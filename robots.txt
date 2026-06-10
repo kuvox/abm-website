@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abeckermarketing.com/sitemap.xml
+
+# LLM-readable site summary: https://abeckermarketing.com/llms.txt

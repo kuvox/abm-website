@@ -1,0 +1,75 @@
+{
+  "site": "https://abeckermarketing.com",
+  "ids": {
+    "organization": "https://abeckermarketing.com/#organization",
+    "website": "https://abeckermarketing.com/#website",
+    "person": "https://abeckermarketing.com/about.html#austin-becker"
+  },
+  "organization": {
+    "name": "Austin Becker E-Commerce Marketing",
+    "description": "U.S.-based PPC agency helping $5M–$50M annual revenue e-commerce stores grow through paid advertising on Google, Amazon, and Microsoft, with specialization in product data feed optimization for large Shopify catalogs.",
+    "email": "austin@abeckermarketing.com",
+    "address": {
+      "streetAddress": "510 S Main St Suite 120",
+      "addressLocality": "South Bend",
+      "addressRegion": "IN",
+      "postalCode": "46601",
+      "addressCountry": "US"
+    },
+    "logo": "https://abeckermarketing.com/images/logo.svg",
+    "sameAs": [
+      "https://www.linkedin.com/in/austin-becker-marketing/",
+      "https://www.youtube.com/@ppcforeveryone",
+      "https://www.facebook.com/ABeckerMarketing",
+      "https://x.com/MktngByABecker",
+      "https://www.instagram.com/austinbeckerecommarketing/",
+      "https://www.google.com/partners/agency?id=2938602801",
+      "https://msadvertisingpartnerprogram.powerappsportals.com/partner-directory-profile-full/?partnerProfileID=3c2bfd14-8945-f111-88b4-7ced8d3d593b"
+    ]
+  },
+  "person": {
+    "name": "Austin Becker",
+    "jobTitle": "Founder & Google Ads Manager",
+    "image": "https://abeckermarketing.com/images/austin-becker-portrait-3.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/austin-becker-marketing/"
+    ]
+  },
+  "services": [
+    {
+      "slug": "google-shopping-ads",
+      "name": "Google Shopping Ads",
+      "description": "Product listing ads with emphasis on product data optimization, inventory prioritization, and e-commerce reporting."
+    },
+    {
+      "slug": "google-search-ads",
+      "name": "Google Search Ads",
+      "description": "Text search ads across the Google ad inventory to drive incremental e-commerce sales."
+    },
+    {
+      "slug": "google-display-network",
+      "name": "Google Display Network",
+      "description": "Display advertising to keep stores top-of-mind through the purchase decision."
+    },
+    {
+      "slug": "amazon-ads",
+      "name": "Amazon Ads",
+      "description": "Amazon advertising optimized around ad spend efficiency and ACOS targets aligned to business goals."
+    },
+    {
+      "slug": "product-feeds",
+      "name": "Product Feeds",
+      "description": "Product data feed creation and optimization so listings stand out across channels."
+    },
+    {
+      "slug": "microsoft-ads",
+      "name": "Microsoft Ads",
+      "description": "Paid advertising on Bing, AOL, Yahoo, and DuckDuckGo via Microsoft Advertising."
+    },
+    {
+      "slug": "youtube-ads",
+      "name": "YouTube Ads",
+      "description": "YouTube video ad campaigns to drive consideration and purchase."
+    }
+  ]
+}

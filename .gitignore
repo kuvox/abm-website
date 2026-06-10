@@ -1,0 +1,13 @@
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+*.zip
+*.skill
+
+# Old agent session output — not part of the live site
+sessions/
+
+# Design comparison screenshots (local reference only)
+_comparisons_*/
