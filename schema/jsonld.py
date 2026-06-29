@@ -17,6 +17,13 @@ PERSON = _ENTITIES["person"]
 SERVICES = _ENTITIES["services"]
 
 
+def _service_url(svc: dict) -> str:
+    fragment = svc.get("fragment")
+    if fragment:
+        return f"{SITE}/services.html#{fragment}"
+    return f"{SITE}/services/{svc['slug']}.html"
+
+
 def _script_tag(graph: dict) -> str:
     payload = json.dumps(graph, indent=2, ensure_ascii=False)
     return f'<script type="application/ld+json">\n{payload}\n</script>'
@@ -51,7 +58,7 @@ def _org_node(*, include_offers: bool = False) -> dict:
     }
     if include_offers:
         org["makesOffer"] = [
-            {"@id": f"{SITE}/services/{svc['slug']}.html#service"}
+            {"@id": f"{_service_url(svc)}#service"}
             for svc in SERVICES
         ]
     return org
@@ -109,14 +116,14 @@ def _person_node() -> dict:
     }
 
 
-def _service_node(slug: str, name: str, description: str) -> dict:
-    url = f"{SITE}/services/{slug}.html"
+def _service_node(svc: dict) -> dict:
+    url = _service_url(svc)
     return {
         "@type": "Service",
         "@id": f"{url}#service",
-        "name": name,
+        "name": svc["name"],
         "url": url,
-        "description": description,
+        "description": svc["description"],
         "provider": {"@id": ORG_ID},
         "areaServed": {
             "@type": "Country",
@@ -166,12 +173,13 @@ def about_schema() -> str:
 
 
 def service_schema(slug: str, name: str, description: str) -> str:
-    page_url = f"{SITE}/services/{slug}.html"
+    svc = {"slug": slug, "name": name, "description": description}
+    page_url = _service_url(svc)
     service_id = f"{page_url}#service"
     graph = {
         "@context": "https://schema.org",
         "@graph": [
-            _service_node(slug, name, description),
+            _service_node(svc),
             _webpage_node(
                 page_url=page_url,
                 name=f"{name} — Austin Becker E-Commerce Marketing",

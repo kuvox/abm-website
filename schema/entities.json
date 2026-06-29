@@ -37,39 +37,33 @@
   },
   "services": [
     {
-      "slug": "google-shopping-ads",
-      "name": "Google Shopping Ads",
-      "description": "Product listing ads with emphasis on product data optimization, inventory prioritization, and e-commerce reporting."
+      "slug": "services",
+      "fragment": "ad-management-pricing",
+      "name": "Ad Management",
+      "description": "Long-term paid advertising strategy and implementation across Google, Microsoft, YouTube, and other channels."
     },
     {
-      "slug": "google-search-ads",
-      "name": "Google Search Ads",
-      "description": "Text search ads across the Google ad inventory to drive incremental e-commerce sales."
+      "slug": "services",
+      "fragment": "product-feeds",
+      "name": "Product Feeds",
+      "description": "Product data feed creation and optimization so listings stand out across channels."
     },
     {
-      "slug": "google-display-network",
-      "name": "Google Display Network",
-      "description": "Display advertising to keep stores top-of-mind through the purchase decision."
+      "slug": "services",
+      "fragment": "consulting",
+      "name": "Consulting",
+      "description": "One-time consulting and training on conversion tracking, campaign structure, and feed optimization."
+    },
+    {
+      "slug": "services",
+      "fragment": "pricing",
+      "name": "Pricing",
+      "description": "Tiered service fees based on catalog complexity, website needs, and ad budget."
     },
     {
       "slug": "amazon-ads",
       "name": "Amazon Ads",
       "description": "Amazon advertising optimized around ad spend efficiency and ACOS targets aligned to business goals."
-    },
-    {
-      "slug": "product-feeds",
-      "name": "Product Feeds",
-      "description": "Product data feed creation and optimization so listings stand out across channels."
-    },
-    {
-      "slug": "microsoft-ads",
-      "name": "Microsoft Ads",
-      "description": "Paid advertising on Bing, AOL, Yahoo, and DuckDuckGo via Microsoft Advertising."
-    },
-    {
-      "slug": "youtube-ads",
-      "name": "YouTube Ads",
-      "description": "YouTube video ad campaigns to drive consideration and purchase."
     }
   ]
 }

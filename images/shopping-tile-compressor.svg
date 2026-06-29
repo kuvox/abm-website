@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-label="A/C compressor product">
+  <rect width="400" height="400" fill="#e8eaed"/>
+  <ellipse cx="200" cy="318" rx="88" ry="14" fill="rgba(0,0,0,0.1)"/>
+  <g transform="translate(200 188)">
+    <rect x="-92" y="-58" width="184" height="108" rx="18" fill="#b8bcc4"/>
+    <rect x="-82" y="-48" width="164" height="88" rx="14" fill="#d2d6dc"/>
+    <circle cx="-58" cy="6" r="30" fill="#9aa0a8" stroke="#7a8088" stroke-width="3"/>
+    <circle cx="-58" cy="6" r="16" fill="#c4c8ce"/>
+    <rect x="-18" y="-34" width="96" height="64" rx="10" fill="#aeb4bc"/>
+    <rect x="-8" y="-24" width="76" height="44" rx="6" fill="#c8ccd2"/>
+    <path d="M58,-10 L92,-10 L92,26 L58,26 Z" fill="#8e949c"/>
+    <path d="M68,-22 L82,-22 L82,-6 L68,-6 Z" fill="#6e747c"/>
+    <rect x="-72" y="52" width="144" height="18" rx="6" fill="#9aa0a8"/>
+  </g>
+</svg>

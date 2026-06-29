@@ -34,13 +34,11 @@ def header(active="", depth=0):
     <ul id="navlinks" class="nav-links">
       <li class="has-menu"><a href="{p}index.html#services" style="{nav_active('services')}">Services</a>
         <ul class="submenu">
-          <li><a href="{p}services/google-shopping-ads.html">Google Shopping Ads</a></li>
-          <li><a href="{p}services/google-search-ads.html">Google Search Ads</a></li>
-          <li><a href="{p}services/google-display-network.html">Google Display Network</a></li>
+          <li><a href="{p}services.html">Ad Management</a></li>
+          <li><a href="{p}services.html">Product Feeds</a></li>
+          <li><a href="{p}services.html">Consulting</a></li>
+          <li><a href="{p}services.html">Pricing</a></li>
           <li><a href="{p}services/amazon-ads.html">Amazon Ads</a></li>
-          <li><a href="{p}services/product-feeds.html">Product Feeds</a></li>
-          <li><a href="{p}services/microsoft-ads.html">Microsoft Ads</a></li>
-          <li><a href="{p}services/youtube-ads.html">YouTube Ads</a></li>
         </ul>
       </li>
       <li><a href="{p}case-studies.html" style="{nav_active('case')}">Case Studies</a></li>
@@ -59,20 +57,17 @@ def footer(depth=0):
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <h4>Austin Becker E-Commerce Marketing</h4>
+      <div class="footer-brand">
+        <img src="{p}images/website-logos/ABHorizontalWhiteDigital.png" alt="Austin Becker E-Commerce Marketing" class="footer-logo">
         <p style="color:#bcbec1;font-size:0.95rem;">We help $5M to $50M annual revenue businesses grow via pay-per-click ads. Contact us today to learn how we can help.</p>
       </div>
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="{p}services/google-shopping-ads.html">Google Shopping Ads</a></li>
-          <li><a href="{p}services/google-search-ads.html">Google Search Ads</a></li>
-          <li><a href="{p}services/google-display-network.html">Display Network</a></li>
-          <li><a href="{p}services/amazon-ads.html">Amazon Ads</a></li>
-          <li><a href="{p}services/product-feeds.html">Product Feeds</a></li>
-          <li><a href="{p}services/microsoft-ads.html">Microsoft Ads</a></li>
-          <li><a href="{p}services/youtube-ads.html">YouTube Ads</a></li>
+          <li><a href="{p}services.html">Ad Management</a></li>
+          <li><a href="{p}services.html">Product Feeds</a></li>
+          <li><a href="{p}services.html">Consulting</a></li>
+          <li><a href="{p}services.html">Pricing</a></li>
         </ul>
       </div>
       <div>
@@ -130,7 +125,7 @@ about_body = """
 <section class="section" id="why-choose-us">
   <div class="container split">
     <div>
-      <div class="eyebrow">Why choose us?</div>
+      <div class="eyebrow">Are We a Fit?</div>
       <h2>Built specifically for product catalog ad performance.</h2>
       <p>Our services are designed to meet the needs of growing $5M to $50M annual revenue companies. We work with your internal and external teams to ensure that our advertising work matches your brand style and guidelines across all channels.</p>
       <p>We maintain a special emphasis on e-commerce ads and product data feeds. This helps us keep all our clients' ad data clean, understandable and usable.</p>
@@ -513,27 +508,9 @@ page("404.html",
 
 
 # ============================================================
-# SERVICE PAGES (7)
+# SERVICE PAGES
 # ============================================================
 services = [
-    {
-        "slug": "google-shopping-ads",
-        "name": "Google Shopping Ads",
-        "tagline": "Product listing ads, done right.",
-        "lead": "Optimized product data helps customers select your offer and convert. We place special emphasis on creating complete product data so your ads stand out.",
-        "body": """
-            <p>Google Shopping ads are the most important ad surface for most e-commerce stores — and they're entirely driven by the quality of your product feed. We treat the feed as a first-class asset and tune it continuously.</p>
-            <p>What we focus on:</p>
-            <ul class="checklist">
-              <li>Product feed quality, completeness and segmentation</li>
-              <li>Bid strategy aligned to margin and inventory</li>
-              <li>Custom labels for promotions, seasonality and lifecycle</li>
-              <li>Negative keywords and search query review</li>
-              <li>Inventory prioritization for profitable SKUs</li>
-              <li>Performance Max strategy when it fits the account</li>
-            </ul>
-        """
-    },
     {
         "slug": "amazon-ads",
         "name": "Amazon Ads",
@@ -547,83 +524,6 @@ services = [
               <li>Brand defense and competitor conquest strategies</li>
               <li>Search term harvesting and negative keyword management</li>
               <li>DSP for advanced retargeting (when account size justifies)</li>
-            </ul>
-        """
-    },
-    {
-        "slug": "product-feeds",
-        "name": "Product Feeds",
-        "tagline": "Clean, complete, optimized product data.",
-        "lead": "Optimized product data helps customers select your offer and convert. We place special emphasis on creating complete product data so your ads stand out.",
-        "body": """
-            <p>Product feeds are the unsexy work that drives most of the wins in e-commerce PPC. We do this work seriously, with feed transformation tooling and a process for keeping data clean as your catalog evolves.</p>
-            <ul class="checklist">
-              <li>Shopify, WooCommerce, BigCommerce, custom carts</li>
-              <li>Title and description optimization at scale</li>
-              <li>Custom labels for segmentation</li>
-              <li>Image, GTIN and category compliance</li>
-              <li>Multi-channel feed management (Google, Microsoft, Meta, Amazon)</li>
-            </ul>
-        """
-    },
-    {
-        "slug": "google-search-ads",
-        "name": "Google Search Ads",
-        "tagline": "Capture intent across all of Google.",
-        "lead": "Your ads perform best when they appear across all Google ad inventory. Search (text) ads give incremental gains to e-commerce businesses.",
-        "body": """
-            <p>Search ads complement Shopping by capturing branded queries, high-intent product searches, and category-level demand. We structure search accounts for long-term performance, not short-term flash.</p>
-            <ul class="checklist">
-              <li>Brand and competitor strategy</li>
-              <li>Category and product-level keyword expansion</li>
-              <li>Smart bidding configuration</li>
-              <li>Ad copy testing and asset rotation</li>
-              <li>Match type and negative keyword discipline</li>
-            </ul>
-        """
-    },
-    {
-        "slug": "google-display-network",
-        "name": "Google Display Network",
-        "tagline": "Stay top-of-mind through the buyer journey.",
-        "lead": "We optimize and deploy your ad data across display ads to ensure customers see and remember your store before making a final purchase decision. The end result is more sales.",
-        "body": """
-            <p>Display done well drives incremental sales. Display done poorly burns cash. We focus on the audiences and placements that move the needle.</p>
-            <ul class="checklist">
-              <li>Dynamic remarketing tied to your product feed</li>
-              <li>Custom audiences and lookalikes</li>
-              <li>Placement and topic exclusions to protect spend</li>
-              <li>Creative asset development and testing</li>
-            </ul>
-        """
-    },
-    {
-        "slug": "microsoft-ads",
-        "name": "Microsoft Ads",
-        "tagline": "Reach customers on Bing, AOL, Yahoo and DuckDuckGo.",
-        "lead": "Carry your success on Google and Amazon over to Microsoft Ads, where you can reach customers on Bing, AOL, Yahoo and DuckDuckGo.",
-        "body": """
-            <p>Microsoft Ads often delivers cheaper clicks and a higher-spending audience for the right verticals. Importing from Google is the easy part — making the account actually perform takes specialization.</p>
-            <ul class="checklist">
-              <li>Account import and structure cleanup</li>
-              <li>Microsoft Shopping with optimized feeds</li>
-              <li>LinkedIn audience targeting (a Microsoft-only advantage)</li>
-              <li>Search and audience network management</li>
-            </ul>
-        """
-    },
-    {
-        "slug": "youtube-ads",
-        "name": "YouTube Ads",
-        "tagline": "Reach buyers on the second-most-visited site in the US.",
-        "lead": "YouTube is the second most visited website in the USA. We expand your ads into YouTube to help more potential customers consider and purchase from you.",
-        "body": """
-            <p>YouTube isn't just a brand awareness channel — for the right products, it's a direct response engine. We focus on the formats, audiences, and creative briefs that drive measurable results.</p>
-            <ul class="checklist">
-              <li>Performance-focused video ad strategy</li>
-              <li>Audience targeting tuned to your customer profile</li>
-              <li>Creative briefs and testing frameworks</li>
-              <li>Integration with your Google Ads conversion tracking</li>
             </ul>
         """
     },

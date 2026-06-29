@@ -85,34 +85,21 @@ Use the client's name in the page `<title>` as `"{Client} Case Study — Austin 
 **URL shape:** `/resources/<slug>.html`.
 **Generator:** `generate_pages.py`, in the `RESOURCES` list.
 
-> **No table of contents** — the WordPress originals had one; on the static site
-> we drop it. Anchor links from the side were rarely used and added clutter.
+> **See `docs/blog-pages.md`** for the full blog layout spec (split hero, newsletter
+> footer, optional TOC). Legacy `article-hero` / `article-related` patterns are
+> retired.
 
 ### Required sections, in order
 
-1. **`<section class="article-hero">` (narrow container)**
-   - `.article-meta` containing `.article-date`.
-   - `.article-categories` containing one or more `<a class="pill-tag" href="../resources.html#<topic>">{topic}</a>` chips. Topic slugs follow the resources index: `amazon`, `google-ads`, `google-shopping`, `microsoft`, `product-feeds`, `youtube`, `research-articles`, `video-guides`.
-   - `<h1>` — the article title.
-   - `<p class="article-lead">` — one or two sentences describing what you'll get.
-   - `.article-author` row with avatar + name + role.
-
-2. **`<section class="article-feature-image">`**
-   - One full-width hero image (16:9 aspect ratio enforced by CSS).
-
-3. **`<section class="article-body">` (760px container)**
-   - The article prose. Use `<h2>` for main sections and `<h3>` for subsections.
-   - Use semantic HTML: `<p>`, `<ul>`, `<ol>`, `<blockquote>`, `<pre><code>`, `<figure>` with `<figcaption>`.
-   - Optionally embed one or more **interactive tool blocks** (see section 4 below).
-   - End with `.article-categories-footer` line: `Categories: <a>...</a>`.
-
-4. **`<section class="article-related">` (alt background)**
-   - `<h2>Related Resources</h2>` + a `.related-grid` of up to 3 `.related-card` links. The generator auto-picks related cards by overlapping category slugs.
+1. **`<section class="hero">` with `.hero-split`** — eyebrow, title, lead, CTA; video or image in `.hero-video` (see blog-pages.md).
+2. **`<section class="article-body" id="article-body">`** — prose in `.container`; optional `interactive-tool` blocks.
+3. **`<section class="newsletter-cta" id="newsletter">`** — newsletter signup (from `blog_newsletter()` in `site_nav.py`).
+4. **`<footer class="site-footer">`**
 
 ### Adding a new resource
 
 1. Open `generate_pages.py`.
-2. Append a dict to the `RESOURCES` list. Required keys: `slug`, `title`, `lead`, `meta_description`, `date` (e.g. `"Feb 11, 2026"`), `feature_image`, `feature_alt`, `categories` (list of `(name, slug)` tuples), `body_html` (a string of HTML — keep it ≤ ~80% of the content; long pieces should link to Notion or YouTube), and optionally `video_embed` (a YouTube embed URL).
+2. Append a dict to the `RESOURCES` list. Required keys: `slug`, `title`, `lead`, `meta_description`, `date` (e.g. `"Feb 11, 2026"`), `feature_image`, `feature_alt`, `categories` (list of `(name, slug)` tuples), `body_html` (HTML inside the body container). Optional: `eyebrow`, `video_embed`, `video_watch_url`, `hero_cta_href`, `hero_cta_label`.
 3. Drop the feature image into `images/`.
 4. Run `python3 generate_pages.py`.
 5. Add a card on `resources.html` pointing at `resources/<slug>.html`.

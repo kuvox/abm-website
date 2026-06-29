@@ -14,14 +14,9 @@ site/
 ├── privacy-policy.html
 ├── service-agreement.html
 ├── 404.html
-├── services/               ← one page per service (7 total)
-│   ├── google-shopping-ads.html
-│   ├── google-search-ads.html
-│   ├── google-display-network.html
-│   ├── amazon-ads.html
-│   ├── product-feeds.html
-│   ├── microsoft-ads.html
-│   └── youtube-ads.html
+├── services.html           ← services + pricing hub
+├── services/               ← optional service detail pages
+│   └── amazon-ads.html
 ├── styles.css              ← all styling (one file)
 ├── robots.txt
 └── sitemap.xml

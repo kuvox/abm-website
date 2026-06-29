@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#f0f2f5"/>
+  <circle cx="200" cy="190" r="70" fill="#dde2e8" stroke="#b8c0cc" stroke-width="3"/>
+  <rect x="170" y="250" width="60" height="50" rx="4" fill="#c8d0da" stroke="#b8c0cc" stroke-width="2"/>
+  <text x="200" y="360" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#999">Industrial</text>
+</svg>

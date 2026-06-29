@@ -45,72 +45,65 @@
 </script>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-about">
 <header class="site-header">
   <div class="container nav">
-    <a href="index.html" class="brand-mark" aria-label="Austin Becker E-Commerce Marketing"><img src="images/logo.svg" alt="Austin Becker E-Commerce Marketing" class="brand-logo"></a>
+    <a href="/" class="brand-mark" aria-label="Austin Becker E-Commerce Marketing"><img src="images/logo.svg" alt="Austin Becker E-Commerce Marketing" class="brand-logo"></a>
     <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
     <ul id="navlinks" class="nav-links">
-      <li class="has-menu has-megamenu has-megamenu--services"><a href="index.html#services">Services</a>
+      <li class="has-menu has-megamenu has-megamenu--services"><a href="services.html">Services</a>
         <div class="megamenu megamenu--services">
-          <div class="megamenu-col">
-            <span class="megamenu-eyebrow">Our Services</span>
+          <div class="megamenu-col megamenu-col--with-cta">
+            <span class="megamenu-eyebrow">Services</span>
             <ul>
-              <li><a href="services/google-shopping-ads.html">Google Shopping Ads</a></li>
-              <li><a href="services/google-search-ads.html">Google Search Ads</a></li>
-              <li><a href="services/google-display-network.html">Google Display Network</a></li>
-              <li><a href="services/amazon-ads.html">Amazon Ads</a></li>
+              <li><a href="services.html">Ad Management</a></li>
+              <li><a href="services.html">Product Feeds</a></li>
+              <li><a href="services.html">Consulting</a></li>
+              <li><a href="services.html">Pricing</a></li>
             </ul>
+            <div class="megamenu-cta-card">
+              <p class="megamenu-cta-quote">I&rsquo;ve had the pleasure of working with Austin, and I must say, he&rsquo;s been an absolute legend!</p>
+              <div class="megamenu-cta-attribution">
+                <img src="images/boxhill-instagram-logo-circle.jpg" alt="" class="megamenu-cta-avatar" width="52" height="52">
+                <div class="megamenu-cta-attribution-text">
+                  <strong class="megamenu-cta-name">Rich Fraser</strong>
+                  <span class="megamenu-cta-title">Owner at <a href="https://www.boxhill.co.nz/" target="_blank" rel="noopener">boxhill.co.nz</a></span>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="megamenu-col">
+            <span class="megamenu-eyebrow">Ad Platforms</span>
             <ul>
-              <li><a href="services/product-feeds.html">Product Feeds</a></li>
-              <li><a href="services/microsoft-ads.html">Microsoft Ads</a></li>
-              <li><a href="services/youtube-ads.html">YouTube Ads</a></li>
+              <li><a href="supported-ad-platforms.html">Google &amp; YouTube</a></li>
+              <li><a href="supported-ad-platforms.html">Microsoft</a></li>
+              <li><a href="supported-ad-platforms.html">ChatGPT</a></li>
+              <li><a href="supported-ad-platforms.html">Meta</a></li>
+              <li><a href="supported-ad-platforms.html">Pinterest</a></li>
+              <li><a href="supported-ad-platforms.html">Target</a></li>
+              <li><a href="supported-ad-platforms.html">Walmart</a></li>
+              <li><a href="supported-ad-platforms.html">Reddit</a></li>
             </ul>
           </div>
-          <a href="contact.html" class="megamenu-cta-card">
-            <h4>Contact Us to Get a Proposal</h4>
-            <p>Please submit a contact form. We&rsquo;ll reach out to see if our team is a good fit for your business.</p>
-            <span class="megamenu-cta-arrow" aria-hidden="true">&rarr;</span>
-          </a>
         </div>
       </li>
       <li><a href="case-studies.html">Case Studies</a></li>
-      <li class="has-menu has-megamenu has-megamenu--resources"><a href="resources.html">Resources</a>
-        <div class="megamenu megamenu--resources">
+      <li class="has-menu has-megamenu has-megamenu--learn"><a href="resources.html">Learn</a>
+        <div class="megamenu megamenu--learn">
           <div class="megamenu-col">
             <ul>
-              <li><a href="resources.html#featured">Featured Resources</a></li>
-              <li><a href="resources.html#research">Research Articles</a></li>
-              <li><a href="resources.html#video">Video Guides and Training</a></li>
-              <li><a href="resources.html#support">Support Articles</a></li>
+              <li><a href="resources.html"><span class="megamenu-learn-label">Blog</span><span class="megamenu-learn-desc">Optimize Campaigns &amp; Data Feeds</span></a></li>
+              <li><a href="https://www.youtube.com/@ppcforeveryone" target="_blank" rel="noopener"><span class="megamenu-learn-label">YouTube Channel</span><span class="megamenu-learn-desc">PPC for Everyone</span></a></li>
+              <li><a href="resources.html#newsletter"><span class="megamenu-learn-label">Newsletter</span><span class="megamenu-learn-desc">Up-to-Date on Digital Ads</span></a></li>
             </ul>
-          </div>
-          <div class="megamenu-col">
-            <span class="megamenu-eyebrow">Resources by Topic</span>
-            <ul>
-              <li><a href="resources.html#amazon">Amazon</a></li>
-              <li><a href="resources.html#google-ads">Google Ads</a></li>
-              <li><a href="resources.html#google-shopping">Google Shopping</a></li>
-              <li><a href="resources.html#microsoft">Microsoft</a></li>
-              <li><a href="resources.html#product-feeds">Product Feeds</a></li>
-              <li><a href="resources.html#youtube">YouTube</a></li>
-            </ul>
-          </div>
-          <div class="megamenu-card">
-            <a href="https://abeckermarketing.com/get-free-guides-here/" target="_blank" rel="noopener">
-              <img src="images/Weekly-Guides-on-YouTube.png" alt="Weekly Guides on YouTube">
-              <span class="megamenu-card-cta">Get Free Guides Here &rsaquo;</span>
-            </a>
           </div>
         </div>
       </li>
-      <li class="has-menu has-megamenu has-megamenu--about"><a href="about.html" style="color:var(--brand);">About</a>
+      <li class="has-menu has-megamenu has-megamenu--about"><a href="about.html" class="active">About</a>
         <div class="megamenu megamenu--about">
           <div class="megamenu-col">
             <ul>
-              <li><a href="about.html#why-choose-us">Why choose us?</a></li>
+              <li><a href="about.html">Who We Work With</a></li>
               <li><a href="about.html#founder">About the Founder</a></li>
               <li><a href="about.html#team">Our Team</a></li>
             </ul>
@@ -132,30 +125,118 @@
       <span class="eyebrow">About Us</span>
       <h1>Who We Work With</h1>
       <p class="lead">Shopify stores with 10,000+ SKUs benefit the most from our work. We specialize in optimizing large product data feeds for Google and Microsoft shopping ads.</p>
-      <p class="lead" style="margin-top:0;">Improvements we apply to data feeds often yield improved return on ad spend within 2 to 4 weeks. In 1 to 2 months, our clients typically achieve increased total sales.</p>
+      <p class="lead" style="margin-top:0;">Improvements we apply to data feeds often yield improved return on ad spend within 2 to 4 weeks. After 1 to 2 months, our clients typically achieve increased total sales.</p>
       <div class="hero-actions">
         <a href="contact.html" class="btn btn-primary">Get a Proposal Today</a>
       </div>
     </div>
-    <div class="client-collage-card" aria-label="Client logos">
-      <img src="images/beltsmart-logo.png" alt="BeltSmart">
-      <img src="images/hosewarhouse-logo.png" alt="Hose Warehouse">
-      <img src="images/mymusic-folders-logo.png" alt="My Music Folders">
-      <img src="images/parker-baby-logo.png" alt="Parker Baby Co">
-      <img src="images/tallslim-tees-logo.png" alt="TallSlim Tees">
-      <img src="images/the-crypto-lawyers-logo.png" alt="The Crypto Lawyers">
-      <img src="images/kingsley-north-logo.png" alt="Kingsley North">
-      <img src="images/murdock-industrial-logo.png" alt="Murdock Industrial">
-      <img src="images/meseroll-logo.png" alt="Meseroll">
-      <img src="images/irish-woodworks-logo.png" alt="Irish Woodworks">
-      <img src="images/billfodl-logo.png" alt="Billfodl">
-      <img src="images/listing-mirror-logo.png" alt="Listing Mirror">
-      <img src="images/indoor-cycle-pros-logo.png" alt="Indoor Cycle Pros">
-      <img src="images/conservation-mart-logo.png" alt="Conservation Mart">
-      <img src="images/iron-fence-shop-logo.png" alt="Iron Fence Shop">
-      <img src="images/maia-homes-logo.png" alt="Maia Homes">
-      <img src="images/poulsbo-rv-logo.png" alt="Poulsbo RV">
-    </div>
+    <div class="client-collage-shell">
+  <div class="client-collage-card client-collage-card--home" aria-label="Client logos">
+    <a class="logo-item logo-item--has-tooltip" href="https://hosewarehouse.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/hosewarhouse-logo.png" alt="Hose Warehouse">
+      <div class="logo-tooltip" role="tooltip">
+        <p class="logo-tooltip-name">Hose Warehouse</p>
+        <p class="logo-tooltip-tenure">6+ Year Client</p>
+        <p class="logo-tooltip-category">Industrial Parts</p>
+      </div>
+    </a>
+    <a class="logo-item logo-item--has-tooltip" href="https://www.mymusicfolders.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/mymusic-folders-logo.png" alt="My Music Folders">
+      <div class="logo-tooltip" role="tooltip">
+        <p class="logo-tooltip-name">MyMusic Folders</p>
+        <p class="logo-tooltip-tenure">3+ Year Client</p>
+        <p class="logo-tooltip-category">Musician Supplies</p>
+      </div>
+    </a>
+    <a class="logo-item logo-item--has-tooltip" href="https://tallslimtees.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/tallslim-tees-logo.png" alt="TallSlim Tees">
+      <div class="logo-tooltip" role="tooltip">
+        <p class="logo-tooltip-name">TallSlim Tees</p>
+        <p class="logo-tooltip-tenure">4+ Year Client</p>
+        <p class="logo-tooltip-category">Apparel</p>
+      </div>
+    </a>
+    <a class="logo-item logo-item--has-tooltip" href="https://parkerbaby.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/parker-baby-logo.png" alt="Parker Baby">
+      <div class="logo-tooltip" role="tooltip">
+        <p class="logo-tooltip-name">Parker Baby</p>
+        <p class="logo-tooltip-tenure">4+ Year Client</p>
+        <p class="logo-tooltip-category">Baby Accessories</p>
+      </div>
+    </a>
+    <a class="logo-item logo-item--has-tooltip" href="https://kingsleynorth.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/kingsley-north-logo.png" alt="Kingsley North">
+      <div class="logo-tooltip" role="tooltip">
+        <p class="logo-tooltip-name">Kingsley North</p>
+        <p class="logo-tooltip-tenure">3+ Year Client</p>
+        <p class="logo-tooltip-category">Lapidary Supplies</p>
+      </div>
+    </a>
+    <a class="logo-item logo-item--has-tooltip" href="https://meserollshop.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/meseroll-logo.png" alt="Meseroll Shop">
+      <div class="logo-tooltip" role="tooltip">
+        <p class="logo-tooltip-name">Meseroll Shop</p>
+        <p class="logo-tooltip-tenure">1 Year Client</p>
+        <p class="logo-tooltip-category">Biking Gear</p>
+      </div>
+    </a>
+    <a class="logo-item logo-item--has-tooltip" href="https://indoorcyclepros.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/indoor-cycle-pros-logo.png" alt="Indoor Cycle Pros">
+      <div class="logo-tooltip" role="tooltip">
+        <p class="logo-tooltip-name">Indoor Cycle Pros</p>
+        <p class="logo-tooltip-tenure">1 Year Client</p>
+        <p class="logo-tooltip-category">Biking Gear</p>
+      </div>
+    </a>
+    <a class="logo-item logo-item--has-tooltip" href="https://poulsborv.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/poulsbo-rv-logo.png" alt="Poulsbo RV">
+      <div class="logo-tooltip" role="tooltip">
+        <p class="logo-tooltip-name">Poulsbo RV</p>
+        <p class="logo-tooltip-tenure">2+ Year Client</p>
+        <p class="logo-tooltip-category">RV Dealership</p>
+      </div>
+    </a>
+    <a class="logo-item logo-item--has-tooltip" href="https://maiahomes.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/maia-homes-logo.png" alt="Maia Homes">
+      <div class="logo-tooltip" role="tooltip">
+        <p class="logo-tooltip-name">Maia Homes</p>
+        <p class="logo-tooltip-tenure">1+ Year Client</p>
+        <p class="logo-tooltip-category">Home Decor</p>
+      </div>
+    </a>
+    <a class="logo-item logo-item--has-tooltip" href="https://conservationmart.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/conservation-mart-logo.png" alt="Conservation Mart">
+      <div class="logo-tooltip" role="tooltip">
+        <p class="logo-tooltip-name">Conservation Mart</p>
+        <p class="logo-tooltip-tenure">1-Year Client</p>
+        <p class="logo-tooltip-category">Industrial Parts</p>
+      </div>
+    </a>
+    <a class="logo-item logo-item--has-tooltip" href="https://murdockindustrial.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/beltsmart-logo.png" alt="BeltSmart">
+      <div class="logo-tooltip" role="tooltip">
+        <p class="logo-tooltip-name">BeltSmart</p>
+        <p class="logo-tooltip-tenure">6+ Year Client</p>
+        <p class="logo-tooltip-category">Industrial Parts</p>
+      </div>
+    </a>
+    <a class="logo-item" href="https://www.thecryptolawyers.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/the-crypto-lawyers-logo.png" alt="The Crypto Lawyers">
+    </a>
+    <a class="logo-item" href="https://murdockindustrial.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/murdock-industrial-logo.png" alt="Murdock Industrial">
+    </a>
+    <a class="logo-item" href="https://www.irishwoodworks.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/irish-woodworks-logo.png" alt="Irish Woodworks">
+    </a>
+    <a class="logo-item" href="https://billfodl.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/billfodl-logo.png" alt="Billfodl">
+    </a>
+    <a class="logo-item" href="https://www.listingmirror.com/" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/listing-mirror-logo.png" alt="Listing Mirror">
+    </a>
+  </div>
+</div>
   </div>
 </section>
 
@@ -167,7 +248,7 @@
     <div>
       <h2>Our Team and Founder</h2>
       <p>We help small and medium size businesses grow sales online using Google, Amazon and Microsoft pay per click marketing. We work with B2C and B2B e-commerce clients.</p>
-      <p>Austin has personally worked with Fortune 500 companies as a project manager and in retail sales analytics. He has advertised and sold products online for 10+ years.</p>
+      <p>Company founder, Austin, has worked with Fortune 500 companies in online retail sales analytics. Austin has worked in ecommerce marketing for 10+ years, and spent earlier years on other start-ups.</p>
       <a href="contact.html" class="btn btn-ghost">Get a Proposal Today</a>
     </div>
   </div>
@@ -176,7 +257,7 @@
 <section class="section why-choose-us-section" id="why-choose-us">
   <div class="container why-grid">
     <div class="why-intro">
-      <h2>Why Choose Us</h2>
+      <h2>Are We a Fit?</h2>
       <p>Your team provides quality products. Our team provides advertising expertise. When you partner with us, we ensure that your digital ads rise to the quality of your store and close more sales while reaching more new and returning customers. Here's how.</p>
       <a href="contact.html" class="btn btn-primary">Get Started Today</a>
     </div>
@@ -255,7 +336,7 @@
           </div>
           <div class="team-flip-back">
             <p>Veronica has worked in Marketing for 3+ years after graduating with her Bachelor in Business Administration and continues to expand her advertising knowledge within the eCommerce space. She assists with campaign creations and maintenance within Google Ads, Amazon, and YouTube strategies.</p>
-            <a href="#linkedin-veronica" target="_blank" rel="noopener" class="team-flip-linkedin" aria-label="Veronica Garcia on LinkedIn" onclick="event.stopPropagation()">
+            <a href="https://www.linkedin.com/in/veronica-garcia-balasquide-517117129/" target="_blank" rel="noopener" class="team-flip-linkedin" aria-label="Veronica Garcia on LinkedIn" onclick="event.stopPropagation()">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
             </a>
           </div>
@@ -272,7 +353,7 @@
           </div>
           <div class="team-flip-back">
             <p>Kodi specializes in product data feed management and ad campaign execution, helping clients keep large product catalogs clean, complete and competitive across Google Shopping, Microsoft and Amazon.</p>
-            <a href="#linkedin-kodi" target="_blank" rel="noopener" class="team-flip-linkedin" aria-label="Kodi Ekenta on LinkedIn" onclick="event.stopPropagation()">
+            <a href="https://www.linkedin.com/in/kodi-ekenta-515ab4101/" target="_blank" rel="noopener" class="team-flip-linkedin" aria-label="Kodi Ekenta on LinkedIn" onclick="event.stopPropagation()">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
             </a>
           </div>
@@ -282,33 +363,80 @@
   </div>
 </section>
 
-<section class="section section--alt" id="case-studies-preview">
+<section class="section section--alt client-case-studies-section">
   <div class="container">
-    <div class="center" style="max-width:680px;margin:0 auto 32px;">
-      <span class="eyebrow">Case Studies</span>
-      <h2>Work With Us</h2>
+    <div class="case-studies-carousel-header center">
+      <h2>Customer Success Stories</h2>
     </div>
-    <div class="grid-2">
-      <div class="case-card">
+  </div>
+  <div class="case-studies-carousel-track" tabindex="0" aria-label="Client case studies">
+    <div class="case-studies-carousel">
+      <a class="case-card" href="case-studies/hose-warehouse-beltsmart.html" style="text-decoration:none;color:inherit;">
         <img src="images/Hose-Warehouse.jpg" alt="HoseWarehouse" class="case-image">
         <div class="case-body">
-          <span class="pill-tag">Case Study</span>
-          <h3>Hose Warehouse &amp; Beltsmart</h3>
-          <div class="result">181.92% Year-Over-Year Increase in Revenue From Google Ads</div>
+          <h3>HoseWarehouse</h3>
+          <div class="result">181.92% Increase in Revenue</div>
           <p>HoseWarehouse.com and BeltSmart.com sell industrial hose, tools and accessories at wholesale prices in the USA. Both are subsidiaries of Murdock Industrial based in Akron, Ohio.</p>
-          <a href="case-studies.html" class="more">Read the case study &rarr;</a>
+          <span class="more">Read the case study &rarr;</span>
         </div>
-      </div>
-      <div class="case-card">
-        <img src="images/iron-fence-shop.jpeg" alt="Iron Fence Shop" class="case-image">
+      </a>
+      <a class="case-card" href="case-studies/kingsley-north.html" style="text-decoration:none;color:inherit;">
+        <video class="case-image" autoplay muted loop playsinline poster="images/kingsley-north-case-study-thumbnail.jpg" aria-label="Kingsley North">
+        <source src="images/kingsley-north-case-study-video.webm" type="video/webm">
+        <source src="images/kingsley-north-case-study-video.mp4" type="video/mp4">
+        </video>
         <div class="case-body">
-          <span class="pill-tag">Case Study</span>
-          <h3>Iron Fence Shop</h3>
-          <div class="result">16% Decrease in Google Ad Spend. 221% Increase in Form Leads.</div>
-          <p>Iron Fence Shop retails handcrafted and custom designed perimeter fencing crafted in their own facility including fencing, driveway gates and finials constructed of iron and aluminum.</p>
-          <a href="case-studies.html" class="more">Read the case study &rarr;</a>
+          <h3>Kingsley North</h3>
+          <div class="result">15.64% Higher Conversion Rate</div>
+          <p>Kingsley North leads the lapidary equipment space. We enhanced product feeds and built feature-focused video ads to grow conversions on the same budget.</p>
+          <span class="more">Read the case study &rarr;</span>
         </div>
-      </div>
+      </a>
+      <a class="case-card" href="case-studies/parker-baby.html" style="text-decoration:none;color:inherit;">
+        <img src="images/parker-baby-homepage.png" alt="Parker Baby" class="case-image">
+        <div class="case-body">
+          <h3>Parker Baby</h3>
+          <div class="result">Increased ROAS Within 3 Weeks</div>
+          <p>Parker Baby designs and provides exceptional and affordable baby products for the modern parent. Since 2015, they've specialized in diaper backpacks, caddies, bath supplies, and other baby accessories.</p>
+          <span class="more">Read the case study &rarr;</span>
+        </div>
+      </a>
+      <a class="case-card" href="case-studies/tallslim-tees.html" style="text-decoration:none;color:inherit;">
+        <img src="images/tallslim-tees-homepage-3.png" alt="TallSlim Tees" class="case-image">
+        <div class="case-body">
+          <h3>TallSlim Tees</h3>
+          <div class="result">74.70% YoY Growth in Google Ads Revenue</div>
+          <p>TallSlim Tees is an apparel brand for men 6 ft&ndash;7 ft tall, designing slim and tall clothing focused on length rather than width for t-shirts, flannels, and activewear.</p>
+          <span class="more">Read the case study &rarr;</span>
+        </div>
+      </a>
+      <a class="case-card" href="case-studies/iron-fence-shop.html" style="text-decoration:none;color:inherit;">
+        <img src="images/iron-fence-shop-homepage.png" alt="Iron Fence Shop" class="case-image">
+        <div class="case-body">
+          <h3>Iron Fence Shop</h3>
+          <div class="result">221% Increase in Form Leads</div>
+          <p>Iron Fence Shop retails handcrafted and custom designed perimeter fencing crafted in their own facility including fencing, driveway gates and finials constructed of iron and aluminum.</p>
+          <span class="more">Read the case study &rarr;</span>
+        </div>
+      </a>
+      <a class="case-card" href="case-studies/trailheads.html" style="text-decoration:none;color:inherit;">
+        <img src="images/trailheads.jpg" alt="Trailheads" class="case-image">
+        <div class="case-body">
+          <h3>TrailHeads</h3>
+          <div class="result">172% Year-Over-Year Revenue Growth</div>
+          <p>Established in 2002, TrailHeads specializes in the manufacturing of quality and comfortable accessories for running and outdoor sports enthusiasts. They design and test their products in-house and offer a variety of hats, headbands, gloves and related accessories that can be worn year round.</p>
+          <span class="more">Read the case study &rarr;</span>
+        </div>
+      </a>
+      <a class="case-card" href="https://www.datafeedwatch.com/blog/increase-revenue-manging-multiple-feeds" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+        <img src="images/datafeedwatch.jpg" alt="DataFeedWatch feature" class="case-image">
+        <div class="case-body">
+          <h3>DataFeedWatch</h3>
+          <div class="result">136% Average Revenue Increase</div>
+          <p>Discover how we use DataFeedWatch to manage multiple product feeds for over 50 clients while increasing their revenue by 136% and ROAS by 32% on average.</p>
+          <span class="more">Read the case study &rarr;</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -341,43 +469,29 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <h4>Austin Becker E-Commerce Marketing</h4>
+        <img src="images/website-logos/ABHorizontalWhiteDigital.png" alt="Austin Becker E-Commerce Marketing" class="footer-logo">
         <p>We help $5M to $50M annual revenue businesses grow via pay per click ads. Contact us today to learn how we can help you grow your business.</p>
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/austin-becker-marketing/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/ABeckerMarketing" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.95.93-1.95 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
-          </a>
-          <a href="https://x.com/MktngByABecker" target="_blank" rel="noopener" aria-label="X (Twitter)">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/austinbeckerecommarketing/" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.71 3.71 0 0 1-1.38-.9 3.71 3.71 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.87 5.87 0 0 0-2.13 1.38A5.87 5.87 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.87 5.87 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.87 5.87 0 0 0 2.13-1.38 5.87 5.87 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.87 5.87 0 0 0-1.38-2.13A5.87 5.87 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/@ppcforeveryone" target="_blank" rel="noopener" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.13-2.13C19.5 3.56 12 3.56 12 3.56s-7.5 0-9.37.51A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.13 2.13c1.87.51 9.37.51 9.37.51s7.5 0 9.37-.51A3 3 0 0 0 23.5 17.8 31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
-          </a>
+            <a href="https://www.linkedin.com/in/austin-becker-marketing/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+            <a href="https://www.facebook.com/ABeckerMarketing" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.95.93-1.95 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
+            <a href="https://x.com/MktngByABecker" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://www.instagram.com/austinbeckerecommarketing/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.71 3.71 0 0 1-1.38-.9 3.71 3.71 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.87 5.87 0 0 0-2.13 1.38A5.87 5.87 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.87 5.87 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.87 5.87 0 0 0 2.13-1.38 5.87 5.87 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.87 5.87 0 0 0-1.38-2.13A5.87 5.87 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a>
+            <a href="https://www.youtube.com/@ppcforeveryone" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.13-2.13C19.5 3.56 12 3.56 12 3.56s-7.5 0-9.37.51A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.13 2.13c1.87.51 9.37.51 9.37.51s7.5 0 9.37-.51A3 3 0 0 0 23.5 17.8 31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a>
         </div>
-
       </div>
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="services/google-shopping-ads.html">Google Shopping Ads</a></li>
-          <li><a href="services/google-search-ads.html">Google Search Ads</a></li>
-          <li><a href="services/google-display-network.html">Display Network</a></li>
-          <li><a href="services/amazon-ads.html">Amazon Ads</a></li>
-          <li><a href="services/product-feeds.html">Product Feeds</a></li>
-          <li><a href="services/microsoft-ads.html">Microsoft Ads</a></li>
-          <li><a href="services/youtube-ads.html">YouTube Ads</a></li>
+          <li><a href="services.html">Ad Management</a></li>
+          <li><a href="services.html">Product Feeds</a></li>
+          <li><a href="services.html">Consulting</a></li>
+          <li><a href="services.html">Pricing</a></li>
         </ul>
       </div>
       <div>
         <h4>About</h4>
         <ul>
-          <li><a href="about.html#why-choose-us">Why Choose Us</a></li>
+          <li><a href="about.html#why-choose-us">Are We a Fit?</a></li>
           <li><a href="about.html#founder">About the Founder</a></li>
           <li><a href="about.html#team">Our Team</a></li>
         </ul>
@@ -392,7 +506,7 @@
         </ul>
       </div>
     </div>
-        <div class="footer-bottom">
+    <div class="footer-bottom">
       <span>Copyright &copy; 2026 Austin Becker E-Commerce Marketing. All Rights Reserved.</span>
       <div class="footer-bottom-links">
         <a href="privacy-policy.html">Privacy Policy</a>
@@ -402,5 +516,8 @@
     </div>
   </div>
 </footer>
+<!-- Client-logo auto-scroll trial — remove script tag on index.html and about.html to revert -->
+<script src="scripts/client-logos-autoscroll.js" defer></script>
+
 </body>
 </html>
