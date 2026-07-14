@@ -57,7 +57,7 @@
 <header class="site-header">
   <div class="container nav">
     <a href="../index.html" class="brand-mark" aria-label="Austin Becker E-Commerce Marketing"><img src="../images/logo.svg" alt="Austin Becker E-Commerce Marketing" class="brand-logo"></a>
-    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">☰</button>
     <ul id="navlinks" class="nav-links">
       <li class="has-menu has-megamenu has-megamenu--services"><a href="../services.html">Services</a>
         <div class="megamenu megamenu--services">
@@ -228,6 +228,7 @@
 
           <div class="feed-shopping-ads">
             <div class="feed-shopping-ads-header">Shopping ads</div>
+            <p class="feed-demo-tap-hint">Tap a sample search or a shopping ad to preview a match.</p>
             <div class="feed-ai-overview" data-feed-ai-overview>
               <div class="feed-ai-overview-header">AI Overview</div>
               <p class="feed-ai-overview-text" data-feed-ai-overview-text hidden></p>
@@ -318,5 +319,6 @@
 
 <script src="../scripts/feed-keyword-matcher.js" defer></script>
 <script src="../scripts/newsletter-form.js" defer></script>
+<script src="../scripts/site-nav.js" defer></script>
 </body>
 </html>

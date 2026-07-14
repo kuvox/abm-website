@@ -13,7 +13,7 @@
 <header class="site-header">
   <div class="container nav">
     <a href="/" class="brand-mark" aria-label="Austin Becker E-Commerce Marketing"><img src="images/logo.svg" alt="Austin Becker E-Commerce Marketing" class="brand-logo"></a>
-    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">☰</button>
     <ul id="navlinks" class="nav-links">
       <li class="has-menu has-megamenu has-megamenu--services"><a href="services.html" class="active">Services</a>
         <div class="megamenu megamenu--services">
@@ -266,5 +266,6 @@
 </footer>
 <script src="scripts/pricing-carousel.js"></script>
 <script src="scripts/hero-grid-interactive.js" defer></script>
+<script src="scripts/site-nav.js" defer></script>
 </body>
 </html>

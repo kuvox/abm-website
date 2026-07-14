@@ -68,7 +68,7 @@ def header(rel: str, *, active: str | None = None) -> str:
   return f"""<header class="site-header">
   <div class="container nav">
     <a href="{brand_href}" class="brand-mark" aria-label="Austin Becker E-Commerce Marketing"><img src="{rel}images/logo.svg" alt="Austin Becker E-Commerce Marketing" class="brand-logo"></a>
-    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">☰</button>
     <ul id="navlinks" class="nav-links">
       <li class="has-menu has-megamenu has-megamenu--services"><a href="{rel}services.html"{_nav_class(active, "services")}>Services</a>
         <div class="megamenu megamenu--services">
