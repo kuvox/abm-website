@@ -14,7 +14,6 @@ A plain HTML/CSS replacement for the WordPress version of abeckermarketing.com. 
 ├── supported-ad-platforms.html
 ├── guides/                 ← long-form guides (feed demo, vehicle ads, etc.)
 ├── privacy-policy.html
-├── service-agreement.html
 ├── 404.html
 ├── _archive/               ← archived pages (not deployed)
 │   └── services/

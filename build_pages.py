@@ -82,7 +82,6 @@ def footer(depth=0):
         <h4>Legal</h4>
         <ul>
           <li><a href="{p}privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="{p}service-agreement.html">Service Agreement</a></li>
         </ul>
       </div>
     </div>
@@ -446,48 +445,6 @@ page("privacy-policy.html",
 
 
 # ============================================================
-# SERVICE AGREEMENT
-# ============================================================
-agreement_body = """
-<section class="hero" style="padding-bottom:32px;">
-  <div class="container">
-    <div class="eyebrow">Legal</div>
-    <h1>Service Agreement</h1>
-    <p class="lead">The terms that govern our client engagements.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container" style="max-width:780px;">
-    <p class="muted"><em>This page is a placeholder. Replace this content with your actual service agreement, or link to a hosted version (PDF or e-sign system) of your full agreement.</em></p>
-
-    <h2>Engagement</h2>
-    <p>By engaging Austin Becker E-Commerce Marketing for paid advertising services, you agree to the terms outlined in your signed Statement of Work.</p>
-
-    <h2>Scope of services</h2>
-    <p>Services covered include account setup, campaign management, optimization, reporting, and strategic guidance for the channels listed in your agreement (Google Ads, Amazon Ads, Microsoft Ads, etc.).</p>
-
-    <h2>Fees and billing</h2>
-    <p>Fees and billing terms are specified in your Statement of Work. Invoices are due upon receipt unless otherwise stated.</p>
-
-    <h2>Termination</h2>
-    <p>Either party may terminate the engagement with 30 days written notice. Account access will be returned to the client in a usable state.</p>
-
-    <h2>Confidentiality</h2>
-    <p>Both parties agree to keep confidential information shared during the engagement private and to use it only for purposes of the agreement.</p>
-
-    <h2>Contact</h2>
-    <p>Questions about your agreement? Email <a href="mailto:austin@abeckermarketing.com">austin@abeckermarketing.com</a>.</p>
-  </div>
-</section>
-"""
-page("service-agreement.html",
-     "Service Agreement — Austin Becker E-Commerce Marketing",
-     "Service agreement and engagement terms.",
-     agreement_body)
-
-
-# ============================================================
 # 404
 # ============================================================
 notfound_body = """
@@ -563,7 +520,7 @@ print("  wrote robots.txt")
 # ============================================================
 urls = [
     "/", "/about.html", "/contact.html", "/case-studies.html", "/resources.html",
-    "/privacy-policy.html", "/service-agreement.html",
+    "/privacy-policy.html",
 ] + [f"/services/{s['slug']}.html" for s in services]
 
 sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
