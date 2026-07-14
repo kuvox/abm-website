@@ -205,7 +205,7 @@ Standard closing block on informational pages.
 
 ## 7. “What It’s Like to Work With Us” block
 
-Dark band above the footer on **services**, **supported ad platforms**, **resources**, and **case study** pages.
+Dark band above the footer on **services**, **supported ad platforms**, **resources**, and **all case study** pages (replaces the old embedded case-study contact form).
 
 ```html
 <section class="section--black" id="work-with-us">
@@ -262,40 +262,47 @@ These patterns live on `index.html` but are documented here for reuse.
 
 - **Layout:** 2-column grid — narrative left, 2×2 stat card grid right.
 - **Stat cards:** `--brand-tint` background, topic label, large figure (`stat-card-figure`), heading, body, arrow link.
+- **Current cards (top-left → bottom-right):**
+  1. **Data Feeds** — 10% → `guides/product-data-feeds-as-keywords.html`
+  2. **Case Study** — 15.64% (Kingsley North) → `case-studies/kingsley-north.html`
+  3. **Guides** — 2026 vehicle ads → `guides/google-vehicle-listing-ads.html`
+  4. **Case Study** — 182% (Hose Warehouse / BeltSmart) → `case-studies/hose-warehouse-beltsmart.html`
 - **Featured logos:** DataFeedWatch dropdown + PPC for Everyone YouTube link below divider.
 
 ---
 
-### 9. Scrolling client logo grid with mouse-over metrics
+### 9. Scrolling client logo grid
 
-**Canonical source:** `snippets/client-logos-grid.html` — see **`client-logos.md`** for the full logo list, add/remove workflow, and usage rules. Copy this block identically wherever client logos appear (`index.html`, `about.html`).
+**Canonical source:** `client_logos_grid.py` → `snippets/client-logos-grid.html`. Run `python3 scripts/sync_client_logos_grid.py` after edits. Full rules in **`client-logos.md`**.
 
 **Location:** `section--dark section--clients-dark` (home) or `about-hero-split` (about hero, right column).
 
 ```html
 <div class="client-collage-shell">
   <div class="client-collage-card client-collage-card--home" aria-label="Client logos">
-    <div class="logo-item" tabindex="0">
-      <img src="images/website-logos/website-client-logos/beltsmart-logo.png" alt="BeltSmart">
+    <a class="logo-item logo-item--has-tooltip" href="…" target="_blank" rel="noopener">
+      <img src="images/website-logos/website-client-logos/hosewarhouse-logo.png" alt="Hose Warehouse">
       <div class="logo-tooltip" role="tooltip">
-        <p class="logo-tooltip-blurb">…</p>
-        <div class="logo-tooltip-stat">
-          <span class="stat-num">+XX%</span>
-          <span class="stat-meta">Metric · Time frame</span>
-        </div>
+        <p class="logo-tooltip-name">Hose Warehouse</p>
+        <p class="logo-tooltip-tenure">6+ Year Client</p>
+        <p class="logo-tooltip-category">Industrial Parts</p>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 ```
 
 - **Section:** dark background on home; about hero uses the same grid in the right column.
-- **Logo grid:** 2-column scrollable card with hover/focus tooltips (16 logos; Iron Fence Shop excluded).
-- **Do not** maintain separate logo lists per page — edit the snippet, then sync to all pages.
+- **Logo grid:** 2-column card, fixed **420px** height, scrollable (manual + slow auto-scroll on home/about — see `client-logos.md`).
+- **Featured logos:** linked tiles with name / tenure / category tooltips (black + red text on white popup).
+- **Other logos:** link only, grayscale → color on hover, no tooltip.
+- **Do not** maintain separate logo lists per page — edit `client_logos_grid.py`, then sync.
 
 ---
 
 ### 10. Client success stories (case studies carousel)
+
+**Canonical source:** `case_studies_section.py` — run `python3 scripts/sync_case_studies_section.py` to sync `index.html`, `about.html`, `case-studies.html`, etc.
 
 **Location:** `client-case-studies-section`.
 
@@ -306,16 +313,15 @@ These patterns live on `index.html` but are documented here for reuse.
       <h2>Customer Success Stories</h2>
     </div>
   </div>
-  <div class="case-studies-carousel-track" tabindex="0">
+  <div class="case-studies-carousel-track" tabindex="0" aria-label="Client case studies">
     <div class="case-studies-carousel">
-      <a class="case-card" href="case-studies/…">
-        <img class="case-image" …>
+      <a class="case-card" href="case-studies/kingsley-north.html">
+        <video class="case-image" …></video><!-- or img -->
         <div class="case-body">
-          <span class="pill-tag">Case Study</span>
-          <h3>Client Name</h3>
-          <div class="result">Headline metric</div>
+          <h3>Kingsley North</h3>
+          <div class="result">15.64% Higher Conversion Rate</div>
           <p>Summary…</p>
-          <span class="more">Read the case study →</span>
+          <span class="more">Read the case study &rarr;</span>
         </div>
       </a>
     </div>
@@ -324,50 +330,41 @@ These patterns live on `index.html` but are documented here for reuse.
 ```
 
 - **Layout:** full-bleed horizontal scroll track below centered heading.
-- **Cards:** image top, pill tag, client name, bold result line, excerpt, “Read the case study →”.
-- **Interaction:** case study links may trigger email-gate modal (see `scripts/` if configured).
+- **Cards:** image or video top, client name, bold `.result` line, excerpt, “Read the case study →”.
+- **Order:** Hose Warehouse → Kingsley North → Parker Baby → TallSlim Tees → Iron Fence Shop → TrailHeads → DataFeedWatch (external).
 
 ---
 
 ### 11. “What You Get” block
 
-**Location:** `services-cta` section (brand-red background).
+**Location:** `services-cta` section (brand-red gradient background).
 
 ```html
 <section class="section services-cta">
   <div class="container">
     <div class="services-cta-intro">
+      <p class="eyebrow services-cta-eyebrow">When You Work With Us</p>
       <h2>What You Get</h2>
-      <p class="services-cta-sub">When you engage our team…</p>
-    </div>
-    <div class="services-cta-split">
-      <div class="services-cta-copy">
-        <p class="services-cta-body">…</p>
-        <div class="cta-bubbles services-cta-bubbles">
-          <span class="cta-bubble">Accredited Ad Managers</span>
-          …
-        </div>
+      <div class="sync-graphic" aria-label="Optimized data and campaigns across platforms">
+        <!-- platform logos → dots → ABM tile → dots → Shopify -->
       </div>
-      <div class="sync-graphic">…</div>
+    </div>
+    <div class="services-cta-copy">
+      <p class="services-cta-body">Our team takes over responsibility for all of the paid ads duties below…</p>
+      <ul class="services-cta-dashlist" aria-label="Included services">
+        <li>Create and optimize ad campaigns</li>
+        <!-- …8 items, em-dash separators via CSS between items … -->
+      </ul>
     </div>
   </div>
 </section>
 ```
 
-- **Background:** brand red (`services-cta`), white text.
-- **Intro:** centered headline + subhead.
-- **Split:** left = body copy + pill bubbles; right = sync graphic (platform logos → optimized data tile → Shopify).
-- **Platform logos:** single `sync-logo sync-logo--platforms` grid (4×2) in the sources column. Use **transparent-background** assets only:
-  - Google Ads → `images/website-logos/google-logo.svg`
-  - Microsoft Ads → `images/website-logos/microsoft-ads-icon.png`
-  - Google Merchant Center → `images/website-logos/google-merchant-center-icon.png`
-  - Facebook → `images/website-logos/facebook-icon.png`
-  - Instagram → `images/website-logos/instagram-icon.png`
-  - ChatGPT → `images/website-logos/chatgpt-black-icon.png`
-  - Reddit → `images/reddit.svg` (root; not yet in website-logos)
-  - Pinterest → `images/website-logos/pinterest-red-icon.png`
-  - Shopify (dest column) → `images/website-logos/shopify-icon.png`
-- **Bubbles:** outlined pills for trust points (no buttons in intro area).
+- **Background:** brand gradient (`services-cta`), white text.
+- **Order (top → bottom):** white eyebrow “When You Work With Us” → centered `h2` → **sync graphic** → body paragraph → dash-separated service list (centered, wraps horizontally).
+- **Sync graphic:** sources column (8 platform logos + “Managed Channels / Focused on Google Ads”) → animated dots → ABM tile (`austin-becker-logo-icon-white.png`) → dots → Shopify dest (“Overall Sales Growth / More efficient / ad spend” on three lines).
+- **Platform logos:** see **`website-logos.md`** (Reddit → `reddit-icon.png`).
+- **No** intro subhead, pill bubbles, or side-by-side copy/graphic split (retired layout).
 
 ---
 
@@ -430,6 +427,12 @@ For a new informational page (services-style):
 | `supported-ad-platforms.html` | Platform hub — same shell, platform cards |
 | `styles.css` | All component styles (~`.services-page-hero*`, `.service-card`, `.pricing-*`, etc.) |
 | `scripts/pricing-carousel.js` | Pricing card dot navigation |
+| `scripts/client-logos-autoscroll.js` | Slow auto-scroll for client logo box (home + about) |
+| `scripts/sync_client_logos_grid.py` | Sync logo grid snippet → pages |
+| `scripts/sync_case_studies_section.py` | Sync case study carousel → pages |
+| `case_studies_section.py` | Case study carousel data + markup |
+| `client_logos_grid.py` | Client logo grid data + markup |
+| `site_nav.py` | Shared header, footer, megamenu |
 | `resources.html` | Work With Us block reference |
 | `client-logos.md` | Client logo grid standard + logo list |
 | `website-logos.md` | Ad platform icon paths and usage |
@@ -438,4 +441,4 @@ For a new informational page (services-style):
 
 ---
 
-*Last updated: June 2026 — Work With Us side-by-side CTAs; services and supported-ad-platforms redesign.*
+*Last updated: June 2026 — homepage What You Get, stat cards, client logo autoscroll, case study carousel sync, case study page layout.*

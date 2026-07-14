@@ -59,11 +59,6 @@
       "fragment": "pricing",
       "name": "Pricing",
       "description": "Tiered service fees based on catalog complexity, website needs, and ad budget."
-    },
-    {
-      "slug": "amazon-ads",
-      "name": "Amazon Ads",
-      "description": "Amazon advertising optimized around ad spend efficiency and ACOS targets aligned to business goals."
     }
   ]
 }

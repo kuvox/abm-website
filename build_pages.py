@@ -38,7 +38,6 @@ def header(active="", depth=0):
           <li><a href="{p}services.html">Product Feeds</a></li>
           <li><a href="{p}services.html">Consulting</a></li>
           <li><a href="{p}services.html">Pricing</a></li>
-          <li><a href="{p}services/amazon-ads.html">Amazon Ads</a></li>
         </ul>
       </li>
       <li><a href="{p}case-studies.html" style="{nav_active('case')}">Case Studies</a></li>
@@ -176,10 +175,10 @@ about_body = """
   </div>
 </section>
 
-<section class="cta-banner">
+<section class="cta-banner cta-banner--dark">
   <div class="container">
-    <h2>Ready to talk?</h2>
-    <p>Let's discuss your business and how we can help you grow.</p>
+    <h2>Take the Next Step</h2>
+    <p>We're ready to discuss your business and how we can help you grow it. Please fill out a contact form so we can begin the conversation.</p>
     <a href="contact.html" class="btn btn-primary">Contact Us</a>
   </div>
 </section>
@@ -510,24 +509,8 @@ page("404.html",
 # ============================================================
 # SERVICE PAGES
 # ============================================================
-services = [
-    {
-        "slug": "amazon-ads",
-        "name": "Amazon Ads",
-        "tagline": "Optimize ACOS without burning cash.",
-        "lead": "Amazon ads can be your sales lifeline or a bottomless pit for cash. We understand how to optimize ad spend and ACOS based on your business's unique goals.",
-        "body": """
-            <p>Amazon's ad platform rewards specialists who understand both the marketplace mechanics and the broader retail context. We bring both.</p>
-            <ul class="checklist">
-              <li>Sponsored Products, Brands, and Display campaigns</li>
-              <li>ACOS targets aligned to margin and product lifecycle</li>
-              <li>Brand defense and competitor conquest strategies</li>
-              <li>Search term harvesting and negative keyword management</li>
-              <li>DSP for advanced retargeting (when account size justifies)</li>
-            </ul>
-        """
-    },
-]
+# Standalone service pages archived in _archive/services/ (see _archive/README.md).
+services = []
 
 for s in services:
     body = f"""

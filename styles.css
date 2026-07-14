@@ -617,6 +617,67 @@ p { margin: 0 0 1em; font-size: 20px; }
   object-fit: cover;
   aspect-ratio: 16 / 11;
 }
+/* Channel logo collage in the floating photo slot (platforms page).
+   Same outer footprint as the services photo (width + 16:11) so the
+   black hero band and intro copy land in the same place. */
+.services-page-hero__photo--collage {
+  max-width: min(540px, 54%);
+  padding: 0;
+}
+.services-platform-collage {
+  --collage-gap-x: clamp(8px, 1.3vw, 12px);
+  /* Match .services-page-hero__photo img so overhang / white-rise match services */
+  aspect-ratio: 16 / 11;
+  width: 100%;
+  margin: 0;
+  padding: clamp(16px, 2.4vw, 28px) clamp(14px, 2vw, 24px);
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: clamp(10px, 1.6vw, 18px) var(--collage-gap-x);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  background:
+    radial-gradient(120% 90% at 12% 8%, rgba(232, 79, 59, 0.14), transparent 55%),
+    radial-gradient(100% 80% at 92% 88%, rgba(13, 27, 42, 0.06), transparent 50%),
+    linear-gradient(160deg, #ffffff 0%, var(--brand-tint) 48%, #f3f4f6 100%);
+  border: 1px solid rgba(230, 231, 233, 0.9);
+}
+.services-platform-collage li {
+  margin: 0;
+  flex: 0 0 calc((100% - (3 * var(--collage-gap-x))) / 4);
+  max-width: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.services-platform-collage a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 84px;
+  height: clamp(42px, 6.3vw, 60px);
+  transition: transform .18s ease, opacity .18s ease;
+}
+.services-platform-collage a:hover {
+  transform: translateY(-2px);
+  opacity: 0.88;
+  text-decoration: none;
+}
+.services-platform-collage img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.services-platform-collage li:nth-child(2) img {
+  border-radius: 8px;
+}
 .services-page-hero__spacer {
   background: #fff;
   margin-top: calc(-1 * var(--services-white-rise));
@@ -636,6 +697,10 @@ p { margin: 0 0 1em; font-size: 20px; }
   .services-page-hero__photo {
     max-width: 100%;
     margin-top: calc(-1 * clamp(16px, 4vw, 32px));
+  }
+  .services-page-hero__photo--collage {
+    max-width: min(420px, 100%);
+    margin-inline: auto;
   }
   .services-hub-section {
     margin-top: calc(-1 * clamp(56px, 10vw, 88px));
@@ -873,10 +938,36 @@ p { margin: 0 0 1em; font-size: 20px; }
   inset: 0;
   width: auto;
   height: auto;
-  background: radial-gradient(55% 75% at 80% 38%, rgba(231, 77, 59, 0.22), transparent 72%);
+  background: radial-gradient(55% 75% at 80% 38%, rgba(231, 77, 59, 0.14), transparent 72%);
 }
 .hero--dark .hero-arrow-link { color: #fff; }
 .hero--dark .hero-arrow-link:hover { color: var(--brand); }
+
+/* Interactive grid trail (hero, CTA banners, etc.) */
+.grid-trail {
+  position: relative;
+  overflow: hidden;
+}
+.hero--dark.grid-trail::after {
+  z-index: 0;
+}
+.grid-trail-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.grid-trail > .container {
+  position: relative;
+  z-index: 2;
+}
+@media (prefers-reduced-motion: reduce) {
+  .grid-trail-canvas {
+    display: none;
+  }
+}
 
 /* ---------- Stats ---------- */
 .stats {
@@ -1370,6 +1461,15 @@ p { margin: 0 0 1em; font-size: 20px; }
 .stats-inline .stat .label { text-align: left; }
 .stats-inline .stat .num { font-size: clamp(1.6rem, 2.4vw, 2rem); }
 .stats-inline .stat .label { font-size: 0.85rem; color: var(--ink-soft); }
+.stats-inline a.stat-link {
+  color: inherit;
+  text-decoration: none;
+}
+.stats-inline a.stat-link:hover,
+.stats-inline a.stat-link:focus-visible {
+  color: inherit;
+  text-decoration: none;
+}
 @media (max-width: 700px) { .stats-inline { grid-template-columns: 1fr; } }
 
 /* ---------- Footer (live-site dark grey) ---------- */
@@ -1697,6 +1797,54 @@ hr.rule { border: 0; height: 1px; background: var(--line); margin: 48px 0; }
 }
 .resources-intro-links { margin-bottom: 0; }
 .resources-intro-links + p { margin-top: 1.65em; }
+
+/* Inline YouTube channel preview chip (resources intro, dark band) */
+.section--black a.yt-channel-chip,
+.yt-channel-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  vertical-align: middle;
+  margin: 0 4px;
+  padding: 6px 16px 6px 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  transition: background .15s ease, border-color .15s ease;
+}
+.section--black a.yt-channel-chip:hover,
+.yt-channel-chip:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.26);
+  color: #fff;
+  text-decoration: none;
+}
+.yt-channel-chip img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: block;
+}
+.yt-channel-chip__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  line-height: 1.3;
+}
+.yt-channel-chip__text strong {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.yt-channel-chip__text span {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
 .resources-work-split {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
@@ -1924,22 +2072,21 @@ hr.rule { border: 0; height: 1px; background: var(--line); margin: 48px 0; }
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: clamp(20px, 3vw, 28px) clamp(20px, 3vw, 32px);
+  padding: clamp(24px, 3.5vw, 36px) clamp(24px, 4vw, 40px);
   box-shadow: var(--shadow-sm);
 }
 .services-platform-logos__grid {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: clamp(6px, 1vw, 14px);
+  justify-content: center;
+  gap: clamp(18px, 2.8vw, 32px) clamp(22px, 3.2vw, 40px);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .services-platform-logos__grid li {
-  flex: 1 1 0;
-  min-width: 0;
+  flex: 0 0 auto;
   display: flex;
   justify-content: center;
 }
@@ -1947,9 +2094,8 @@ hr.rule { border: 0; height: 1px; background: var(--line); margin: 48px 0; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 132px;
-  height: clamp(52px, 6.5vw, 68px);
+  width: clamp(56px, 7.5vw, 84px);
+  height: clamp(48px, 6.5vw, 72px);
   padding: 2px;
   transition: transform .18s ease, opacity .18s ease;
 }
@@ -1967,23 +2113,19 @@ hr.rule { border: 0; height: 1px; background: var(--line); margin: 48px 0; }
   object-fit: contain;
 }
 .services-platform-logos__grid li:nth-child(2) img {
-  max-height: 48px;
+  /* Microsoft Ads icon ships on a black square */
+  border-radius: 12px;
 }
 @media (max-width: 900px) {
   .services-platform-logos__partners {
     justify-content: center;
   }
   .services-platform-logos__grid {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: clamp(12px, 3vw, 20px);
-  }
-  .services-platform-logos__grid li {
-    flex: 0 1 calc(33.333% - 16px);
-    min-width: 88px;
+    gap: clamp(14px, 3vw, 22px) clamp(16px, 4vw, 28px);
   }
   .services-platform-logos__grid a {
-    max-width: 110px;
+    width: clamp(52px, 14vw, 72px);
+    height: clamp(44px, 12vw, 64px);
   }
 }
 .services-hub-list {
@@ -2025,6 +2167,9 @@ hr.rule { border: 0; height: 1px; background: var(--line); margin: 48px 0; }
 .pricing-section {
   background: var(--bg-soft);
   padding: clamp(56px, 7vw, 80px) 0;
+}
+.pricing-section .container {
+  max-width: 1360px;
 }
 .pricing-panel {
   background: #fff;
@@ -3996,7 +4141,7 @@ body.guide-lightbox-open { overflow: hidden; }
    NEWSLETTER SIGNUP CTA (bottom of resource pages)
    ============================================================ */
 .newsletter-cta {
-  padding: 4.5rem 0;
+  padding: 3rem 0;
   background: var(--bg-dark, #111);
   color: #fff;
   text-align: center;
@@ -4047,71 +4192,199 @@ body.guide-lightbox-open { overflow: hidden; }
   display: block;
   margin-bottom: 4px;
 }
-/* White card around the embedded HubSpot newsletter form so it reads on the dark band */
+/* Compact custom newsletter form (submits to HubSpot Forms API) */
 .newsletter-cta .newsletter-form-wrap {
   background: #fff;
   border-radius: var(--radius-lg);
-  padding: 12px 22px;          /* very tight to keep the card short */
-  max-width: 100%;             /* match the left text column width inside the grid */
+  padding: 10px 12px;
+  max-width: 100%;
   margin: 0;
   text-align: left;
   box-shadow: var(--shadow);
 }
 @media (max-width: 800px) {
-  /* Stacked mobile layout — cap the form width so it doesn't span edge to edge */
   .newsletter-cta .newsletter-form-wrap {
     max-width: 520px;
     margin: 0 auto;
   }
 }
-@media (max-width: 600px) {
-  .newsletter-cta .newsletter-form-wrap { padding: 12px 16px; }
+.newsletter-cta .abm-newsletter-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
 }
-.newsletter-cta .newsletter-form-wrap .hs-form-frame,
-.newsletter-cta .newsletter-form-wrap form {
+.newsletter-cta .abm-newsletter-form input[type="email"] {
+  flex: 1 1 180px;
+  min-width: 0;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm, 6px);
+  font: inherit;
+  font-size: 0.95rem;
   color: var(--ink);
+  background: #fff;
+  box-sizing: border-box;
+}
+.newsletter-cta .abm-newsletter-form button[type="submit"] {
+  flex: 0 0 auto;
+  height: 42px;
+  padding: 0 18px;
+  margin: 0;
+  white-space: nowrap;
+}
+.newsletter-cta .abm-newsletter-status {
+  flex: 1 1 100%;
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+.newsletter-cta .abm-newsletter-status.is-error { color: #b42318; }
+.newsletter-cta .abm-newsletter-status.is-success { color: #067647; }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-/* Compress HubSpot form internals — reduce vertical rhythm so the card is shorter */
-.newsletter-cta .newsletter-form-wrap fieldset { margin: 0 !important; padding: 0 !important; max-width: none !important; }
-.newsletter-cta .newsletter-form-wrap .hs-form-field,
-.newsletter-cta .newsletter-form-wrap .hs_email,
-.newsletter-cta .newsletter-form-wrap .hs_firstname,
-.newsletter-cta .newsletter-form-wrap .hs_lastname {
-  margin-bottom: 6px !important;
+/* Soft content gate (email unlock) */
+.content-gate-preview--faded {
+  position: relative;
+  max-height: 420px;
+  overflow: hidden;
 }
-.newsletter-cta .newsletter-form-wrap .hs-input {
-  padding: 6px 10px !important;
-  line-height: 1.25 !important;
-  font-size: 0.92rem !important;
-  height: auto !important;
+.content-gate-preview--faded::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 85%);
+  pointer-events: none;
 }
-.newsletter-cta .newsletter-form-wrap label {
-  margin-bottom: 1px !important;
-  font-size: 0.8rem !important;
-  line-height: 1.15 !important;
+.content-gate {
+  margin: 0 0 2.5rem;
+  padding: 2rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
 }
-.newsletter-cta .newsletter-form-wrap .hs_submit,
-.newsletter-cta .newsletter-form-wrap .actions {
-  margin-top: 4px !important;
-  padding: 0 !important;
+.content-gate .eyebrow {
+  display: block;
+  margin-bottom: 0.5rem;
 }
-.newsletter-cta .newsletter-form-wrap .hs-button {
-  padding: 7px 16px !important;
-  font-size: 0.92rem !important;
-  line-height: 1.2 !important;
+.content-gate h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.45rem;
 }
-/* Hide the legal/consent block on this newsletter form — covered globally by our privacy policy in the footer.
-   Remove this rule if HubSpot requires the consent checkbox for compliance in your jurisdiction. */
-.newsletter-cta .newsletter-form-wrap .legal-consent-container,
-.newsletter-cta .newsletter-form-wrap .hs-richtext {
+.content-gate p {
+  margin: 0 0 1.25rem;
+  color: var(--ink-soft);
+}
+.content-gate-form-wrap {
+  width: 100%;
+  max-width: none;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+.content-gate-form-wrap .hs-form-frame,
+.content-gate-form-wrap form,
+.content-gate-form-wrap .hs-form {
+  width: 100% !important;
+  max-width: none !important;
+}
+.content-gate-form-wrap fieldset {
+  max-width: none !important;
+}
+.content-gate-form-wrap .hs-input,
+.content-gate-form-wrap input[type="text"],
+.content-gate-form-wrap input[type="email"],
+.content-gate-form-wrap input[type="tel"],
+.content-gate-form-wrap textarea {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box;
+}
+.content-gate-form-wrap .hs-button,
+.content-gate-form-wrap input[type="submit"] {
+  width: 100%;
+  max-width: none;
+}
+.content-gate-fallback label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.content-gate-fallback input[type="email"] {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+  font: inherit;
+}
+.content-gate-error {
+  color: #b42318;
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem;
+}
+body.content-unlocked .content-gate {
   display: none !important;
 }
-/* Tighten the form root and any submitted-message wrappers */
-.newsletter-cta .newsletter-form-wrap form,
-.newsletter-cta .newsletter-form-wrap .hs-form,
-.newsletter-cta .newsletter-form-wrap .submitted-message {
-  margin: 0 !important;
+body.content-unlocked .content-gate-preview--faded {
+  max-height: none;
+  overflow: visible;
+}
+body.content-unlocked .content-gate-preview--faded::after {
+  display: none;
+}
+.gated-content[hidden] {
+  display: none;
+}
+.content-gate-success {
+  margin: 2.5rem 0 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+.content-gate-success[hidden] {
+  display: none;
+}
+.content-gate-success .content-gate-form-wrap {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+.guide-details {
+  margin: 0 0 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  background: #fff;
+}
+.guide-details summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.guide-details[open] summary {
+  margin-bottom: 0.75rem;
 }
 
 /* Related resources grid (article footer) */

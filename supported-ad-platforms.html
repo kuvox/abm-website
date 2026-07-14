@@ -83,7 +83,7 @@
   </div>
 </header>
 
-<section class="services-page-hero">
+<section class="services-page-hero services-page-hero--collage">
   <div class="services-page-hero__shell">
     <div class="container">
       <div class="services-page-hero__top">
@@ -94,8 +94,20 @@
       </div>
     </div>
     <div class="container">
-      <figure class="services-page-hero__photo">
-        <img src="images/austin-becker-e-commerce-marketing-15.jpg" alt="Austin Becker E-Commerce Marketing team collaborating on ad strategy">
+      <figure class="services-page-hero__photo services-page-hero__photo--collage" aria-label="Ad channels we manage">
+        <ul class="services-platform-collage" role="list">
+          <li><a href="#google-youtube"><img src="images/website-logos/google-logo.svg" alt="Google Ads"></a></li>
+          <li><a href="#microsoft"><img src="images/website-logos/microsoft-ads-icon.png" alt="Microsoft Ads"></a></li>
+          <li><a href="#google-youtube"><img src="images/website-logos/youtube-icon.png" alt="YouTube"></a></li>
+          <li><a href="#meta"><img src="images/website-logos/facebook-icon.png" alt="Facebook"></a></li>
+          <li><a href="#meta"><img src="images/website-logos/instagram-icon.png" alt="Instagram"></a></li>
+          <li><a href="#pinterest"><img src="images/website-logos/pinterest-red-icon.png" alt="Pinterest"></a></li>
+          <li><a href="#reddit"><img src="images/reddit-logo-transparent.png" alt="Reddit"></a></li>
+          <li><a href="#target"><img src="images/target-logo-transparent.png" alt="Target"></a></li>
+          <li><a href="#"><img src="images/website-logos/ebay-icon.png" alt="eBay"></a></li>
+          <li><a href="#"><img src="images/amazon-logo-transparent.png" alt="Amazon"></a></li>
+          <li><a href="#chatgpt"><img src="images/chatgpt-logo-transparent.png" alt="ChatGPT"></a></li>
+        </ul>
       </figure>
     </div>
   </div>
@@ -120,17 +132,6 @@
         <a href="https://msadvertisingpartnerprogram.powerappsportals.com/partner-directory-profile-full/?partnerProfileID=3c2bfd14-8945-f111-88b4-7ced8d3d593b" target="_blank" rel="noopener" aria-label="Microsoft Advertising Partner profile">
           <img src="images/80756-2026-Partner-Program-Badge-Updates-LP-C2_Partner.png" alt="Microsoft Advertising Partner" class="partner-badge">
         </a>
-      </div>
-      <div class="services-platform-logos__card">
-        <ul class="services-platform-logos__grid" role="list">
-          <li><a href="#meta"><img src="images/website-logos/facebook-icon.png" alt="Facebook"></a></li>
-          <li><a href="#meta"><img src="images/website-logos/instagram-icon.png" alt="Instagram"></a></li>
-          <li><a href="#google-youtube"><img src="images/website-logos/youtube-icon.png" alt="YouTube"></a></li>
-          <li><a href="#pinterest"><img src="images/website-logos/pinterest-red-icon.png" alt="Pinterest"></a></li>
-          <li><a href="#target"><img src="images/website-logos/target-icon.png" alt="Target"></a></li>
-          <li><a href="#"><img src="images/website-logos/ebay-icon.png" alt="eBay"></a></li>
-          <li><a href="#chatgpt"><img src="images/website-logos/chatgpt-black-icon.png" alt="ChatGPT"></a></li>
-        </ul>
       </div>
     </div>
     <div class="services-hub-list">
@@ -170,14 +171,6 @@
   </div>
 </section>
 
-<section class="cta-banner">
-  <div class="container">
-    <h2>Ready to talk?</h2>
-    <p>Tell us about your store and your current ad performance. We&rsquo;ll let you know whether we can help &mdash; honestly.</p>
-    <a href="contact.html" class="btn btn-primary">Contact Us</a>
-  </div>
-</section>
-
 <section class="section--black" id="work-with-us">
   <div class="container resources-work-split">
     <div>
@@ -191,6 +184,15 @@
     <figure class="resources-work-photo">
       <img src="images/austin-becker-e-commerce-marketing-22.jpg" alt="Austin Becker and team collaborating on e-commerce marketing strategy">
     </figure>
+  </div>
+</section>
+
+<section class="cta-banner cta-banner--dark grid-trail">
+  <canvas class="grid-trail-canvas" aria-hidden="true"></canvas>
+  <div class="container">
+    <h2>Take the Next Step</h2>
+    <p>We're ready to discuss your business and how we can help you grow it. Please fill out a contact form so we can begin the conversation.</p>
+    <a href="contact.html" class="btn btn-primary">Contact Us</a>
   </div>
 </section>
 
@@ -245,5 +247,6 @@
     </div>
   </div>
 </footer>
+<script src="scripts/hero-grid-interactive.js" defer></script>
 </body>
 </html>

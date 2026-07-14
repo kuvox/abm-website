@@ -5,24 +5,34 @@ A plain HTML/CSS replacement for the WordPress version of abeckermarketing.com. 
 ## What's in here
 
 ```
-site/
 ├── index.html              ← homepage
 ├── about.html
 ├── contact.html            ← contact form (HubSpot embed placeholder)
 ├── resources.html          ← gated guides (HubSpot signup placeholder)
 ├── case-studies.html
+├── services.html           ← services + pricing hub
+├── supported-ad-platforms.html
+├── guides/                 ← long-form guides (feed demo, vehicle ads, etc.)
 ├── privacy-policy.html
 ├── service-agreement.html
 ├── 404.html
-├── services.html           ← services + pricing hub
-├── services/               ← optional service detail pages
-│   └── amazon-ads.html
+├── _archive/               ← archived pages (not deployed)
+│   └── services/
+│       └── amazon-ads.html
+├── case-studies/           ← one HTML file per client (generated)
 ├── styles.css              ← all styling (one file)
+├── site_nav.py             ← shared header/footer/megamenu
+├── client_logos_grid.py    ← client logo grid source
+├── case_studies_section.py ← case study carousel source
+├── scripts/                ← sync scripts, autoscroll, pricing carousel, etc.
+├── snippets/               ← canonical HTML fragments (logos, reviews)
 ├── robots.txt
 └── sitemap.xml
 ```
 
-The accompanying `build_pages.py` (in the parent folder) is the one-time generator that built most of these pages. You don't need it to deploy — but if you want to bulk-edit the service pages or add new ones, it's the easiest place to do it.
+**Docs:** `informational-pages.md`, `client-logos.md`, `website-logos.md`, `docs/PAGE_PATTERNS.md`.
+
+`generate_pages.py` regenerates case study and resource article pages from data tables. Sync scripts (`scripts/sync_*.py`) push shared snippets into `index.html`, `about.html`, etc.
 
 ---
 

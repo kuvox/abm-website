@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google Merchant Center SFTP File Upload — Austin Becker E-Commerce Marketing</title>
+<meta name="description" content="Step-by-step SFTP file upload setup for Google Merchant Center and Microsoft Merchant Center. Send intraday product feed updates from DataFeedWatch.">
+<meta property="og:title" content="Google Merchant Center SFTP File Upload">
+<meta property="og:description" content="Step-by-step SFTP file upload setup for Google Merchant Center and Microsoft Merchant Center. Send intraday product feed updates from DataFeedWatch.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://abeckermarketing.com/images/2026-Product-Feed-Tutorial-light.png">
+<link rel="canonical" href="https://abeckermarketing.com/resources/google-merchant-center-sftp-upload.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://abeckermarketing.com/resources/google-merchant-center-sftp-upload.html#article",
+      "headline": "Google Merchant Center SFTP File Upload",
+      "description": "Step-by-step SFTP file upload setup for Google Merchant Center and Microsoft Merchant Center. Send intraday product feed updates from DataFeedWatch.",
+      "url": "https://abeckermarketing.com/resources/google-merchant-center-sftp-upload.html",
+      "datePublished": "2026-04-27",
+      "author": {
+        "@id": "https://abeckermarketing.com/about.html#austin-becker"
+      },
+      "publisher": {
+        "@id": "https://abeckermarketing.com/#organization"
+      },
+      "image": "https://abeckermarketing.com/images/2026-Product-Feed-Tutorial-light.png",
+      "articleSection": "Resource",
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://abeckermarketing.com/resources/google-merchant-center-sftp-upload.html#webpage",
+      "url": "https://abeckermarketing.com/resources/google-merchant-center-sftp-upload.html",
+      "name": "Google Merchant Center SFTP File Upload — Austin Becker E-Commerce Marketing",
+      "description": "Step-by-step SFTP file upload setup for Google Merchant Center and Microsoft Merchant Center. Send intraday product feed updates from DataFeedWatch.",
+      "isPartOf": {
+        "@id": "https://abeckermarketing.com/#website"
+      },
+      "inLanguage": "en-US",
+      "mainEntity": {
+        "@id": "https://abeckermarketing.com/resources/google-merchant-center-sftp-upload.html#article"
+      },
+      "about": {
+        "@id": "https://abeckermarketing.com/#organization"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://abeckermarketing.com/resources/google-merchant-center-sftp-upload.html#video",
+      "name": "Google Merchant Center SFTP File Upload",
+      "description": "Step-by-step SFTP file upload setup for Google Merchant Center and Microsoft Merchant Center. Send intraday product feed updates from DataFeedWatch.",
+      "embedUrl": "https://www.youtube.com/embed/NjdGmRHEABk",
+      "uploadDate": "2026-04-27",
+      "publisher": {
+        "@id": "https://abeckermarketing.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="../index.html" class="brand-mark" aria-label="Austin Becker E-Commerce Marketing"><img src="../images/logo.svg" alt="Austin Becker E-Commerce Marketing" class="brand-logo"></a>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
+    <ul id="navlinks" class="nav-links">
+      <li class="has-menu has-megamenu has-megamenu--services"><a href="../services.html">Services</a>
+        <div class="megamenu megamenu--services">
+          <div class="megamenu-col megamenu-col--with-cta">
+            <span class="megamenu-eyebrow">Services</span>
+            <ul>
+              <li><a href="../services.html">Ad Management</a></li>
+              <li><a href="../services.html">Product Feeds</a></li>
+              <li><a href="../services.html">Consulting</a></li>
+              <li><a href="../services.html">Pricing</a></li>
+            </ul>
+            <div class="megamenu-cta-card">
+              <p class="megamenu-cta-quote">I&rsquo;ve had the pleasure of working with Austin, and I must say, he&rsquo;s been an absolute legend!</p>
+              <div class="megamenu-cta-attribution">
+                <img src="../images/boxhill-instagram-logo-circle.jpg" alt="" class="megamenu-cta-avatar" width="52" height="52">
+                <div class="megamenu-cta-attribution-text">
+                  <strong class="megamenu-cta-name">Rich Fraser</strong>
+                  <span class="megamenu-cta-title">Owner at <a href="https://www.boxhill.co.nz/" target="_blank" rel="noopener">boxhill.co.nz</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="megamenu-col">
+            <span class="megamenu-eyebrow">Ad Platforms</span>
+            <ul>
+              <li><a href="../supported-ad-platforms.html">Google &amp; YouTube</a></li>
+              <li><a href="../supported-ad-platforms.html">Microsoft</a></li>
+              <li><a href="../supported-ad-platforms.html">ChatGPT</a></li>
+              <li><a href="../supported-ad-platforms.html">Meta</a></li>
+              <li><a href="../supported-ad-platforms.html">Pinterest</a></li>
+              <li><a href="../supported-ad-platforms.html">Target</a></li>
+              <li><a href="../supported-ad-platforms.html">Walmart</a></li>
+              <li><a href="../supported-ad-platforms.html">Reddit</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="../case-studies.html">Case Studies</a></li>
+      <li class="has-menu has-megamenu has-megamenu--learn"><a href="../resources.html" class="active">Learn</a>
+        <div class="megamenu megamenu--learn">
+          <div class="megamenu-col">
+            <ul>
+              <li><a href="../resources.html"><span class="megamenu-learn-label">Blog</span><span class="megamenu-learn-desc">Optimize Campaigns &amp; Data Feeds</span></a></li>
+              <li><a href="https://www.youtube.com/@ppcforeveryone" target="_blank" rel="noopener"><span class="megamenu-learn-label">YouTube Channel</span><span class="megamenu-learn-desc">PPC for Everyone</span></a></li>
+              <li><a href="../resources.html#newsletter"><span class="megamenu-learn-label">Newsletter</span><span class="megamenu-learn-desc">Up-to-Date on Digital Ads</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="has-menu has-megamenu has-megamenu--about"><a href="../about.html">About</a>
+        <div class="megamenu megamenu--about">
+          <div class="megamenu-col">
+            <ul>
+              <li><a href="../about.html">Who We Work With</a></li>
+              <li><a href="../about.html#founder">About the Founder</a></li>
+              <li><a href="../about.html#team">Our Team</a></li>
+            </ul>
+          </div>
+          <div class="megamenu-col megamenu-col--text">
+            <span class="megamenu-eyebrow">About Us</span>
+            <p>An e-commerce, growth-focused team, equipped to work with $5M-$50M annual revenue companies. If your product catalog is large, complex or niche, we are the right choice for you.</p>
+          </div>
+        </div>
+      </li>
+      <li><a href="../contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-split">
+    <div class="hero-text">
+      <span class="eyebrow">Free Guide &middot; Google Shopping</span>
+      <h1>Google Merchant Center SFTP File Upload</h1>
+      <p class="lead">Upload pricing and inventory to Google and Microsoft Merchant Center multiple times per day using SFTP and DataFeedWatch.</p>
+      <div class="hero-actions">
+        <a href="#content-gate" class="btn btn-dark">Get the Checklist</a>
+        <a href="https://youtu.be/NjdGmRHEABk" target="_blank" rel="noopener" class="hero-arrow-link">Watch on YouTube <span aria-hidden="true">&rsaquo;</span></a>
+      </div>
+    </div>
+    <div class="hero-video">
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/NjdGmRHEABk" title="Google Merchant Center SFTP File Upload" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="article-body article-body--with-toc" id="article-body">
+  <div class="container guide-body-split">
+    <aside class="guide-toc-sidebar">
+      <nav class="guide-toc" aria-label="Table of contents">
+        <h2>Table of contents</h2>
+        <ol>
+          <li><a href="#know-before">Know before implementing</a></li>
+          <li><a href="#google-merchant-center">Google Merchant Center</a></li>
+          <li><a href="#microsoft-merchant-center">Microsoft Merchant Center</a></li>
+          <li><a href="#resources-cited">Resources cited</a></li>
+        </ol>
+      </nav>
+    </aside>
+    <div class="guide-body-content">
+    <div class="content-gate-preview content-gate-preview--faded">
+    <p>Upload pricing and inventory to Google Merchant Center multiple times per day using SFTP. Watch the tutorial in the hero video, then unlock the full checklist for Google and Microsoft Merchant Center.</p>
+
+    <h2 id="know-before">Know Before Implementing</h2>
+    <p>Using the FTP upload system for Merchant Center entails two important changes to how your feed works:</p>
+    <ol>
+      <li>When you apply a change to your feed in DataFeedWatch (DFW), those changes immediately process and send to Merchant Center. <strong>You will not have a chance to review changes before the updated feed data is sent unless you &ldquo;Pause&rdquo; the DFW channel first.</strong></li>
+      <li>You can add multiple daily feed updates to align with your internal product update schedule. For example, if you update shop product data at 8:00 am and 4:00 pm, set DFW to download at 9:00 am and 5:00 pm.</li>
+    </ol>
+    </div>
+    <div class="content-gate" id="content-gate">
+      <div class="content-gate-form-wrap">
+        <div id="content-gate-form" class="content-gate-form"></div>
+      </div>
+    </div>
+    <div class="gated-content" id="gated-content" hidden>
+<figure class="guide-figure"><img src="../images/resources/google-merchant-center-sftp-upload/dfw-multiple-daily-updates.png" alt="DataFeedWatch multiple daily updates schedule" loading="lazy"></figure>
+    <h3 id="important-terms">Important Terms</h3>
+    <ul>
+      <li><strong>Sending data source:</strong> in the video, the sending source is the DataFeedWatch Google Ads Channel.</li>
+      <li><strong>SFTP:</strong> Secure File Transfer Protocol &mdash; used to send data to Google Merchant Center.</li>
+    </ul>
+
+    <h2 id="google-merchant-center">Google Merchant Center</h2>
+    <p>See Microsoft instructions below.</p>
+    <h3 id="gmc-steps">Steps</h3>
+    <ul class="checklist">
+      <li>Go to <a href="https://merchants.google.com" target="_blank" rel="noopener">merchants.google.com</a> &rarr; Gear Icon &rarr; Data Sources &rarr; &ldquo;Add product source&rdquo; &rarr; Add products from a file</li>
+      <li>Select &ldquo;Add a file use SFTP or Google Cloud Storage&rdquo;</li>
+    </ul>
+    <details class="guide-details">
+      <summary>Where to view and record username, port, and password</summary>
+<figure class="guide-figure"><img src="../images/resources/google-merchant-center-sftp-upload/gmc-add-file-sftp.png" alt="Google Merchant Center add file via SFTP" loading="lazy"></figure>
+      <p>When you click View SFTP and Google Cloud Storage Details, write down:</p>
+      <pre><code>Server partnerupload.google.com
+Port 19321
+Username mc-sftp-XXXXXXXX
+Password (mix of numbers, letters, symbols)
+Exact File Name: your-feed.xml</code></pre>
+      <p>You can reset the password anytime, but you must update it in your sending data source or uploads will stop.</p>
+<figure class="guide-figure"><img src="../images/resources/google-merchant-center-sftp-upload/gmc-sftp-details.png" alt="Google Merchant Center SFTP connection details" loading="lazy"></figure>    </details>
+    <p>Add your username, password, port, etc. into your sending data source. In DataFeedWatch, combine Server and Port like <code>partnerupload.google.com:19321</code>.</p>
+<figure class="guide-figure"><img src="../images/resources/google-merchant-center-sftp-upload/dfw-sftp-settings.png" alt="DataFeedWatch SFTP settings for Google Merchant Center" loading="lazy"></figure>
+    <h3 id="gmc-last-steps">Last Steps</h3>
+    <ul class="checklist">
+      <li>Data has been received by Google Merchant Center</li>
+      <li>Product status is approved or &ldquo;pending initial review&rdquo;</li>
+      <li>The latest Google SFTP password is in your sending data source</li>
+    </ul>
+
+    <h2 id="microsoft-merchant-center">Microsoft Merchant Center</h2>
+    <h3 id="microsoft-steps">Steps</h3>
+    <ul class="checklist">
+      <li>Go to <a href="https://ui.ads.microsoft.com/" target="_blank" rel="noopener">Microsoft Advertising</a> &rarr; Merchant Center &rarr; your store &rarr; feed &rarr; &ldquo;Update feed&rdquo;</li>
+      <li>Select &ldquo;Upload via FTP/SFTP&rdquo;</li>
+      <li>Create a memorable filename</li>
+    </ul>
+<figure class="guide-figure"><img src="../images/resources/google-merchant-center-sftp-upload/microsoft-feed-settings.png" alt="Microsoft Merchant Center update feed settings" loading="lazy"></figure>
+    <p>Click &ldquo;change the FTP/SFTP account settings&rdquo; and save:</p>
+    <pre><code>File name: storeNameFeed.xml
+SFTP Server name: sftp.ads.microsoft.com
+SFTP Port: 19321
+Username: (from Microsoft screen)
+Password: (strong password)</code></pre>
+<figure class="guide-figure"><img src="../images/resources/google-merchant-center-sftp-upload/microsoft-sftp-details.png" alt="Microsoft Merchant Center SFTP account details" loading="lazy"></figure>
+    <p>In DataFeedWatch, under FTP Address select <code>sftp://</code> then enter <code>sftp.ads.microsoft.com:19321</code>, username, password, and filename. Click Update Channel.</p>
+<figure class="guide-figure"><img src="../images/resources/google-merchant-center-sftp-upload/dfw-microsoft-ftp-settings.png" alt="DataFeedWatch Microsoft SFTP settings" loading="lazy"></figure>
+    <p>Click the &ldquo;FTP Upload&rdquo; button in DataFeedWatch to send the feed.</p>
+<figure class="guide-figure"><img src="../images/resources/google-merchant-center-sftp-upload/dfw-ftp-upload-button.png" alt="DataFeedWatch FTP upload button" loading="lazy"></figure>
+    <h3 id="microsoft-last-steps">Last Steps</h3>
+    <ul class="checklist">
+      <li>Wait 2&ndash;3 minutes and check for your SFTP file name in the Merchant Center Feed summary</li>
+      <li>Keep checking daily until items are approved for ads</li>
+    </ul>
+<figure class="guide-figure"><img src="../images/resources/google-merchant-center-sftp-upload/microsoft-feed-summary.png" alt="Microsoft Merchant Center feed summary after SFTP upload" loading="lazy"></figure>
+    <h2 id="resources-cited">Resources Cited</h2>
+    <ul>
+      <li><a href="https://support.google.com/merchants/answer/13813117?hl=en" target="_blank" rel="noopener">Submit product data sources using SFTP (Google)</a></li>
+      <li><a href="https://www.datafeedwatch.com/blog/google-merchant-center-ftp" target="_blank" rel="noopener">FTP Connections and Google Merchant Center (DataFeedWatch)</a></li>
+    </ul>
+    <p>Related: <a href="google-merchant-center-setup-2026.html">2026 Google Merchant Center Full Setup</a></p>
+      <div class="content-gate-success" id="content-gate-success" hidden></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-cta" id="newsletter">
+  <div class="container">
+    <div class="newsletter-grid">
+      <div class="newsletter-text">
+        <span class="eyebrow">Newsletter</span>
+        <h2>Up-to-Date on Digital Ads</h2>
+        <p>Sign up for practical PPC and product feed updates. We&rsquo;ll email you when new guides and resources are published.</p>
+      </div>
+      <div class="newsletter-form-wrap">
+        <form class="abm-newsletter-form" novalidate>
+          <label class="visually-hidden" for="abm-newsletter-email">Email</label>
+          <input id="abm-newsletter-email" name="email" type="email" autocomplete="email" required placeholder="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+          <p class="abm-newsletter-status" hidden></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../images/website-logos/ABHorizontalWhiteDigital.png" alt="Austin Becker E-Commerce Marketing" class="footer-logo">
+        <p>We help $5M to $50M annual revenue businesses grow via pay per click ads. Contact us today to learn how we can help you grow your business.</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/austin-becker-marketing/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+            <a href="https://www.facebook.com/ABeckerMarketing" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.95.93-1.95 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
+            <a href="https://x.com/MktngByABecker" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://www.instagram.com/austinbeckerecommarketing/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.71 3.71 0 0 1-1.38-.9 3.71 3.71 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.87 5.87 0 0 0-2.13 1.38A5.87 5.87 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.73 1.46 1.38 2.13a5.87 5.87 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.87 5.87 0 0 0 2.13-1.38 5.87 5.87 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.87 5.87 0 0 0-1.38-2.13A5.87 5.87 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a>
+            <a href="https://www.youtube.com/@ppcforeveryone" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.13-2.13C19.5 3.56 12 3.56 12 3.56s-7.5 0-9.37.51A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.13 2.13c1.87.51 9.37.51 9.37.51s7.5 0 9.37-.51A3 3 0 0 0 23.5 17.8 31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services.html">Ad Management</a></li>
+          <li><a href="../services.html">Product Feeds</a></li>
+          <li><a href="../services.html">Consulting</a></li>
+          <li><a href="../services.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li><a href="../about.html#why-choose-us">Are We a Fit?</a></li>
+          <li><a href="../about.html#founder">About the Founder</a></li>
+          <li><a href="../about.html#team">Our Team</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../case-studies.html">Case Studies</a></li>
+          <li><a href="../resources.html">Research Articles</a></li>
+          <li><a href="../resources.html">Video Guides and Training</a></li>
+          <li><a href="../resources.html">Support Articles</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Copyright &copy; 2026 Austin Becker E-Commerce Marketing. All Rights Reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="../privacy-policy.html">Privacy Policy</a>
+        <a href="../service-agreement.html">Service Agreement</a>
+        <span>Website by Kern Co.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../scripts/guide-image-lightbox.js" defer></script>
+<script src="../scripts/newsletter-form.js" defer></script>
+<script src="../scripts/content-gate.js" defer></script>
+</body>
+</html>

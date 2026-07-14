@@ -9,7 +9,6 @@ Typical client outcomes: improved return on ad spend within 2–4 weeks of feed 
 ## Services
 
 - [Services + Pricing](https://abeckermarketing.com/services.html): Ad management, product feeds, consulting, and pricing for e-commerce PPC teams.
-- [Amazon Ads](https://abeckermarketing.com/services/amazon-ads.html): Amazon advertising optimized around ad spend efficiency and ACOS targets aligned to business goals.
 
 ## About
 
@@ -23,7 +22,11 @@ Typical client outcomes: improved return on ad spend within 2–4 weeks of feed 
 ## Resources & Guides
 
 - [Resources Hub](https://abeckermarketing.com/resources.html): Free research articles, video guides, support articles, and training content organized by topic (Amazon, Google Ads, Google Shopping, Microsoft, Product Feeds, YouTube).
-- [Streamlined Conversion Tracking for Shopify 2026](https://abeckermarketing.com/guides/conversion-tracking-shopify-2026.html): Free video + written guide for setting up conversion tracking on Shopify in 2026.
+- [Streamlined Conversion Tracking for Shopify 2026](https://abeckermarketing.com/guides/conversion-tracking-shopify-2026.html): On-site gated checklist for Google & Microsoft conversion tracking via Shopify Customer Events (2026).
+- [Fix Cart Data Errors in Google Ads](https://abeckermarketing.com/resources/fix-cart-data-errors-google-ads.html): Resolve Missing Cart Data when GMC item IDs don’t match your tracking tag; gradual ID swap checklist.
+- [2026 Google Merchant Center Full Setup](https://abeckermarketing.com/resources/google-merchant-center-setup-2026.html): Complete Shopify-to-GMC setup with DataFeedWatch, feed submission, and troubleshooting.
+- [Google Merchant Center SFTP File Upload](https://abeckermarketing.com/resources/google-merchant-center-sftp-upload.html): Send intraday product feed updates to Google and Microsoft Merchant Center via SFTP.
+- [Meta Creative Assets Checklist](https://abeckermarketing.com/resources/meta-creative-assets-checklist.html): Video and image ad specs, safe zones, and sales promotion asset requirements for Meta ads.
 - [Where Product Data Feeds Are Used](https://abeckermarketing.com/guides/product-data-feeds-as-keywords.html): How product feed titles and attributes act as keywords for Shopping and catalog ads, with an interactive A/C compressor demo.
 - [Google Vehicle Listing Ads](https://abeckermarketing.com/guides/google-vehicle-listing-ads.html): DIY guide for RV and auto dealerships setting up Google Vehicle Listing Ads (Shopping ads for vehicles) in Merchant Center.
 

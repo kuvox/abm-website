@@ -200,34 +200,62 @@ def article_schema(
     date: str,
     image_path: str,
     section: str = "Resource",
+    base_path: str = "resources",
+    video_url: str | None = None,
+    faqs: list[tuple[str, str]] | None = None,
 ) -> str:
-    page_url = f"{SITE}/resources/{slug}.html"
+    page_url = f"{SITE}/{base_path}/{slug}.html"
     article_id = f"{page_url}#article"
-    graph = {
-        "@context": "https://schema.org",
-        "@graph": [
+    graph_nodes: list[dict] = [
+        {
+            "@type": "Article",
+            "@id": article_id,
+            "headline": title,
+            "description": description,
+            "url": page_url,
+            "datePublished": _parse_date(date),
+            "author": {"@id": PERSON_ID},
+            "publisher": {"@id": ORG_ID},
+            "image": f"{SITE}/{image_path.lstrip('/')}",
+            "articleSection": section,
+            "inLanguage": "en-US",
+        },
+        _webpage_node(
+            page_url=page_url,
+            name=f"{title} — Austin Becker E-Commerce Marketing",
+            description=description,
+            main_entity_id=article_id,
+            about_id=ORG_ID,
+        ),
+    ]
+    if video_url:
+        graph_nodes.append(
             {
-                "@type": "Article",
-                "@id": article_id,
-                "headline": title,
+                "@type": "VideoObject",
+                "@id": f"{page_url}#video",
+                "name": title,
                 "description": description,
-                "url": page_url,
-                "datePublished": _parse_date(date),
-                "author": {"@id": PERSON_ID},
+                "embedUrl": video_url,
+                "uploadDate": _parse_date(date),
                 "publisher": {"@id": ORG_ID},
-                "image": f"{SITE}/{image_path.lstrip('/')}",
-                "articleSection": section,
-                "inLanguage": "en-US",
-            },
-            _webpage_node(
-                page_url=page_url,
-                name=f"{title} — Austin Becker E-Commerce Marketing",
-                description=description,
-                main_entity_id=article_id,
-                about_id=ORG_ID,
-            ),
-        ],
-    }
+            }
+        )
+    if faqs:
+        graph_nodes.append(
+            {
+                "@type": "FAQPage",
+                "@id": f"{page_url}#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": question,
+                        "acceptedAnswer": {"@type": "Answer", "text": answer},
+                    }
+                    for question, answer in faqs
+                ],
+            }
+        )
+    graph = {"@context": "https://schema.org", "@graph": graph_nodes}
     return _script_tag(graph)
 
 

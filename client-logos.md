@@ -16,10 +16,14 @@ Copy the full block from `snippets/client-logos-grid.html` (the `<div class="cli
 ```html
 <div class="client-collage-shell">
   <div class="client-collage-card client-collage-card--home" aria-label="Client logos">
-    <div class="logo-item" tabindex="0">
+    <a class="logo-item logo-item--has-tooltip" href="https://example.com/" target="_blank" rel="noopener">
       <img src="images/website-logos/website-client-logos/beltsmart-logo.png" alt="BeltSmart">
-      <div class="logo-tooltip" role="tooltip">…</div>
-    </div>
+      <div class="logo-tooltip" role="tooltip">
+        <p class="logo-tooltip-name">BeltSmart</p>
+        <p class="logo-tooltip-tenure">6+ Year Client</p>
+        <p class="logo-tooltip-category">Industrial Parts</p>
+      </div>
+    </a>
     <!-- …remaining logos… -->
   </div>
 </div>
@@ -74,3 +78,12 @@ Featured clients show name, tenure, and category on hover. Other logos link out 
 | Category | `.logo-tooltip-category` | Muted dark (`var(--ink-soft)`, `#5a5a5a`) |
 
 CSS uses `.logo-tooltip .logo-tooltip-*` selectors so these colors win over section-level dark-theme paragraph styles.
+
+## Auto-scroll (homepage + about)
+
+On **`index.html`** and **`about.html`**, the logo box slowly auto-scrolls top-to-bottom (~13px/s). Hover or focus pauses scrolling so visitors can scroll manually.
+
+- **Script:** `scripts/client-logos-autoscroll.js` (included on both pages)
+- **CSS:** `.client-collage-card--home` uses fixed `height: 420px`; `.client-collage-card--autoscroll` removes the bottom fade mask while scrolling
+- **Revert:** remove the script tags from both pages and delete `scripts/client-logos-autoscroll.js` (optionally restore `max-height`-only sizing and bottom fade in `styles.css`)
+- Respects `prefers-reduced-motion: reduce` (no auto-scroll)

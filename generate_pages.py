@@ -17,10 +17,23 @@ SITE_ROOT = Path(__file__).parent
 sys.path.insert(0, str(SITE_ROOT))
 
 from case_studies_section import case_study_pager_html
-from schema.jsonld import article_schema, case_study_schema
+from gated_resources_content import (
+    CART_DATA_FAQS,
+    CART_DATA_GATED,
+    CART_DATA_PREVIEW,
+    CONV_TRACKING_GATED,
+    CONV_TRACKING_PREVIEW,
+    GMC_SETUP_GATED,
+    GMC_SETUP_PREVIEW,
+    META_CREATIVE_GATED,
+    META_CREATIVE_PREVIEW,
+    SFTP_GATED,
+    SFTP_PREVIEW,
+)
+from schema.jsonld import article_schema, case_study_schema, guide_schema
 from site_nav import blog_newsletter, footer, header
 
-# ---------- case-study closing CTA (matches services.html #work-with-us) ----------
+# ---------- case-study closing CTAs ----------
 
 def work_with_us_section(rel: str = "") -> str:
     return f"""<section class="section--black" id="work-with-us">
@@ -36,6 +49,17 @@ def work_with_us_section(rel: str = "") -> str:
     <figure class="resources-work-photo">
       <img src="{rel}images/austin-becker-e-commerce-marketing-22.jpg" alt="Austin Becker and team collaborating on e-commerce marketing strategy">
     </figure>
+  </div>
+</section>"""
+
+
+def take_the_next_step_section(rel: str = "") -> str:
+    return f"""<section class="cta-banner cta-banner--dark grid-trail">
+  <canvas class="grid-trail-canvas" aria-hidden="true"></canvas>
+  <div class="container">
+    <h2>Take the Next Step</h2>
+    <p>We're ready to discuss your business and how we can help you grow it. Please fill out a contact form so we can begin the conversation.</p>
+    <a href="{rel}contact.html" class="btn btn-primary">Contact Us</a>
   </div>
 </section>"""
 
@@ -139,23 +163,24 @@ CASE_STUDIES = [
     {
         "slug": "tallslim-tees",
         "client": "TallSlim Tees",
-        "title": "74.70% YoY Growth in Attributed Google Ads Revenue",
+        "title": "6x+ Conv. Value Growth from First to Most Recent Q4",
         "intro": "TallSlim Tees is an apparel brand specifically catered to men 6 ft&ndash;7 ft tall who seek a wardrobe tailored to their natural build. Their specialty is designing slim and tall clothing that focuses on length rather than width for t-shirts, flannels, and activewear that guarantees a perfect fit for the tall and lean figure.",
         "hero_image": "images/tallslim-tees-homepage-3.png",
         "hero_alt": "TallSlim Tees homepage",
-        "meta_description": "How we refreshed TallSlim Tees' Google Shopping creative and product feed to grow attributed Google Ads revenue 74.70% year over year.",
-        "challenge": "TallSlim Tees&rsquo; ad account was performing well with healthy ROAS between 200%&ndash;300%, but their creative and approach to shopping ads was outdated. They wanted to refresh their assets and brand, and improve the rankings of their listings on Google Shopping to receive more relevant traffic that would turn into consistent sales across their target customers.",
-        "solution": "The client&rsquo;s product feed was updated with enhanced titles formatted with product attributes by variant, and was segmented by custom labels for product group by popularity (e.g. high, mid, and low-selling products). We followed Google&rsquo;s best practices for finalizing the feed, updated assets with new creative, implemented user-generated content, and restructured campaigns by scaling budgets and bidding by product group.",
-        "what_we_did": [
-            "This resulted in year-over-year growth in attributed Google Ads revenue of 74.70% while maintaining the account&rsquo;s strong ROAS foundation.",
+        "meta_description": "How we scaled TallSlim Tees Google Shopping ads after acquisition—6x+ attributed conversion value growth from first to most recent Q4 while expanding into new product categories.",
+        "challenge": "TallSlim Tees&rsquo; Google Ads account was performing well but the business needed to scale sales after being acquired by a new owner. The new ownership&rsquo;s marketing team needed to increase sales across existing top-selling SKUs, but also introducing new product categories, like jogger pants and hoodies, without losing profits along the way.",
+        "solution": "Our team updated TallSlim Tees&rsquo; existing Google Shopping Ads product data with enhanced product attributes, like variant colors, styles and keywords that are frequently searched on Google.com. We optimized all product data per variant, and segmented inventory by sell-through rate (e.g. high, mid, and low sell-through products). We then updated all paid ads assets with additional video and image creative elements in ads, added user-generated content to paid ads, and restructured campaigns to keep spend allocated appropriately between existing inventory and new releases for optimal balance between sales growth and profit.",
+        "what_we_did": [],
+        "results": [
+            "Between our first Q4 working on TallSlim Tees and the most recent Q4, attributed conversion value in Google Ads increased by over 6x, while cost increased by over 2x.",
         ],
         "metrics": [
-            ("74.70%", "YoY growth in attributed Google Ads revenue"),
-            ("200&ndash;300%", "ROAS range before the shopping ads refresh"),
-            ("3-tier", "custom label segmentation by product popularity"),
+            ("6x+", "Conv. value growth from 1st to most recent Q4"),
+            ("2x+", "Ad budget growth from 1st to most recent Q4"),
+            ("3-tier", "segmentation by sell-through rate"),
         ],
-        "body_sidebar_intro": "Year-over-year after the shopping refresh",
-        "body_sidebar_foot": "While maintaining strong ROAS.",
+        "body_sidebar_intro": "From first to most recent Q4",
+        "body_sidebar_foot": "While balancing sales growth and profit.",
         "quote": "Austin is very responsive and quickly understood our businesses and our goals, and built campaigns to meet those goals.",
         "quote_author": "Sam Huebner",
         "quote_title": "CEO, Parker Baby Co.",
@@ -248,7 +273,11 @@ def render_case_study(cs: dict) -> str:
         case_body_html = cs["body_html"]
     else:
         what_we_did_html = ""
-        if cs["what_we_did"]:
+        if cs.get("results"):
+            what_we_did_html = "\n    <h2>Results</h2>\n" + "\n".join(
+                f"    <p>{p}</p>" for p in cs["results"]
+            )
+        elif cs["what_we_did"]:
             what_we_did_html = "\n    <h2>What we did</h2>\n" + "\n".join(
                 f"    <p>{p}</p>" for p in cs["what_we_did"]
             )
@@ -329,7 +358,10 @@ def render_case_study(cs: dict) -> str:
 
 {work_with_us_section(rel)}
 
+{take_the_next_step_section(rel)}
+
 {footer(rel)}
+<script src="{rel}scripts/hero-grid-interactive.js" defer></script>
 </body>
 </html>
 """
@@ -341,43 +373,101 @@ def render_case_study(cs: dict) -> str:
 # Each article body uses HTML-as-string. Keep paragraphs short and readable.
 RESOURCES = [
     {
-        "slug": "shopify-google-merchant-center-setup-2026",
-        "title": "2026 Shopify to Google Merchant Center Feed Setup",
-        "lead": "Step-by-step checklist for sending Shopify product data into Google Merchant Center in 2026 — without breaking historic sales data tied to your existing product IDs.",
-        "meta_description": "Learn how to send a Shopify product feed to Google Merchant Center in 2026, keeping historic sales data and syncing shipping settings automatically.",
-        "date": "Feb 11, 2026",
-        "feature_image": "images/2026-Product-Feed-Tutorial-light.png",
-        "feature_alt": "2026 Product Feed Tutorial for Shopify and Google Merchant Center",
+        "slug": "fix-cart-data-errors-google-ads",
+        "title": "Fix Cart Data Errors in Google Ads",
+        "lead": "When Google Ads shows Missing Cart Data, your Merchant Center product IDs and tracking tag IDs don&rsquo;t match. Fix it without losing historic performance data.",
+        "meta_description": "Fix Missing Cart Data errors in Google Ads when GMC item IDs don\u2019t match your Shopify tracking tag. Step-by-step gradual ID swap checklist.",
+        "date": "Jun 23, 2026",
+        "feature_image": "images/3_Display_Ads.png",
+        "feature_alt": "Fix Cart Data Errors in Google Ads",
         "categories": [("Google Ads", "google-ads"), ("Google Shopping", "google-shopping"), ("Product Feeds", "product-feeds")],
-        "video_embed": None,
+        "video_embed": "https://www.youtube.com/embed/wSx8Lmtb_L0",
+        "video_watch_url": "https://youtu.be/wSx8Lmtb_L0",
+        "gated": True,
+        "faqs": CART_DATA_FAQS,
         "toc": [
-            ("what-you-need", "What you'll need before starting"),
-            ("the-checklist", "The checklist"),
+            ("the-problem", "The Problem"),
+            ("the-solution", "The Solution"),
+            ("cross-sell-reports", "Cross-sell reports"),
+            ("sources-cited", "Sources cited"),
         ],
-        "body_html": """    <p>Get the step-by-step <strong>checklist below</strong>. The checklist includes all necessary steps and instructions to quickly send a product data feed from Shopify to Google Merchant Center.</p>
-    <p>With this method you will:</p>
-    <ol>
-      <li>Avoid losing historic sales data associated with your old product feed's product IDs,</li>
-      <li>Send a product data feed for free, or with our recommended 3rd-party product data feed tool DataFeedWatch,</li>
-      <li>Sync all your Shopify shipping settings to Google Merchant Center automatically, and</li>
-      <li>Have a foundation to start from when optimizing product data for Google Shopping Ads.</li>
-    </ol>
-
-    <h2 id="what-you-need">What you'll need before starting</h2>
-    <ul>
-      <li>Admin access to your Shopify store</li>
-      <li>An active Google Merchant Center account linked to your domain</li>
-      <li>Optional: a DataFeedWatch (or comparable feed-management) trial if you want to manage many SKUs in one place</li>
-    </ul>
-
-    <h2 id="the-checklist">The checklist</h2>
-    <p>The checklist itself lives alongside the full video walkthrough on YouTube. The high-level moves:</p>
-    <ol>
-      <li>Decide on your <strong>product ID</strong> strategy. If you've already advertised, preserving the existing IDs (SKU or variant ID) keeps historic learning intact.</li>
-      <li>Map Shopify product fields to Google's required attributes: <code>id</code>, <code>title</code>, <code>description</code>, <code>link</code>, <code>image_link</code>, <code>availability</code>, <code>price</code>, <code>brand</code>, and <code>gtin</code> or <code>mpn</code>.</li>
-      <li>Connect Shopify shipping to GMC so the price the user sees in the ad reflects real-time shipping rates from your store.</li>
-      <li>Validate the feed in GMC and resolve all warnings before launching campaigns.</li>
-    </ol>""",
+        "preview_html": CART_DATA_PREVIEW,
+        "gated_body_html": CART_DATA_GATED,
+        "body_html": CART_DATA_PREVIEW + CART_DATA_GATED,
+        "hero_cta_href": "#content-gate",
+        "hero_cta_label": "Get the Checklist",
+    },
+    {
+        "slug": "google-merchant-center-sftp-upload",
+        "title": "Google Merchant Center SFTP File Upload",
+        "lead": "Upload pricing and inventory to Google and Microsoft Merchant Center multiple times per day using SFTP and DataFeedWatch.",
+        "meta_description": "Step-by-step SFTP file upload setup for Google Merchant Center and Microsoft Merchant Center. Send intraday product feed updates from DataFeedWatch.",
+        "date": "Apr 27, 2026",
+        "feature_image": "images/2026-Product-Feed-Tutorial-light.png",
+        "feature_alt": "Google Merchant Center SFTP file upload guide",
+        "categories": [("Google Shopping", "google-shopping"), ("Product Feeds", "product-feeds")],
+        "video_embed": "https://www.youtube.com/embed/NjdGmRHEABk",
+        "video_watch_url": "https://youtu.be/NjdGmRHEABk",
+        "gated": True,
+        "toc": [
+            ("know-before", "Know before implementing"),
+            ("google-merchant-center", "Google Merchant Center"),
+            ("microsoft-merchant-center", "Microsoft Merchant Center"),
+            ("resources-cited", "Resources cited"),
+        ],
+        "preview_html": SFTP_PREVIEW,
+        "gated_body_html": SFTP_GATED,
+        "body_html": SFTP_PREVIEW + SFTP_GATED,
+        "hero_cta_href": "#content-gate",
+        "hero_cta_label": "Get the Checklist",
+    },
+    {
+        "slug": "google-merchant-center-setup-2026",
+        "title": "2026 Google Merchant Center Full Setup",
+        "lead": "Complete checklist for sending optimized Shopify product data to Google Merchant Center in 2026 &mdash; without breaking historic sales data tied to existing product IDs.",
+        "meta_description": "2026 Google Merchant Center full setup for Shopify: DataFeedWatch, product IDs, feed submission, troubleshooting, and policy fixes.",
+        "date": "Feb 17, 2026",
+        "feature_image": "images/2026-Product-Feed-Tutorial-light.png",
+        "feature_alt": "2026 Google Merchant Center full setup guide",
+        "categories": [("Google Shopping", "google-shopping"), ("Product Feeds", "product-feeds")],
+        "video_embed": "https://www.youtube.com/embed/-LOxC-yi6SI",
+        "video_watch_url": "https://youtu.be/-LOxC-yi6SI",
+        "gated": True,
+        "toc": [
+            ("before-you-begin", "Before you begin"),
+            ("shopify-setup", "Shopify setup"),
+            ("datafeedwatch-setup", "DataFeedWatch setup"),
+            ("submit-feeds", "Submit feeds"),
+            ("troubleshooting", "Troubleshooting"),
+            ("sources-cited", "Sources cited"),
+        ],
+        "preview_html": GMC_SETUP_PREVIEW,
+        "gated_body_html": GMC_SETUP_GATED,
+        "body_html": GMC_SETUP_PREVIEW + GMC_SETUP_GATED,
+        "hero_cta_href": "#content-gate",
+        "hero_cta_label": "Get the Checklist",
+    },
+    {
+        "slug": "meta-creative-assets-checklist",
+        "title": "Meta Creative Assets Checklist",
+        "lead": "Prepare image and video assets for Meta ads. Dimensions, safe zones, file specs, and a sales promotion checklist &mdash; deliver 7 days before launch.",
+        "meta_description": "Meta ads creative checklist: video and image dimensions, safe zones, file specs, and sales promotion asset requirements for Facebook and Instagram ads.",
+        "date": "Apr 14, 2026",
+        "feature_image": "images/3_Display_Ads.png",
+        "feature_alt": "Meta creative assets checklist",
+        "categories": [("Meta", "meta"), ("Research Articles", "research-articles")],
+        "gated": True,
+        "toc": [
+            ("creative-inspiration", "Creative inspiration"),
+            ("creative-checklist", "Creative asset checklist"),
+            ("sales-promotion", "Sales promotion checklist"),
+            ("references", "References"),
+        ],
+        "preview_html": META_CREATIVE_PREVIEW,
+        "gated_body_html": META_CREATIVE_GATED,
+        "body_html": META_CREATIVE_PREVIEW + META_CREATIVE_GATED,
+        "hero_cta_href": "#content-gate",
+        "hero_cta_label": "Get the Checklist",
     },
     {
         "slug": "how-to-optimize-google-shopping-ads-results",
@@ -785,7 +875,47 @@ def _blog_toc_html(toc: list[tuple[str, str]]) -> str:
     </aside>"""
 
 
+def _content_gate_html() -> str:
+    return """    <div class="content-gate" id="content-gate">
+      <div class="content-gate-form-wrap">
+        <div id="content-gate-form" class="content-gate-form"></div>
+      </div>
+    </div>"""
+
+
+def _gated_body_html(art: dict) -> str:
+    preview = art.get("preview_html", "")
+    gated = art.get("gated_body_html", "")
+    toc = art.get("toc")
+    gate = _content_gate_html()
+    preview_block = f"""    <div class="content-gate-preview content-gate-preview--faded">
+{preview}
+    </div>
+{gate}
+    <div class="gated-content" id="gated-content" hidden>
+{gated}
+      <div class="content-gate-success" id="content-gate-success" hidden></div>
+    </div>"""
+    if not toc:
+        return f"""<section class="article-body" id="article-body">
+  <div class="container">
+{preview_block}
+  </div>
+</section>"""
+    toc_sidebar = _blog_toc_html(toc)
+    return f"""<section class="article-body article-body--with-toc" id="article-body">
+  <div class="container guide-body-split">
+{toc_sidebar}
+    <div class="guide-body-content">
+{preview_block}
+    </div>
+  </div>
+</section>"""
+
+
 def _blog_body_section(art: dict) -> str:
+    if art.get("gated"):
+        return _gated_body_html(art)
     body = art["body_html"]
     toc = art.get("toc")
     if not toc:
@@ -803,6 +933,108 @@ def _blog_body_section(art: dict) -> str:
     </div>
   </div>
 </section>"""
+
+
+def _article_schema_html(art: dict) -> str:
+    video_url = art.get("video_embed")
+    return article_schema(
+        slug=art["slug"],
+        title=art["title"],
+        description=art["meta_description"],
+        date=art["date"],
+        image_path=art["feature_image"],
+        video_url=video_url,
+        faqs=art.get("faqs"),
+    )
+
+
+GATED_GUIDES = [
+    {
+        "slug": "conversion-tracking-shopify-2026",
+        "title": "Streamlined Conversion Tracking for Shopify 2026",
+        "lead": "Set up Google Ads and Microsoft Ads conversion tracking on Shopify using Customer Events &mdash; without editing theme.liquid. Watch the video, then unlock the full written checklist.",
+        "meta_description": "2026 Shopify conversion tracking guide: Google & YouTube Sales Channel, Microsoft Sales Channel, primary conversion setup, and optional GTM steps.",
+        "date": "May 7, 2026",
+        "feature_image": "images/Shopify-Conversion-Tracking-2025.png",
+        "feature_alt": "Streamlined Conversion Tracking for Shopify 2026",
+        "video_embed": "https://www.youtube.com/embed/dL_jtZz8uQQ",
+        "video_watch_url": "https://www.youtube.com/watch?v=dL_jtZz8uQQ",
+        "toc": [
+            ("installation", "Installation"),
+            ("microsoft-ads", "Microsoft Ads"),
+            ("last-steps", "Last steps"),
+            ("optional-steps", "Optional custom events"),
+            ("resources-cited", "Resources cited"),
+        ],
+        "preview_html": CONV_TRACKING_PREVIEW,
+        "gated_body_html": CONV_TRACKING_GATED,
+    },
+]
+
+
+def render_gated_guide(guide: dict) -> str:
+    rel = "../"
+    art = {
+        **guide,
+        "gated": True,
+        "body_html": guide["preview_html"] + guide["gated_body_html"],
+        "hero_cta_href": "#content-gate",
+        "hero_cta_label": "Get the Guide",
+        "categories": [("Google Ads", "google-ads")],
+    }
+    eyebrow = _blog_eyebrow(art)
+    hero_media = _blog_hero_media(art, rel)
+    hero_actions = _blog_hero_actions(art)
+    schema = guide_schema(
+        slug=guide["slug"],
+        title=guide["title"],
+        description=guide["meta_description"],
+    )
+
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{guide['title']} — Austin Becker E-Commerce Marketing</title>
+<meta name="description" content="{guide['meta_description']}">
+<meta property="og:title" content="{guide['title']}">
+<meta property="og:description" content="{guide['meta_description']}">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://abeckermarketing.com/{guide['feature_image']}">
+<link rel="canonical" href="https://abeckermarketing.com/guides/{guide['slug']}.html">
+{schema}
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+{header(rel, active="learn")}
+
+<section class="hero">
+  <div class="container hero-split">
+    <div class="hero-text">
+      <span class="eyebrow">{eyebrow}</span>
+      <h1>{guide['title']}</h1>
+      <p class="lead">{guide['lead']}</p>
+      <div class="hero-actions">
+{hero_actions}
+      </div>
+    </div>
+{hero_media}
+  </div>
+</section>
+
+{_gated_body_html(art)}
+
+{blog_newsletter(rel)}
+
+{footer(rel)}
+<script src="../scripts/guide-image-lightbox.js" defer></script>
+<script src="../scripts/newsletter-form.js" defer></script>
+<script src="../scripts/content-gate.js" defer></script>
+</body>
+</html>
+"""
 
 
 def render_article(art: dict, all_articles: list) -> str:
@@ -824,7 +1056,7 @@ def render_article(art: dict, all_articles: list) -> str:
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://abeckermarketing.com/{art['feature_image']}">
 <link rel="canonical" href="https://abeckermarketing.com/resources/{art['slug']}.html">
-{article_schema(slug=art['slug'], title=art['title'], description=art['meta_description'], date=art['date'], image_path=art['feature_image'])}
+{_article_schema_html(art)}
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -851,6 +1083,8 @@ def render_article(art: dict, all_articles: list) -> str:
 
 {footer(rel)}
 <script src="../scripts/guide-image-lightbox.js" defer></script>
+<script src="../scripts/newsletter-form.js" defer></script>
+{"<script src=\"../scripts/content-gate.js\" defer></script>" if art.get("gated") else ""}
 </body>
 </html>
 """
@@ -871,6 +1105,12 @@ def main():
     for art in RESOURCES:
         (res_dir / f"{art['slug']}.html").write_text(render_article(art, RESOURCES))
         print(f"wrote resources/{art['slug']}.html")
+
+    guide_dir = SITE_ROOT / "guides"
+    guide_dir.mkdir(exist_ok=True)
+    for guide in GATED_GUIDES:
+        (guide_dir / f"{guide['slug']}.html").write_text(render_gated_guide(guide))
+        print(f"wrote guides/{guide['slug']}.html")
 
 
 if __name__ == "__main__":

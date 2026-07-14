@@ -260,7 +260,7 @@
       </figure>
     </div>
     <p>Submit your new vehicle listing data feed to Google Merchant Center.</p>
-    <p>Do you update your pricing and inventory multiple times per day? If yes, use the SFTP file upload method for intraday updates. See our article on <a href="https://www.youtube.com/@ppcforeveryone" target="_blank" rel="noopener">Google Merchant Center SFTP file upload</a> for the fastest data updates.</p>
+    <p>Do you update your pricing and inventory multiple times per day? If yes, use the SFTP file upload method for intraday updates. See our guide on <a href="../resources/google-merchant-center-sftp-upload.html">Google Merchant Center SFTP file upload</a> for the fastest data updates.</p>
     <p>Confirm that items are approved or pending. If pending, wait two business days, then reach out to Google Merchant Center support.</p>
 
     <h2 id="troubleshooting">Troubleshooting</h2>
@@ -308,6 +308,8 @@
       <li><a href="https://support.google.com/merchants/answer/6324473" target="_blank" rel="noopener">Sale price [sale_price] — Google Merchant Center Help</a></li>
       <li><a href="https://support.google.com/merchants/answer/6149970" target="_blank" rel="noopener">Shopping ads policies — Google Merchant Center Help</a></li>
       <li><a href="https://www.datafeedwatch.com/pricing?via=austin-youtube" target="_blank" rel="noopener">DataFeedWatch referral link</a></li>
+      <li><a href="../resources/google-merchant-center-setup-2026.html">2026 Google Merchant Center Full Setup</a></li>
+      <li><a href="../resources/google-merchant-center-sftp-upload.html">Google Merchant Center SFTP File Upload</a></li>
     </ul>
     </div>
   </div>
@@ -322,10 +324,12 @@
         <p>Sign up for practical PPC and product feed updates. We&rsquo;ll email you when new guides and resources are published.</p>
       </div>
       <div class="newsletter-form-wrap">
-        <div id="hubspot-newsletter-form" class="hubspot-placeholder">
-          <strong>HubSpot signup form mounts here.</strong>
-          <p style="margin:8px 0 0;">Paste your newsletter form embed code from <code>Marketing &rarr; Forms &rarr; Share &rarr; Embed</code>.</p>
-        </div>
+        <form class="abm-newsletter-form" novalidate>
+          <label class="visually-hidden" for="abm-newsletter-email">Email</label>
+          <input id="abm-newsletter-email" name="email" type="email" autocomplete="email" required placeholder="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+          <p class="abm-newsletter-status" hidden></p>
+        </form>
       </div>
     </div>
   </div>
@@ -384,5 +388,6 @@
 </footer>
 
 <script src="../scripts/guide-image-lightbox.js" defer></script>
+<script src="../scripts/newsletter-form.js" defer></script>
 </body>
 </html>

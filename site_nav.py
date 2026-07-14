@@ -206,10 +206,12 @@ def blog_newsletter(rel: str) -> str:
         <p>Sign up for practical PPC and product feed updates. We&rsquo;ll email you when new guides and resources are published.</p>
       </div>
       <div class="newsletter-form-wrap">
-        <div id="hubspot-newsletter-form" class="hubspot-placeholder">
-          <strong>HubSpot signup form mounts here.</strong>
-          <p style="margin:8px 0 0;">Paste your newsletter form embed code from <code>Marketing &rarr; Forms &rarr; Share &rarr; Embed</code>.</p>
-        </div>
+        <form class="abm-newsletter-form" novalidate>
+          <label class="visually-hidden" for="abm-newsletter-email">Email</label>
+          <input id="abm-newsletter-email" name="email" type="email" autocomplete="email" required placeholder="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+          <p class="abm-newsletter-status" hidden></p>
+        </form>
       </div>
     </div>
   </div>

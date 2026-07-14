@@ -33,7 +33,7 @@ CASE_STUDY_CARDS = [
         "image": "images/tallslim-tees-homepage-3.png",
         "alt": "TallSlim Tees",
         "name": "TallSlim Tees",
-        "result": "74.70% YoY Growth in Google Ads Revenue",
+        "result": "6x+ Conv. Value Growth from First Q4",
         "excerpt": "TallSlim Tees is an apparel brand for men 6 ft&ndash;7 ft tall, designing slim and tall clothing focused on length rather than width for t-shirts, flannels, and activewear.",
     },
     {
@@ -89,6 +89,9 @@ def case_study_pager_html(current_slug: str, rel: str = "../") -> str:
       <a href="{base}{next_slug}.html" class="case-study-pager__arrow" aria-label="Next case study"><span aria-hidden="true">&rsaquo;</span></a>
     </nav>
 """
+
+
+def _media_html(rel: str, card: dict) -> str:
     if card.get("video_webm") or card.get("video_mp4"):
         poster = f"{rel}{card['image']}"
         sources = []

@@ -47,6 +47,17 @@
       "about": {
         "@id": "https://abeckermarketing.com/#organization"
       }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://abeckermarketing.com/resources/google-ads-customer-match-lists.html#video",
+      "name": "Customer Match Lists",
+      "description": "Learn how to use and create Customer Match lists in Google Ads to target existing and similar customers across YouTube, Display, and Search campaigns.",
+      "embedUrl": "https://www.youtube.com/embed/0pcwj39GmW4",
+      "uploadDate": "2023-04-07",
+      "publisher": {
+        "@id": "https://abeckermarketing.com/#organization"
+      }
     }
   ]
 }
@@ -201,10 +212,12 @@
         <p>Sign up for practical PPC and product feed updates. We&rsquo;ll email you when new guides and resources are published.</p>
       </div>
       <div class="newsletter-form-wrap">
-        <div id="hubspot-newsletter-form" class="hubspot-placeholder">
-          <strong>HubSpot signup form mounts here.</strong>
-          <p style="margin:8px 0 0;">Paste your newsletter form embed code from <code>Marketing &rarr; Forms &rarr; Share &rarr; Embed</code>.</p>
-        </div>
+        <form class="abm-newsletter-form" novalidate>
+          <label class="visually-hidden" for="abm-newsletter-email">Email</label>
+          <input id="abm-newsletter-email" name="email" type="email" autocomplete="email" required placeholder="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+          <p class="abm-newsletter-status" hidden></p>
+        </form>
       </div>
     </div>
   </div>
@@ -262,5 +275,7 @@
   </div>
 </footer>
 <script src="../scripts/guide-image-lightbox.js" defer></script>
+<script src="../scripts/newsletter-form.js" defer></script>
+
 </body>
 </html>

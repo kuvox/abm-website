@@ -23,8 +23,11 @@ Used on the services page, supported ad platforms page, homepage “What You Get
 | Meta | `meta-icon.png` |
 | TikTok | `tiktok-icon.png` |
 | X (Twitter) | `x-black-icon.png` / `x-white-icon.png` |
+| Reddit | `reddit-icon.png` |
 
 Partner badges (Google Premier, Microsoft Partner) remain in `images/` root (`Partner-RGB-1.png`, etc.) — not in `website-logos/`.
+
+**Homepage sync tile (not in `website-logos/`):** `images/austin-becker-logo-icon-white.png`
 
 ## Path conventions
 
@@ -41,10 +44,15 @@ Sources column (`sync-logo--platforms`):
 - Facebook → `facebook-icon.png`
 - Instagram → `instagram-icon.png`
 - ChatGPT → `chatgpt-black-icon.png`
-- Reddit → `images/reddit.svg` *(not yet in website-logos)*
+- Reddit → `reddit-icon.png`
 - Pinterest → `pinterest-red-icon.png`
 
+Middle tile (ABM): `images/austin-becker-logo-icon-white.png` in `.sync-tile-icon`
+
 Destination column: Shopify → `shopify-icon.png`
+
+**Captions (sources):** Managed Channels / Focused on Google Ads  
+**Captions (dest):** Overall Sales Growth / More efficient + line break + ad spend
 
 ## Footer logo
 

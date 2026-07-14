@@ -106,11 +106,17 @@
   <div class="container resources-intro-centered">
     <p class="hero-eyebrow hero-eyebrow--gold">Resources</p>
     <h2>We Share What We Learn</h2>
-    <p>Austin regularly posts free content on YouTube (the channel is PPC For Everyone) to help other advertisers and ad agencies find quick answers to digital advertising questions.</p>
-    <p class="resources-intro-links">Get quick tips from our <a href="https://www.youtube.com/channel/UCXeate-c17ew1TNhfQEBG-A" target="_blank" rel="noopener">YouTube channel PPC For Everyone</a>.<br>
-    Follow <a href="https://www.linkedin.com/in/austin-becker-marketing/" target="_blank" rel="noopener">Austin on LinkedIn</a>.<br>
+    <p>Austin regularly posts free content on YouTube
+    <a class="yt-channel-chip" href="https://www.youtube.com/@ppcforeveryone" target="_blank" rel="noopener" aria-label="PPC for Everyone on YouTube">
+      <img src="images/website-logos/ppcforeveryone-logo-icon-mint.png" alt="" width="40" height="40">
+      <span class="yt-channel-chip__text">
+        <strong>PPC for Everyone</strong>
+        <span>@ppcforeveryone &middot; 35.8K subscribers</span>
+      </span>
+    </a>.</p>
+    <p class="resources-intro-links">Follow <a href="https://www.linkedin.com/in/austin-becker-marketing/" target="_blank" rel="noopener">Austin on LinkedIn</a>.<br>
     Find our content on <a href="https://www.datafeedwatch.com/blog/author/austin-becker" target="_blank" rel="noopener">DataFeedWatch&rsquo;s blog</a>.</p>
-    <p>Browse our guides and resources below.</p>
+    <p>Browse our guides and resources below for answers to digital advertising questions.</p>
   </div>
 </section>
 
@@ -147,17 +153,31 @@
               <div class="related-meta">2026 &middot; Austin Becker</div>
             </div>
           </a>
+          <a class="related-card" href="resources/fix-cart-data-errors-google-ads.html" data-search="fix cart data errors google ads missing cart data merchant center item ids">
+            <img src="images/3_Display_Ads.png" alt="Fix Cart Data Errors in Google Ads">
+            <div class="related-body">
+              <h3>Fix Cart Data Errors in Google Ads</h3>
+              <div class="related-meta">Jun 23, 2026 &middot; Austin Becker</div>
+            </div>
+          </a>
         </div>
       </section>
 
       <section class="resources-category" id="data-feeds">
         <h2>Data Feeds</h2>
         <div class="related-grid">
-          <a class="related-card" href="resources/shopify-google-merchant-center-setup-2026.html" data-search="2026 shopify google merchant center feed setup product feeds google shopping google ads">
-            <img src="images/2026-Product-Feed-Tutorial-light.png" alt="2026 Product Feed Tutorial for Shopify and Google Merchant Center">
+          <a class="related-card" href="resources/google-merchant-center-setup-2026.html" data-search="2026 google merchant center full setup shopify product feeds datafeedwatch">
+            <img src="images/2026-Product-Feed-Tutorial-light.png" alt="2026 Google Merchant Center Full Setup">
             <div class="related-body">
-              <h3>2026 Shopify to Google Merchant Center Feed Setup</h3>
-              <div class="related-meta">Feb 11, 2026 &middot; Austin Becker</div>
+              <h3>2026 Google Merchant Center Full Setup</h3>
+              <div class="related-meta">Feb 17, 2026 &middot; Austin Becker</div>
+            </div>
+          </a>
+          <a class="related-card" href="resources/google-merchant-center-sftp-upload.html" data-search="google merchant center sftp upload intraday feed updates microsoft">
+            <img src="images/2026-Product-Feed-Tutorial-light.png" alt="Google Merchant Center SFTP upload guide">
+            <div class="related-body">
+              <h3>Google Merchant Center SFTP File Upload</h3>
+              <div class="related-meta">Apr 27, 2026 &middot; Austin Becker</div>
             </div>
           </a>
           <a class="related-card" href="guides/product-data-feeds-as-keywords.html" data-search="where product data feeds are used keywords shopping meta catalog interactive demo">
@@ -215,6 +235,13 @@
               <div class="related-meta">Aug 20, 2021 &middot; Austin Becker</div>
             </div>
           </a>
+          <a class="related-card" href="resources/meta-creative-assets-checklist.html" data-search="meta creative assets checklist facebook instagram video image ad specs">
+            <img src="images/3_Display_Ads.png" alt="Meta creative assets checklist">
+            <div class="related-body">
+              <h3>Meta Creative Assets Checklist</h3>
+              <div class="related-meta">Apr 14, 2026 &middot; Austin Becker</div>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -251,10 +278,12 @@
         <p>Sign up for practical PPC and product feed updates. We&rsquo;ll email you when new guides and resources are published.</p>
       </div>
       <div class="newsletter-form-wrap">
-        <div id="hubspot-newsletter-form" class="hubspot-placeholder">
-          <strong>HubSpot signup form mounts here.</strong>
-          <p style="margin:8px 0 0;">Paste your newsletter form embed code from <code>Marketing &rarr; Forms &rarr; Share &rarr; Embed</code>.</p>
-        </div>
+        <form class="abm-newsletter-form" novalidate>
+          <label class="visually-hidden" for="abm-newsletter-email">Email</label>
+          <input id="abm-newsletter-email" name="email" type="email" autocomplete="email" required placeholder="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+          <p class="abm-newsletter-status" hidden></p>
+        </form>
       </div>
     </div>
   </div>
@@ -312,5 +341,6 @@
   </div>
 </footer>
 <script src="scripts/resources-filter.js" defer></script>
+<script src="scripts/newsletter-form.js" defer></script>
 </body>
 </html>
