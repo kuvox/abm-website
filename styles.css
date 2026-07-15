@@ -757,8 +757,13 @@ body.nav-open { overflow: hidden; }
     max-width: min(420px, 100%);
     margin-inline: auto;
   }
+  .services-page-hero__spacer {
+    margin-top: 0;
+    padding-top: 0;
+  }
   .services-hub-section {
-    margin-top: calc(-1 * clamp(56px, 10vw, 88px));
+    margin-top: 0;
+    padding-top: clamp(28px, 6vw, 40px);
   }
   .services-intro-split {
     grid-template-columns: 1fr;
@@ -767,6 +772,9 @@ body.nav-open { overflow: hidden; }
   }
   .services-intro-split__spacer {
     display: none;
+  }
+  .services-intro-split__copy p {
+    max-width: none;
   }
 }
 
