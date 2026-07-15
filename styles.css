@@ -221,9 +221,9 @@ p { margin: 0 0 1em; font-size: 20px; }
   margin-top: 8px;
 }
 .megamenu--services {
-  grid-template-columns: minmax(240px, 280px) minmax(150px, 170px) minmax(150px, 170px);
+  grid-template-columns: minmax(240px, 280px) minmax(210px, 240px) minmax(150px, 170px);
   gap: 32px;
-  max-width: 780px;
+  max-width: 860px;
   margin: 0 auto;
 }
 .megamenu-col--cta {
@@ -264,6 +264,17 @@ p { margin: 0 0 1em; font-size: 20px; }
   border-radius: var(--radius-pill);
   vertical-align: middle;
   line-height: 1.6;
+}
+/* Dark/gold "Our Niche" pill next to Product Feeds — mirrors case-studies gold eyebrow */
+.megamenu-badge--niche {
+  color: var(--gold);
+  background: linear-gradient(135deg, #323338 0%, #1e1f22 48%, #26272b 100%);
+}
+.megamenu-badge--niche .megamenu-badge__label {
+  background: linear-gradient(90deg, #f2e974 0%, #d9c684 55%, #c4b06a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .megamenu-learn-label { display: block; font-size: 1.0625rem; font-weight: 600; color: var(--ink); line-height: 1.35; }
 .megamenu-learn-desc { display: block; font-size: 0.88rem; font-weight: 400; color: var(--ink-soft); line-height: 1.4; margin-top: 2px; }

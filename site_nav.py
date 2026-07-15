@@ -23,7 +23,12 @@ def _services_nav_links(rel: str, *, use_anchors: bool = False, indent: str = " 
     lines = []
     for label, page, anchor in SERVICES_NAV_ITEMS:
         href = f"{rel}{page}{anchor}" if use_anchors else f"{rel}{page}"
-        lines.append(f'{indent}<li><a href="{href}">{label}</a></li>')
+        badge = (
+            ' <span class="megamenu-badge megamenu-badge--niche"><span class="megamenu-badge__label">Our Niche</span></span>'
+            if label == "Product Feeds"
+            else ""
+        )
+        lines.append(f'{indent}<li><a href="{href}">{label}{badge}</a></li>')
     return "\n".join(lines)
 
 
