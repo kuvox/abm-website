@@ -376,9 +376,21 @@ p { margin: 0 0 1em; font-size: 20px; }
     width: 100%;
     min-width: 0;
     margin-top: 0;
+    /* Collapsed accordion panel by default — expanded via .megamenu-open (scripts/site-nav.js) */
+    display: none;
   }
+  .has-megamenu.megamenu-open .megamenu { display: grid; }
   .megamenu-card,
   .megamenu-cta-card { max-width: 100%; justify-self: stretch; }
+  /* boxhill.co.nz testimonial: desktop only */
+  .megamenu-cta-card { display: none; }
+  .nav-links .has-megamenu > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-links .has-megamenu > a::after { transition: transform .15s ease; }
+  .nav-links .has-megamenu.megamenu-open > a::after { transform: translateY(-0.18em) rotate(225deg); }
 }
 .nav-cta {
   background: transparent; color: var(--brand) !important; padding: 10px 22px;
@@ -715,6 +727,10 @@ body.nav-open { overflow: hidden; }
   .services-page-hero__photo {
     max-width: 100%;
     margin-top: calc(-1 * clamp(16px, 4vw, 32px));
+    /* Don't bleed past the hero band on mobile — the single-column layout
+       below has no reserved spacer column, so a bottom bleed would cover
+       the intro paragraph that starts right after this section. */
+    margin-bottom: 0;
   }
   .services-page-hero__photo--collage {
     max-width: min(420px, 100%);
@@ -771,6 +787,11 @@ body.nav-open { overflow: hidden; }
 .pov-intro-text h2 { margin-top: 0; }
 @media (max-width: 900px) {
   .pov-intro-grid { grid-template-columns: 1fr; gap: 40px; }
+  /* Move the "Follow us in" logos below the red stat cards on mobile,
+     without touching the desktop 2-column layout. */
+  .pov-intro-text { display: contents; }
+  .stat-card-grid { order: 2; }
+  .pov-follow-us { order: 3; }
 }
 
 /* Divider + "Featured in" block under the intro paragraph */
@@ -1148,7 +1169,6 @@ body.nav-open { overflow: hidden; }
   align-items: center;
   gap: 12px;
   padding: 28px 24px;
-  overflow: hidden;
 }
 .sync-logo-grid {
   display: grid;
@@ -1258,7 +1278,7 @@ body.nav-open { overflow: hidden; }
   .sync-logo { width: 96px; height: 60px; }
   .sync-logo--platforms {
     width: 152px;
-    min-height: 108px;
+    min-height: 138px;
     gap: 10px;
     padding: 24px 20px;
   }
@@ -1266,7 +1286,7 @@ body.nav-open { overflow: hidden; }
   .sync-logo-grid img { max-width: 24px; max-height: 24px; }
   .sync-logo--dest {
     width: 140px;
-    min-height: 100px;
+    min-height: 128px;
     padding: 20px 14px 22px;
   }
   .sync-logo--dest img {
@@ -2318,7 +2338,19 @@ hr.rule { border: 0; height: 1px; background: var(--line); margin: 48px 0; }
   }
   .pricing-copy { order: 1; }
   .pricing-carousel-wrap { order: 2; }
-  .pricing-card { flex-basis: min(300px, 92%); }
+  /* Stack cards vertically instead of side-scrolling on mobile; desktop keeps the horizontal carousel. */
+  .pricing-carousel {
+    flex-direction: column;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+  .pricing-card { flex: 1 1 auto; width: 100%; }
+  .pricing-carousel-dots { display: none; }
+  .pricing-card__fee {
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    overflow-wrap: break-word;
+  }
 }
 
 /* ---------- Client logos strip ---------- */

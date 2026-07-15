@@ -50,7 +50,7 @@ CASE_STUDY_CARDS = [
         "alt": "Trailheads",
         "name": "TrailHeads",
         "result": "172% Year-Over-Year Revenue Growth",
-        "excerpt": "Established in 2002, TrailHeads specializes in the manufacturing of quality and comfortable accessories for running and outdoor sports enthusiasts. They design and test their products in-house and offer a variety of hats, headbands, gloves and related accessories that can be worn year round.",
+        "excerpt": "Established in 2002, TrailHeads specializes in the manufacturing of quality and comfortable accessories for running and outdoor sports enthusiasts.",
     },
     {
         "href": "https://www.datafeedwatch.com/blog/increase-revenue-manging-multiple-feeds",
