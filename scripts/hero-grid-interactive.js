@@ -5,9 +5,15 @@
   var DECAY_RATE = 0.92;
   var GRID_LINE_ALPHA = 0.04;
   var NEIGHBOR_BOOST = 0.55;
+  // Touch/scroll-driven sweep (mobile equivalent of the desktop mouse trail).
+  var SCROLL_SWEEP_SPEED = 0.6; // virtual px swept per px scrolled
+  var SCROLL_WAVE_AMPLITUDE = 26;
+  var SCROLL_WAVE_WAVELENGTH = 220;
+  var VIEWPORT_MARGIN = 200; // start/keep sweeping slightly outside the viewport edges
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  if (window.matchMedia("(pointer: coarse)").matches) return;
+
+  var isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
 
   var sections = document.querySelectorAll(".grid-trail");
   if (!sections.length) return;
@@ -121,11 +127,45 @@
       requestAnimationFrame(tick);
     }
 
-    section.addEventListener("mousemove", function (e) {
-      var rect = section.getBoundingClientRect();
-      lightAt(e.clientX - rect.left, e.clientY - rect.top);
-      startAnimation();
-    });
+    if (isCoarsePointer) {
+      var sweepDistance = 0;
+      var lastScrollY = window.scrollY;
+      var scrollTicking = false;
+
+      function isNearViewport() {
+        var rect = section.getBoundingClientRect();
+        return rect.bottom > -VIEWPORT_MARGIN && rect.top < window.innerHeight + VIEWPORT_MARGIN;
+      }
+
+      function handleScroll() {
+        scrollTicking = false;
+        var currentScrollY = window.scrollY;
+        var delta = currentScrollY - lastScrollY;
+        lastScrollY = currentScrollY;
+        if (!delta || !isNearViewport()) return;
+
+        sweepDistance += delta * SCROLL_SWEEP_SPEED;
+        var w = canvas.width / dpr || 1;
+        var h = canvas.height / dpr || 1;
+        var x = ((sweepDistance % w) + w) % w;
+        var y = h / 2 + Math.sin(sweepDistance / SCROLL_WAVE_WAVELENGTH) * SCROLL_WAVE_AMPLITUDE;
+
+        lightAt(x, y);
+        startAnimation();
+      }
+
+      window.addEventListener("scroll", function () {
+        if (scrollTicking) return;
+        scrollTicking = true;
+        requestAnimationFrame(handleScroll);
+      }, { passive: true });
+    } else {
+      section.addEventListener("mousemove", function (e) {
+        var rect = section.getBoundingClientRect();
+        lightAt(e.clientX - rect.left, e.clientY - rect.top);
+        startAnimation();
+      });
+    }
 
     var resizeTimer;
     window.addEventListener("resize", function () {
