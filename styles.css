@@ -1293,21 +1293,42 @@ body.nav-open { overflow: hidden; }
   font-weight: 500; opacity: 0.9; font-size: 0.95rem; margin-bottom: 0;
 }
 @media (max-width: 900px) {
-  .sync-dots { display: none; }
+  .sync-graphic { flex-direction: column; }
+  .sync-dots {
+    display: block;
+    width: 8px;
+    height: 40px;
+  }
+  .sync-dots span {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: syncFlowVertical;
+  }
+}
+@keyframes syncFlowVertical {
+  0%   { top: 0;                  opacity: 0; }
+  15%  {                          opacity: 1; }
+  85%  {                          opacity: 1; }
+  100% { top: calc(100% - 7px);   opacity: 0; }
+}
+@media (max-width: 900px) and (prefers-reduced-motion: reduce) {
+  .sync-dots span { animation: none; opacity: 0.75; top: 8px; }
+  .sync-dots span:nth-child(2) { top: 24px; }
 }
 @media (max-width: 560px) {
   .sync-logo { width: 96px; height: 60px; }
   .sync-logo--platforms {
-    width: 152px;
-    min-height: 138px;
+    width: 230px;
+    min-height: 118px;
     gap: 10px;
     padding: 24px 20px;
   }
   .sync-logo-grid { gap: 8px 5px; }
   .sync-logo-grid img { max-width: 24px; max-height: 24px; }
   .sync-logo--dest {
-    width: 140px;
-    min-height: 128px;
+    width: 210px;
+    min-height: 108px;
     padding: 20px 14px 22px;
   }
   .sync-logo--dest img {
@@ -1316,6 +1337,11 @@ body.nav-open { overflow: hidden; }
     max-width: 36px;
     max-height: 36px;
   }
+  .sync-logo-caption-title,
+  .sync-logo-caption-sub {
+    white-space: nowrap;
+  }
+  .sync-caption-break { display: none; }
 }
 
 .services-carousel {
