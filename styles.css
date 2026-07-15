@@ -236,7 +236,7 @@ p { margin: 0 0 1em; font-size: 20px; }
   min-width: 300px;
   max-width: min(360px, 92vw);
 }
-.megamenu--about { grid-template-columns: 1fr 1.6fr; max-width: 1100px; margin: 0 auto; }
+.megamenu--about { grid-template-columns: 1.6fr 1fr; max-width: 760px; margin: 0 auto; }
 .nav-links .has-megamenu:hover .megamenu,
 .nav-links .has-megamenu:focus-within .megamenu {
   opacity: 1; visibility: visible; transform: translateY(0);
@@ -389,6 +389,8 @@ p { margin: 0 0 1em; font-size: 20px; }
   .megamenu-cta-card { max-width: 100%; justify-self: stretch; }
   /* boxhill.co.nz testimonial: desktop only — !important beats base display:flex !important */
   .megamenu-cta-card { display: none !important; }
+  /* About Us description: desktop only, mobile shows just the link list */
+  .megamenu-col--text { display: none !important; }
   .nav-links .has-megamenu > a {
     display: flex;
     align-items: center;

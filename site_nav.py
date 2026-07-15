@@ -119,16 +119,16 @@ def header(rel: str, *, active: str | None = None) -> str:
       </li>
       <li class="has-menu has-megamenu has-megamenu--about"><a href="{rel}about.html"{_nav_class(active, "about")}>About</a>
         <div class="megamenu megamenu--about">
+          <div class="megamenu-col megamenu-col--text">
+            <span class="megamenu-eyebrow">About Us</span>
+            <p>An e-commerce, growth-focused team, equipped to work with $5M-$50M annual revenue companies. If your product catalog is large, complex or niche, we are the right choice for you.</p>
+          </div>
           <div class="megamenu-col">
             <ul>
               <li><a href="{rel}about.html">Who We Work With</a></li>
               <li><a href="{rel}about.html#founder">About the Founder</a></li>
               <li><a href="{rel}about.html#team">Our Team</a></li>
             </ul>
-          </div>
-          <div class="megamenu-col megamenu-col--text">
-            <span class="megamenu-eyebrow">About Us</span>
-            <p>An e-commerce, growth-focused team, equipped to work with $5M-$50M annual revenue companies. If your product catalog is large, complex or niche, we are the right choice for you.</p>
           </div>
         </div>
       </li>
