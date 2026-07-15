@@ -93,9 +93,10 @@ def header(rel: str, *, active: str | None = None) -> str:
           <div class="megamenu-col">
             <span class="megamenu-eyebrow">Ad Platforms</span>
             <ul>
-              <li><a href="{rel}supported-ad-platforms.html">Google &amp; YouTube</a></li>
+              <li><a href="{rel}supported-ad-platforms.html">Google <span class="megamenu-badge">Our Focus</span></a></li>
               <li><a href="{rel}supported-ad-platforms.html">Microsoft</a></li>
               <li><a href="{rel}supported-ad-platforms.html">ChatGPT</a></li>
+              <li><a href="{rel}supported-ad-platforms.html">YouTube</a></li>
               <li><a href="{rel}supported-ad-platforms.html">Meta</a></li>
               <li><a href="{rel}supported-ad-platforms.html">Pinterest</a></li>
               <li><a href="{rel}supported-ad-platforms.html">Target</a></li>

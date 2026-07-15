@@ -251,6 +251,20 @@ p { margin: 0 0 1em; font-size: 20px; }
   line-height: 1.5;
 }
 .megamenu-col a:hover { color: var(--brand); text-decoration: none; }
+/* Small "Our Focus" pill next to Google — echoes the Contact Us button's brand-red treatment */
+.megamenu-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  border-radius: var(--radius-pill);
+  vertical-align: middle;
+  line-height: 1.6;
+}
 .megamenu-learn-label { display: block; font-size: 1.0625rem; font-weight: 600; color: var(--ink); line-height: 1.35; }
 .megamenu-learn-desc { display: block; font-size: 0.88rem; font-weight: 400; color: var(--ink-soft); line-height: 1.4; margin-top: 2px; }
 .megamenu--learn .megamenu-col li + li { margin-top: 14px; }
