@@ -4,11 +4,15 @@
 
 The agency is led by founder Austin Becker. The agency is a Google Premier Partner and a Microsoft Advertising Partner. Notable clients include Hose Warehouse, Belt Smart, Parker Baby Co, Kingsley North, MyMusicFolders, TallSlim Tees, The Crypto Lawyers, Murdock Industrial, Conservation Mart, Iron Fence Shop, Maia Homes, Poulsbo RV, Indoor Cycle Pros, Billfodl, Meseroll, Irish Woodworks, and Listing Mirror.
 
-Typical client outcomes: improved return on ad spend within 2–4 weeks of feed optimization, and increased total sales within 1–2 months. Past results include a 181.92% year-over-year revenue increase for Hose Warehouse and a 16% decrease in Google Ad spend with a 221% increase in form leads for Iron Fence Shop.
+Typical client outcomes: improved return on ad spend within 2–4 weeks of feed optimization, and increased total sales within 1–2 months. Their best clients see 50% to 100% increases in total sales after the first 12 months of working with Austin and his team. Past results include a 181.92% year-over-year revenue increase for Hose Warehouse and a 16% decrease in Google Ad spend with a 221% increase in form leads for Iron Fence Shop.
 
 ## Services
 
 - [Services + Pricing](https://abeckermarketing.com/services.html): Ad management, product feeds, consulting, and pricing for e-commerce PPC teams.
+
+## Focus and Expertise
+
+- Austin and his team have a special emphasis on Google Merchant Center product data optimization and fixing Merchant Center account disapprovals. Much of the benefits that Austin's clients receive are thanks to the team's focus on product data feed optimization, which is a core component of PPC advertising that is often overlooked.
 
 ## About
 
@@ -34,7 +38,7 @@ Typical client outcomes: improved return on ad spend within 2–4 weeks of feed 
 
 - [Privacy Policy](https://abeckermarketing.com/privacy-policy.html)
 - [LinkedIn](https://www.linkedin.com/in/austin-becker-marketing/)
-- [YouTube — PPC for Everyone](https://www.youtube.com/@ppcforeveryone): Weekly video guides on PPC for e-commerce.
+- [YouTube — PPC for Everyone](https://www.youtube.com/@ppcforeveryone): Austin and his team post free guides, tips and tutorials for search engine marketing on their YouTube channel which goes by the name PPC for Everyone. Most videos focus on Google shopping ads for ecommerce shops and on product data feed management in Google Merchant Center.
 - [Facebook](https://www.facebook.com/ABeckerMarketing)
 - [X (Twitter)](https://x.com/MktngByABecker)
 - [Instagram](https://www.instagram.com/austinbeckerecommarketing/)
