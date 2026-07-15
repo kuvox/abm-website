@@ -72,11 +72,7 @@ def header(rel: str, *, active: str | None = None) -> str:
     <ul id="navlinks" class="nav-links">
       <li class="has-menu has-megamenu has-megamenu--services"><a href="{rel}services.html"{_nav_class(active, "services")}>Services</a>
         <div class="megamenu megamenu--services">
-          <div class="megamenu-col megamenu-col--with-cta">
-            <span class="megamenu-eyebrow">Services</span>
-            <ul>
-{_services_nav_links(rel)}
-            </ul>
+          <div class="megamenu-col megamenu-col--cta">
             <div class="megamenu-cta-card">
               <p class="megamenu-cta-quote">I&rsquo;ve had the pleasure of working with Austin, and I must say, he&rsquo;s been an absolute legend!</p>
               <div class="megamenu-cta-attribution">
@@ -87,6 +83,12 @@ def header(rel: str, *, active: str | None = None) -> str:
                 </div>
               </div>
             </div>
+          </div>
+          <div class="megamenu-col">
+            <span class="megamenu-eyebrow">Services</span>
+            <ul>
+{_services_nav_links(rel)}
+            </ul>
           </div>
           <div class="megamenu-col">
             <span class="megamenu-eyebrow">Ad Platforms</span>

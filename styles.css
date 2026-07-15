@@ -221,14 +221,15 @@ p { margin: 0 0 1em; font-size: 20px; }
   margin-top: 8px;
 }
 .megamenu--services {
-  grid-template-columns: 1fr 1.15fr;
-  max-width: 1100px;
+  grid-template-columns: minmax(240px, 280px) minmax(150px, 170px) minmax(150px, 170px);
+  gap: 32px;
+  max-width: 780px;
   margin: 0 auto;
 }
-.megamenu-col--with-cta {
+.megamenu-col--cta {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
 }
 .megamenu--learn {
   grid-template-columns: 1fr;
@@ -276,12 +277,17 @@ p { margin: 0 0 1em; font-size: 20px; }
   font-size: 0.98rem;
   padding: 3px 0;
 }
-/* Services testimonial card (below services list, left column) */
+/* Services testimonial card — own column, left of the Services/Ad Platforms lists.
+   Background matches .services-platform-collage (ad-platforms page logo collage). */
 .megamenu-cta-card {
   display: flex !important;
   flex-direction: column;
   justify-content: space-between;
-  background: var(--bg-alt);
+  background:
+    radial-gradient(120% 90% at 12% 8%, rgba(232, 79, 59, 0.14), transparent 55%),
+    radial-gradient(100% 80% at 92% 88%, rgba(13, 27, 42, 0.06), transparent 50%),
+    linear-gradient(160deg, #ffffff 0%, var(--brand-tint) 48%, #f3f4f6 100%);
+  border: 1px solid rgba(230, 231, 233, 0.9);
   border-radius: var(--radius-lg);
   padding: 36px 40px;
   color: var(--ink) !important;
@@ -291,10 +297,9 @@ p { margin: 0 0 1em; font-size: 20px; }
   gap: 24px;
 }
 .megamenu--services .megamenu-cta-card {
-  margin-top: 28px;
   justify-self: auto;
   align-self: stretch;
-  max-width: 420px;
+  max-width: none;
   width: 100%;
 }
 .megamenu-cta-quote {
