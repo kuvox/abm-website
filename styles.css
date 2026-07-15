@@ -382,8 +382,8 @@ p { margin: 0 0 1em; font-size: 20px; }
   .has-megamenu.megamenu-open .megamenu { display: grid; }
   .megamenu-card,
   .megamenu-cta-card { max-width: 100%; justify-self: stretch; }
-  /* boxhill.co.nz testimonial: desktop only */
-  .megamenu-cta-card { display: none; }
+  /* boxhill.co.nz testimonial: desktop only — !important beats base display:flex !important */
+  .megamenu-cta-card { display: none !important; }
   .nav-links .has-megamenu > a {
     display: flex;
     align-items: center;
