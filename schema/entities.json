@@ -7,6 +7,7 @@
   },
   "organization": {
     "name": "Austin Becker E-Commerce Marketing",
+    "alternateNames": ["ABM", "Austin Becker Marketing"],
     "description": "U.S.-based PPC agency helping $5M–$50M annual revenue e-commerce stores grow through paid advertising on Google, Amazon, and Microsoft, with specialization in product data feed optimization for large Shopify catalogs.",
     "email": "austin@abeckermarketing.com",
     "address": {
@@ -17,6 +18,17 @@
       "addressCountry": "US"
     },
     "logo": "https://abeckermarketing.com/images/logo.svg",
+    "image": "https://abeckermarketing.com/images/austin-becker-marketing-office-photo-2021-talking.png",
+    "knowsAbout": [
+      "Product data feed optimization",
+      "Google Merchant Center",
+      "Google Shopping ads",
+      "E-commerce conversion tracking",
+      "https://en.wikipedia.org/wiki/Google_Ads",
+      "https://en.wikipedia.org/wiki/Microsoft_Advertising",
+      "https://en.wikipedia.org/wiki/Shopify",
+      "https://en.wikipedia.org/wiki/Pay-per-click"
+    ],
     "sameAs": [
       "https://www.linkedin.com/in/austin-becker-marketing/",
       "https://www.youtube.com/@ppcforeveryone",
@@ -32,7 +44,9 @@
     "jobTitle": "Founder & Google Ads Manager",
     "image": "https://abeckermarketing.com/images/austin-becker-portrait-3.jpg",
     "sameAs": [
-      "https://www.linkedin.com/in/austin-becker-marketing/"
+      "https://www.linkedin.com/in/austin-becker-marketing/",
+      "https://www.youtube.com/@ppcforeveryone",
+      "https://www.upwork.com/freelancers/~014ed904b2ddf51fa6"
     ]
   },
   "services": [
@@ -53,12 +67,15 @@
       "fragment": "consulting",
       "name": "Consulting",
       "description": "One-time consulting and training on conversion tracking, campaign structure, and feed optimization."
-    },
-    {
-      "slug": "services",
-      "fragment": "pricing",
-      "name": "Pricing",
-      "description": "Tiered service fees based on catalog complexity, website needs, and ad budget."
     }
-  ]
+  ],
+  "clients": {
+    "Murdock Industrial": { "url": "https://murdockindustrial.com/" },
+    "Hose Warehouse": { "url": "https://hosewarehouse.com/" },
+    "Iron Fence Shop": { "url": "https://www.ironfenceshop.com/" },
+    "Kingsley North": { "url": "https://kingsleynorth.com/" },
+    "Parker Baby Co.": { "url": "https://parkerbaby.com/" },
+    "TallSlim Tees": { "url": "https://tallslimtees.com/" },
+    "TrailHeads": { "url": "https://www.trailheads.com/" }
+  }
 }

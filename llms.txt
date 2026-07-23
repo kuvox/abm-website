@@ -9,6 +9,7 @@ Typical client outcomes: improved return on ad spend within 2–4 weeks of feed 
 ## Services
 
 - [Services + Pricing](https://abeckermarketing.com/services.html): Ad management, product feeds, consulting, and pricing for e-commerce PPC teams.
+- [Supported Ad Platforms](https://abeckermarketing.com/supported-ad-platforms.html): Google, YouTube, Microsoft, Meta, Pinterest, Target, Walmart, Reddit, and ChatGPT catalog advertising.
 
 ## Focus and Expertise
 
@@ -22,6 +23,12 @@ Typical client outcomes: improved return on ad spend within 2–4 weeks of feed 
 ## Case Studies
 
 - [All Case Studies](https://abeckermarketing.com/case-studies.html): Customer success stories with measurable revenue and ROAS results.
+- [Murdock Industrial / Hose Warehouse & BeltSmart](https://abeckermarketing.com/case-studies/hose-warehouse-beltsmart.html): 181.92% year-over-year Google Ads revenue growth from a rebuilt product feed.
+- [Iron Fence Shop](https://abeckermarketing.com/case-studies/iron-fence-shop.html): 16% lower Google Ads spend with 221% more form leads via better conversion tracking.
+- [Kingsley North](https://abeckermarketing.com/case-studies/kingsley-north.html): 15.64% higher conversion rate on the same budget with enhanced feeds and video creative.
+- [Parker Baby Co.](https://abeckermarketing.com/case-studies/parker-baby.html): Scaled Google Shopping and search ads with a 20.72% conversion rate lift.
+- [TallSlim Tees](https://abeckermarketing.com/case-studies/tallslim-tees.html): 6x+ attributed conversion value growth from first to most recent Q4.
+- [TrailHeads](https://abeckermarketing.com/case-studies/trailheads.html): 172% year-over-year revenue growth by segmenting the product feed by seasonality.
 
 ## Resources & Guides
 
@@ -33,6 +40,12 @@ Typical client outcomes: improved return on ad spend within 2–4 weeks of feed 
 - [Meta Creative Assets Checklist](https://abeckermarketing.com/resources/meta-creative-assets-checklist.html): Video and image ad specs, safe zones, and sales promotion asset requirements for Meta ads.
 - [Where Product Data Feeds Are Used](https://abeckermarketing.com/guides/product-data-feeds-as-keywords.html): How product feed titles and attributes act as keywords for Shopping and catalog ads, with an interactive A/C compressor demo.
 - [Google Vehicle Listing Ads](https://abeckermarketing.com/guides/google-vehicle-listing-ads.html): DIY guide for RV and auto dealerships setting up Google Vehicle Listing Ads (Shopping ads for vehicles) in Merchant Center.
+- [2025 Shopify Conversion Tracking Guide](https://abeckermarketing.com/resources/2025-shopify-conversion-tracking-guide.html): Google and Microsoft Ads tracking with enhanced conversions via Shopify Customer Events.
+- [How to Optimize Google Shopping Ads Results](https://abeckermarketing.com/resources/how-to-optimize-google-shopping-ads-results.html): 150-character titles, full attributes, and consecutive A/B tests to raise CTR and revenue.
+- [How to Set Marketing Budgets for Paid Ads](https://abeckermarketing.com/resources/how-much-to-budget.html): Budgeting with LTV, COGS, and target ROAS, including a budget calculator.
+- [Google Ads Customer Match Lists](https://abeckermarketing.com/resources/google-ads-customer-match-lists.html): Using first-party customer lists across YouTube, Display, and Search campaigns.
+- [Edit YouTube Ads for Success](https://abeckermarketing.com/resources/edit-youtube-ads-for-success.html): Edit guidance for Bumper, Non-Skippable, and Skippable video ads.
+- [Display Ads: An Introduction for Graphic Designers](https://abeckermarketing.com/resources/display-ads-an-introduction-for-graphic-designers.html): Specs, dimensions, and creative best practices for Google display ads.
 
 ## Optional
 

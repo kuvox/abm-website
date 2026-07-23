@@ -1,19 +1,8 @@
 (function () {
+  /* Static grid only — interactive mouse/scroll glow is archived in
+     docs/grid-trail-interactive.md. Restore from that file if needed. */
   var CELL_SIZE = 48;
-  var HIGHLIGHT_OPACITY = 0.26;
-  var CORE_OPACITY = 0.12;
-  var DECAY_RATE = 0.92;
   var GRID_LINE_ALPHA = 0.04;
-  var NEIGHBOR_BOOST = 0.55;
-  // Touch/scroll-driven sweep (mobile equivalent of the desktop mouse trail).
-  var SCROLL_SWEEP_SPEED = 0.6; // virtual px swept per px scrolled
-  var SCROLL_WAVE_AMPLITUDE = 26;
-  var SCROLL_WAVE_WAVELENGTH = 220;
-  var VIEWPORT_MARGIN = 200; // start/keep sweeping slightly outside the viewport edges
-
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-  var isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
 
   var sections = document.querySelectorAll(".grid-trail");
   if (!sections.length) return;
@@ -25,8 +14,6 @@
     var ctx = canvas.getContext("2d");
     var cols = 0;
     var rows = 0;
-    var opacities = [];
-    var animating = false;
     var dpr = window.devicePixelRatio || 1;
 
     function buildGrid() {
@@ -40,29 +27,6 @@
 
       cols = Math.ceil(rect.width / CELL_SIZE);
       rows = Math.ceil(rect.height / CELL_SIZE);
-      opacities = new Float32Array(cols * rows);
-    }
-
-    function cellIndex(col, row) {
-      if (col < 0 || row < 0 || col >= cols || row >= rows) return -1;
-      return row * cols + col;
-    }
-
-    function lightCell(col, row, amount) {
-      var idx = cellIndex(col, row);
-      if (idx === -1) return;
-      opacities[idx] = Math.min(1, opacities[idx] + amount);
-    }
-
-    function lightAt(x, y) {
-      var col = Math.floor(x / CELL_SIZE);
-      var row = Math.floor(y / CELL_SIZE);
-
-      lightCell(col, row, HIGHLIGHT_OPACITY + CORE_OPACITY);
-      lightCell(col - 1, row, HIGHLIGHT_OPACITY * NEIGHBOR_BOOST);
-      lightCell(col + 1, row, HIGHLIGHT_OPACITY * NEIGHBOR_BOOST);
-      lightCell(col, row - 1, HIGHLIGHT_OPACITY * NEIGHBOR_BOOST);
-      lightCell(col, row + 1, HIGHLIGHT_OPACITY * NEIGHBOR_BOOST);
     }
 
     function draw() {
@@ -86,85 +50,6 @@
         ctx.lineTo(w, y);
         ctx.stroke();
       }
-
-      for (var i = 0; i < opacities.length; i++) {
-        if (opacities[i] <= 0.01) continue;
-        var col = i % cols;
-        var row = Math.floor(i / cols);
-        var alpha = opacities[i];
-        ctx.fillStyle = "rgba(231, 77, 59, " + (alpha * 0.85) + ")";
-        ctx.fillRect(col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE);
-        if (alpha > 0.5) {
-          ctx.fillStyle = "rgba(255, 255, 255, " + ((alpha - 0.5) * CORE_OPACITY) + ")";
-          ctx.fillRect(col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE);
-        }
-      }
-    }
-
-    function tick() {
-      var anyLeft = false;
-      for (var i = 0; i < opacities.length; i++) {
-        if (opacities[i] > 0.01) {
-          opacities[i] *= DECAY_RATE;
-          anyLeft = true;
-        } else {
-          opacities[i] = 0;
-        }
-      }
-
-      draw();
-
-      if (anyLeft) {
-        requestAnimationFrame(tick);
-      } else {
-        animating = false;
-      }
-    }
-
-    function startAnimation() {
-      if (animating) return;
-      animating = true;
-      requestAnimationFrame(tick);
-    }
-
-    if (isCoarsePointer) {
-      var sweepDistance = 0;
-      var lastScrollY = window.scrollY;
-      var scrollTicking = false;
-
-      function isNearViewport() {
-        var rect = section.getBoundingClientRect();
-        return rect.bottom > -VIEWPORT_MARGIN && rect.top < window.innerHeight + VIEWPORT_MARGIN;
-      }
-
-      function handleScroll() {
-        scrollTicking = false;
-        var currentScrollY = window.scrollY;
-        var delta = currentScrollY - lastScrollY;
-        lastScrollY = currentScrollY;
-        if (!delta || !isNearViewport()) return;
-
-        sweepDistance += delta * SCROLL_SWEEP_SPEED;
-        var w = canvas.width / dpr || 1;
-        var h = canvas.height / dpr || 1;
-        var x = ((sweepDistance % w) + w) % w;
-        var y = h / 2 + Math.sin(sweepDistance / SCROLL_WAVE_WAVELENGTH) * SCROLL_WAVE_AMPLITUDE;
-
-        lightAt(x, y);
-        startAnimation();
-      }
-
-      window.addEventListener("scroll", function () {
-        if (scrollTicking) return;
-        scrollTicking = true;
-        requestAnimationFrame(handleScroll);
-      }, { passive: true });
-    } else {
-      section.addEventListener("mousemove", function (e) {
-        var rect = section.getBoundingClientRect();
-        lightAt(e.clientX - rect.left, e.clientY - rect.top);
-        startAnimation();
-      });
     }
 
     var resizeTimer;

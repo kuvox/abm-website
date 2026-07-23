@@ -30,7 +30,22 @@ from gated_resources_content import (
     SFTP_GATED,
     SFTP_PREVIEW,
 )
+from datetime import date as _date
+
 from schema.jsonld import article_schema, case_study_schema, guide_schema
+
+# Build date — stamped into dateModified so schema freshness tracks rebuilds.
+_TODAY = _date.today().isoformat()
+
+# Services each case study demonstrates (fragment ids on services.html).
+_CS_SERVICES = {
+    "hose-warehouse-beltsmart": ["ad-management-pricing", "product-feeds"],
+    "iron-fence-shop": ["ad-management-pricing"],
+    "kingsley-north": ["ad-management-pricing", "product-feeds"],
+    "parker-baby": ["ad-management-pricing", "product-feeds"],
+    "tallslim-tees": ["ad-management-pricing", "product-feeds"],
+    "trailheads": ["ad-management-pricing", "product-feeds"],
+}
 from site_nav import blog_newsletter, footer, header
 
 # ---------- case-study closing CTAs ----------
@@ -309,11 +324,15 @@ def render_case_study(cs: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{cs['client']} Case Study — Austin Becker E-Commerce Marketing</title>
 <meta name="description" content="{cs['meta_description']}">
+<link rel="canonical" href="https://abeckermarketing.com/case-studies/{cs['slug']}.html">
+<meta property="og:site_name" content="Austin Becker E-Commerce Marketing">
 <meta property="og:title" content="{cs['client']} Case Study">
 <meta property="og:description" content="{cs['meta_description']}">
 <meta property="og:type" content="article">
-<link rel="canonical" href="https://abeckermarketing.com/case-studies/{cs['slug']}.html">
-{case_study_schema(slug=cs['slug'], title=cs['title'], description=cs['meta_description'], client=cs['client'], image_path=cs['hero_image'])}
+<meta property="og:url" content="https://abeckermarketing.com/case-studies/{cs['slug']}.html">
+<meta property="og:image" content="https://abeckermarketing.com/{cs['hero_image'].lstrip('/')}">
+<meta name="twitter:card" content="summary_large_image">
+{case_study_schema(slug=cs['slug'], title=cs['title'], description=cs['meta_description'], client=cs['client'], image_path=cs['hero_image'], date_modified=_TODAY, service_fragments=_CS_SERVICES.get(cs['slug']))}
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -945,6 +964,7 @@ def _article_schema_html(art: dict) -> str:
         image_path=art["feature_image"],
         video_url=video_url,
         faqs=art.get("faqs"),
+        date_modified=_TODAY,
     )
 
 
@@ -989,6 +1009,8 @@ def render_gated_guide(guide: dict) -> str:
         slug=guide["slug"],
         title=guide["title"],
         description=guide["meta_description"],
+        date_modified=_TODAY,
+        image_path=guide.get("feature_image"),
     )
 
     return f"""<!doctype html>
@@ -998,11 +1020,14 @@ def render_gated_guide(guide: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{guide['title']} — Austin Becker E-Commerce Marketing</title>
 <meta name="description" content="{guide['meta_description']}">
+<link rel="canonical" href="https://abeckermarketing.com/guides/{guide['slug']}.html">
+<meta property="og:site_name" content="Austin Becker E-Commerce Marketing">
 <meta property="og:title" content="{guide['title']}">
 <meta property="og:description" content="{guide['meta_description']}">
 <meta property="og:type" content="article">
+<meta property="og:url" content="https://abeckermarketing.com/guides/{guide['slug']}.html">
 <meta property="og:image" content="https://abeckermarketing.com/{guide['feature_image']}">
-<link rel="canonical" href="https://abeckermarketing.com/guides/{guide['slug']}.html">
+<meta name="twitter:card" content="summary_large_image">
 {schema}
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -1051,11 +1076,14 @@ def render_article(art: dict, all_articles: list) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{art['title']} — Austin Becker E-Commerce Marketing</title>
 <meta name="description" content="{art['meta_description']}">
+<link rel="canonical" href="https://abeckermarketing.com/resources/{art['slug']}.html">
+<meta property="og:site_name" content="Austin Becker E-Commerce Marketing">
 <meta property="og:title" content="{art['title']}">
 <meta property="og:description" content="{art['meta_description']}">
 <meta property="og:type" content="article">
+<meta property="og:url" content="https://abeckermarketing.com/resources/{art['slug']}.html">
 <meta property="og:image" content="https://abeckermarketing.com/{art['feature_image']}">
-<link rel="canonical" href="https://abeckermarketing.com/resources/{art['slug']}.html">
+<meta name="twitter:card" content="summary_large_image">
 {_article_schema_html(art)}
 <link rel="stylesheet" href="../styles.css">
 </head>

@@ -47,9 +47,9 @@
   --brand: #e84f3b;          /* primary brand red */
   --brand-dark: #c02b0a;     /* hover / pressed red (live site button hover) */
   --brand-tint: #faebe8;     /* very pale red wash (live site uses for soft sections) */
-  --ink: #343536;            /* primary text on light */
-  --ink-soft: #5a5a5a;       /* muted body text */
-  --muted: #6b6c6e;
+  --ink: #26272a;            /* primary text on light (slightly darker for readability) */
+  --ink-soft: #4b4c4e;       /* muted body text (slightly darker) */
+  --muted: #5c5d5f;
   --bg: #ffffff;
   --bg-alt: #ffffff;         /* alt sections — white (was cream) */
   --bg-soft: #f7f7f8;        /* neutral light grey */
@@ -95,11 +95,14 @@ body {
   font-family: var(--font);
   font-size: 16px;        /* live site body --wp--preset--font-size--normal */
   line-height: 1.6;
+  letter-spacing: -0.01em; /* slightly tighter tracking site-wide (hero sections reset below) */
   color: var(--ink);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
 }
+/* Hero sections keep default tracking */
+.hero, .page-hero, .services-page-hero, .case-hero, .article-hero { letter-spacing: normal; }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--brand); text-decoration: none; }
 a:hover { color: var(--brand-dark); text-decoration: underline; }
@@ -114,7 +117,7 @@ h1 { font-size: clamp(2.4rem, 5.2vw, var(--fs-gigantic)); line-height: 1.08; }
 h2 { font-size: clamp(1.85rem, 3.8vw, var(--fs-huge)); line-height: 1.12; }
 h3 { font-size: clamp(1.25rem, 2.2vw, var(--fs-x-large)); line-height: 1.2; }
 h4 { font-size: var(--fs-medium); }
-p { margin: 0 0 1em; font-size: 20px; }
+p { margin: 0 0 1em; font-size: 18.5px; }
 
 .container { max-width: var(--max); margin: 0 auto; padding: 0 5%; }
 @media (min-width: 1280px) { .container { padding: 0 24px; } }
@@ -825,6 +828,7 @@ body.nav-open { overflow: hidden; }
   align-items: start;
 }
 .pov-intro-text h2 { margin-top: 0; }
+.pov-scan-dir-mobile { display: none; }
 @media (max-width: 900px) {
   .pov-intro-grid { grid-template-columns: 1fr; gap: 40px; }
   /* Move the "Follow us in" logos below the red stat cards on mobile,
@@ -832,6 +836,8 @@ body.nav-open { overflow: hidden; }
   .pov-intro-text { display: contents; }
   .stat-card-grid { order: 2; }
   .pov-follow-us { order: 3; }
+  .pov-scan-dir-desktop { display: none; }
+  .pov-scan-dir-mobile { display: inline; }
 }
 
 /* Divider + "Featured in" block under the intro paragraph */
@@ -933,6 +939,20 @@ body.nav-open { overflow: hidden; }
   display: flex;
   flex-direction: column;
 }
+/* Whole card is a link */
+a.stat-card,
+a.stat-card:hover {
+  color: inherit;
+  text-decoration: none;
+}
+a.stat-card {
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+a.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(52, 53, 54, 0.10);
+}
+a.stat-card:hover .stat-card-link { color: var(--brand-dark); text-decoration: underline; }
 .stat-card-topic {
   margin: 0 0 18px;
   font-family: var(--font-heading);
@@ -976,6 +996,16 @@ body.nav-open { overflow: hidden; }
   text-decoration: none;
 }
 .stat-card-link:hover { color: var(--brand-dark); text-decoration: underline; }
+/* Tiny ABM logo icon in card links (replaces the arrow glyph) */
+.stat-card-link .abm-link-icon {
+  display: inline-block;
+  height: 0.8em;
+  width: auto;
+  margin-left: 7px;
+  vertical-align: -0.06em;
+  transition: transform .15s ease;
+}
+a.stat-card:hover .abm-link-icon { transform: translateX(3px); }
 @media (max-width: 520px) {
   .stat-card-grid { grid-template-columns: 1fr; }
   .stat-card-figure { font-size: 2.8rem; }
@@ -1901,6 +1931,8 @@ hr.rule { border: 0; height: 1px; background: var(--line); margin: 48px 0; }
 .section--black h2,
 .section--black h3,
 .section--black h4 { color: #ffffff; }
+.section--black h1,
+.section--black h1,
 .section--black h2 {
   font-size: clamp(1.9rem, 3.6vw, 2.7rem);
   font-weight: 700;
