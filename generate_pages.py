@@ -87,25 +87,65 @@ CASE_STUDIES = [
         "slug": "hose-warehouse-beltsmart",  # already exists; re-generated for consistency
         "client": "Murdock Industrial",
         "title": "181.92% Year-Over-Year Increase in Revenue From Google Ads",
-        "intro": "HoseWarehouse.com and BeltSmart.com sell industrial hose, tools and accessories at wholesale prices in the USA. Both are subsidiaries of Murdock Industrial based in Akron, Ohio.",
+        "intro": "HoseWarehouse.com and MurdockIndustrial.com sell industrial hose, tools and accessories at wholesale prices in the USA. Both are subsidiaries of Murdock Industrial based in Akron, Ohio.",
         "hero_image": "images/Hose-Warehouse.jpg",
         "hero_alt": "Hose Warehouse Google Ads success case study",
-        "meta_description": "HoseWarehouse.com and BeltSmart.com — subsidiaries of Murdock Industrial — grew Google Ads revenue 181.92% year-over-year with a rebuilt product feed and shopping ads work.",
-        "challenge": "Shopping ad data quality makes a huge difference in a saturated market. Optimizing and cleaning product ad data was a priority for Tony to keep his ads competitive with established competitors. Managing tens of thousands of SKUs was simply too time-consuming and foreign to the internal team, so Tony engaged Austin to begin re-creating a more manageable and organized shopping feed.",
-        "solution": "With a more advanced product data feed system, Austin was able to increase the number of products eligible for advertising, more accurately quote shipping rates in Shopping Ads, and add much-needed MPN and SKU data across the entire product catalog.",
-        "what_we_did": [
-            "Improvements to product feeds led to increased free Google Shopping traffic, but more importantly to substantial paid revenue growth. After completing the product feed overhaul, Tony asked Austin to revamp search and shopping ads for both stores, supporting additional growth already fueled by improved website improvements.",
-            "Between 2019 and 2020, sales growth in both stores was nearly 200% year over year, while ads costs increased far less.",
-        ],
+        "meta_description": "A product data feed audit across 100,000+ SKUs plus weekly shopping ad optimization grew Murdock Industrial's Google Ads revenue 181.92% year-over-year.",
+        "challenge": "",
+        "solution": "",
+        "what_we_did": [],
+        "body_html": """    <span class="case-sec-kicker" aria-hidden="true">01</span>
+    <h2>Challenge</h2>
+    <p>Professionals in the hose and accessories market search for replacement parts and materials with all sorts of searches: part numbers, colloquial terminology and nicknames for types of equipment, and brand and manufacturer searches. Being found with any of these disparate types of searches is difficult in Google Shopping Ads, which only display 70 to 150 characters in product ad titles.</p>
+
+    <span class="case-sec-kicker" aria-hidden="true">02</span>
+    <h2>Solution</h2>
+    <p>Tony at Murdock Industrial requested a product data feed audit and optimization from Austin and his team in 2019. After optimizing product data across Tony&rsquo;s 100,000+ SKU catalog, Austin&rsquo;s team began optimizing shopping ad campaigns to ensure that Murdock Industrial&rsquo;s paid ads appeared on part number, colloquial, brand and other relevant searches across Google and Microsoft Ads (Bing, Yahoo, DuckDuckGo, and more).</p>
+
+    <div class="case-steps">
+      <section class="case-step">
+        <span class="case-step__num" aria-hidden="true"><img src="../images/website-logos/google-merchant-center-icon.png" alt=""></span>
+        <div class="case-step__body">
+          <h3>Increased inventory approval in Merchant Center</h3>
+          <p>With an optimized product data feed, item approval rates in Google and Microsoft Ads increased immediately, meaning more inventory than ever was finally eligible to show ads in Google and Microsoft. A higher percentage of approved items in Merchant Center is the single most predictable indicator of increased sales: more eligible products in ads leads to more clicks, leads to more sales &mdash; all without raising ad budgets. It&rsquo;s a budget-free way to boost sales from shopping ads.</p>
+        </div>
+      </section>
+      <section class="case-step">
+        <span class="case-step__num" aria-hidden="true"><img src="../images/website-logos/google-logo.svg" alt=""></span>
+        <div class="case-step__body">
+          <h3>Increased specificity in search targeting</h3>
+          <p>With a more advanced product data feed setup, Austin and his team increased the number of eligible (and relevant) searches that Murdock Industrial could bid on at auction in Google.</p>
+          <p>Increasing the volume of eligible searches has a direct impact on clicks, but not necessarily on sales. So to ensure that more clicks led to more sales (not just more spend), Austin adjusted campaigns weekly until Murdock Industrial&rsquo;s Google Ads campaigns stopped bidding on irrelevant and non-commercial adjacent searches.</p>
+        </div>
+      </section>
+      <section class="case-step">
+        <span class="case-step__num" aria-hidden="true"><img src="../images/delivery-truck-icon.svg" alt=""></span>
+        <div class="case-step__body">
+          <h3>Accurate shipping timelines and rates</h3>
+          <p>Google Shopping displays the total cost of an item to customers, meaning that shipping costs are calculated and displayed in shopping ads. Austin revised all of Murdock Industrial&rsquo;s shipping policies in Google Merchant Center to avoid over-quoting the shipping rate that any USA-based customer viewed in ads. This effectively lowered the prices seen by shoppers in Murdock Industrial&rsquo;s ads.</p>
+          <p>Since price is one of the biggest drivers of clicks in Shopping Ads, a lower advertised price leads to more clicks. More clicks lead to more sales, further boosting Murdock Industrial&rsquo;s sales growth from paid ads.</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="case-result-panel">
+      <span class="case-sec-kicker" aria-hidden="true">03</span>
+      <h2>The result</h2>
+      <p>Without sharing actual sales volumes, ROAS, or other proprietary data, we can share that Murdock Industrial&rsquo;s sales were quickly pushed up, while ad costs grew at a far slower pace &mdash; meaning more profit month after month.</p>
+      <p>More importantly, Murdock Industrial&rsquo;s trend of high sales growth alongside modest ad budget growth has continued for years, freeing up Tony and his team to invest in additional business objectives, continually growing the entire business&rsquo;s revenue year after year.</p>
+    </div>""",
         "metrics": [
             ("181.92%", "year-over-year increase in revenue from Google Ads"),
             ("10.65%", "increase in paid search conversion rate"),
         ],
         "body_sidebar_intro": "Year-over-year on Google Ads",
-        "body_sidebar_foot": "Across Hose Warehouse and BeltSmart.",
-        "quote": "Austin collaborates frequently with us to ensure that our online business goals are met. His work has significantly steered our pay per click sales trajectory up over the past years.",
+        "body_sidebar_foot": "Across Hose Warehouse and MurdockIndustrial.com.",
+        "quote": "We&rsquo;ve grown every quarter and every year since working with Austin. His weekly campaign optimizations, ongoing data feed work, and ad tracking tech all help us continue growing.",
         "quote_author": "Tony Price",
         "quote_title": "Owner &amp; CEO, Murdock Industrial",
+        "quote_featured": True,
+        "quote_logo": "images/website-logos/website-client-logos/murdock-industrial-logo.png",
+        "quote_logo_alt": "Murdock Industrial logo",
     },
     {
         "slug": "iron-fence-shop",
@@ -282,6 +322,34 @@ def _case_body_sidebar_metrics_html(cs: dict) -> str:
 {foot_html}    </aside>"""
 
 
+def _case_quote_callout_html(cs: dict, rel: str) -> str:
+    """Featured client quote banner, rendered under the hero when quote_featured is set."""
+    if not (cs.get("quote_featured") and cs.get("quote")):
+        return ""
+    logo_html = ""
+    if cs.get("quote_logo"):
+        logo_html = (
+            f'        <img src="{rel}{cs["quote_logo"]}" alt="{cs.get("quote_logo_alt", "")}"'
+            ' class="case-quote-callout__logo" loading="lazy">\n'
+        )
+    return f"""<section class="case-quote-callout" aria-label="Client quote">
+  <div class="container">
+    <figure class="case-quote-callout__card">
+      <span class="case-quote-callout__mark" aria-hidden="true">&ldquo;</span>
+      <blockquote class="case-quote-callout__text">{cs['quote']}</blockquote>
+      <figcaption class="case-quote-callout__attribution">
+        <span class="case-quote-callout__who">
+          <span class="case-quote-callout__name">{cs['quote_author']}</span>
+          <span class="case-quote-callout__role">{cs['quote_title']}</span>
+        </span>
+{logo_html}      </figcaption>
+    </figure>
+  </div>
+</section>
+
+"""
+
+
 def render_case_study(cs: dict) -> str:
     rel = "../"
     if cs.get("body_html"):
@@ -331,6 +399,7 @@ def render_case_study(cs: dict) -> str:
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://abeckermarketing.com/case-studies/{cs['slug']}.html">
 <meta property="og:image" content="https://abeckermarketing.com/{cs['hero_image'].lstrip('/')}">
+<meta property="article:modified_time" content="{_TODAY}">
 <meta name="twitter:card" content="summary_large_image">
 {case_study_schema(slug=cs['slug'], title=cs['title'], description=cs['meta_description'], client=cs['client'], image_path=cs['hero_image'], date_modified=_TODAY, service_fragments=_CS_SERVICES.get(cs['slug']))}
 <link rel="stylesheet" href="../styles.css">
@@ -352,7 +421,7 @@ def render_case_study(cs: dict) -> str:
   </div>
 </section>
 
-{case_body_section_html}
+{_case_quote_callout_html(cs, rel)}{case_body_section_html}
 
 <section class="section client-reviews-section">
   <div class="container">
@@ -381,6 +450,7 @@ def render_case_study(cs: dict) -> str:
 
 {footer(rel)}
 <script src="{rel}scripts/hero-grid-interactive.js" defer></script>
+<script src="{rel}scripts/site-nav.js" defer></script>
 </body>
 </html>
 """
