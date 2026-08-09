@@ -22,6 +22,13 @@
 @font-face {
   font-family: 'Inter';
   font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('images/Inter-Light.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 500;
   font-display: swap;
   src: url('images/Inter-Medium.woff2') format('woff2');
@@ -828,6 +835,27 @@ body.nav-open { overflow: hidden; }
   align-items: start;
 }
 .pov-intro-text h2 { margin-top: 0; }
+
+/* "Imagine if…" intro styling (light headline + bold emphasis) */
+.pov-eyebrow {
+  margin: 0 0 12px;
+  font-size: 1rem;              /* 16px */
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--brand);
+}
+.pov-intro-text h2.pov-headline {
+  margin: 0 0 20px;
+  font-family: var(--font);
+  font-size: 2rem;              /* 32px */
+  font-weight: 300;             /* Inter Light */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.pov-headline strong {
+  font-weight: 700;
+}
 .pov-scan-dir-mobile { display: none; }
 @media (max-width: 900px) {
   .pov-intro-grid { grid-template-columns: 1fr; gap: 40px; }
