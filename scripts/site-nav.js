@@ -1,6 +1,21 @@
 (function () {
   var toggle = document.querySelector('.menu-toggle');
   var nav = document.getElementById('navlinks');
+
+  // Overlay header (homepage): transparent over the dark hero until the user
+  // scrolls or opens the mobile drawer, then fades to the white sticky nav.
+  var overlayHeader = document.querySelector('.site-header--overlay');
+  function updateOverlay() {
+    if (!overlayHeader) return;
+    var transparent = window.scrollY <= 24 &&
+      !document.body.classList.contains('nav-open');
+    overlayHeader.classList.toggle('is-transparent', transparent);
+  }
+  if (overlayHeader) {
+    updateOverlay();
+    window.addEventListener('scroll', updateOverlay, { passive: true });
+  }
+
   if (!toggle || !nav) return;
 
   var OPEN_ICON = '\u2715'; // ✕
@@ -19,6 +34,7 @@
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     toggle.textContent = isOpen ? OPEN_ICON : CLOSED_ICON;
     document.body.classList.toggle('nav-open', isOpen);
+    updateOverlay();
     if (!isOpen) closeMegaMenus();
   }
 

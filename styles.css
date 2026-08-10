@@ -171,6 +171,61 @@ p { margin: 0 0 1em; font-size: 18.5px; }
 .brand-dot { width: 14px; height: 14px; border-radius: 4px; background: var(--brand); display: inline-block; }
 .brand-logo { height: 48px; width: auto; display: block; }
 @media (max-width: 600px) { .brand-logo { height: 41px; } }
+
+/* ---------- Overlay nav (site-wide) ----------
+   .site-header--overlay: the header is fixed and starts transparent so the
+   page's first section stretches up behind it; on scroll (or opening the
+   mobile drawer) scripts/site-nav.js removes .is-transparent and the header
+   detaches into the standard white sticky nav.
+   .site-header--overlay-dark: add on pages with a DARK first section — while
+   transparent the links go white and the white logo cross-fades in. Pages
+   with a white/light hero use only .site-header--overlay (color logo, dark
+   links, borderless until scroll). */
+.site-header--overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  transition: background-color .3s ease, border-color .3s ease;
+}
+/* Each page's first section tucks under the fixed header (72px tall) so its
+   background reaches the top of the viewport */
+.site-header--overlay + .hero { padding-top: calc(4.5rem + 72px); }
+.site-header--overlay + .section--black { padding-top: calc(96px + 72px); }
+.site-header--overlay + .case-hero { padding-top: calc(4.5rem + 72px); }
+.site-header--overlay + .section { padding-top: calc(5rem + 72px); }
+.site-header--overlay + .contact-section { padding-top: calc(4rem + 72px); }
+.site-header--overlay + .services-page-hero .services-page-hero__shell {
+  padding-top: calc(clamp(56px, 9vw, 96px) + 72px);
+}
+.brand-mark { position: relative; }
+.brand-logo--color { transition: opacity .3s ease; }
+.brand-logo--white {
+  position: absolute; top: 50%; left: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.site-header--overlay.is-transparent {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border-bottom-color: transparent;
+}
+.site-header--overlay-dark.is-transparent .brand-logo--color { opacity: 0; }
+.site-header--overlay-dark.is-transparent .brand-logo--white { opacity: 1; }
+.site-header--overlay-dark.is-transparent .menu-toggle { color: #fff; }
+@media (min-width: 901px) {
+  .site-header--overlay-dark.is-transparent .nav-links > li > a { color: #fff; }
+  .site-header--overlay-dark.is-transparent .nav-links > li > a:hover { color: var(--brand); }
+  .site-header--overlay-dark.is-transparent .nav-links > li > a.nav-cta,
+  .site-header--overlay-dark.is-transparent .nav-cta {
+    color: #fff !important;
+    border-color: #fff;
+  }
+  .site-header--overlay-dark.is-transparent .nav-cta:hover {
+    background: #fff;
+    color: var(--brand) !important;
+  }
+}
 .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; margin: 0; padding: 0; }
 .nav-links a { color: var(--ink); font-weight: 500; font-size: 0.95rem; letter-spacing: 0.01em; }
 .nav-links a:hover { color: var(--brand); text-decoration: none; }
@@ -3330,16 +3385,29 @@ video.case-hero-image {
   .case-step__num img { width: 20px; height: 20px; }
 }
 
-/* Result tie-off panel — tinted closing block for case studies */
+/* Result tie-off panel — matches quote callout gradient treatment */
 .case-result-panel {
-  background: var(--brand-tint);
+  position: relative;
+  background: linear-gradient(135deg, var(--brand-tint) 0%, #fff 78%);
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 26px 30px 22px;
+  box-shadow: var(--shadow-lg);
+  padding: 30px 36px 24px;
   margin-top: 2.6rem;
+  overflow: hidden;
 }
-.case-result-panel .case-sec-kicker { margin-top: 0; }
-.case-result-panel h2 { margin: 0.35rem 0 0.8rem; }
+.case-result-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand), #f0907f);
+}
+.case-result-panel h2 { margin: 0 0 0.8rem; }
 .case-result-panel p:last-child { margin-bottom: 0; }
+@media (max-width: 560px) {
+  .case-result-panel { padding: 24px 18px 20px; }
+}
 
 /* Results metric callouts */
 .case-results {
@@ -4751,6 +4819,76 @@ body.content-unlocked .content-gate-preview--faded::after {
   background: transparent;
   border: 0;
   border-radius: 0;
+}
+
+/* Case study client-preview password gate */
+.preview-password-gate {
+  padding: 0 0 2rem;
+}
+.preview-password-gate .container {
+  max-width: 720px;
+}
+.preview-password-gate__card {
+  margin: 0;
+  padding: 28px 32px 30px;
+  background: linear-gradient(135deg, var(--brand-tint) 0%, #fff 78%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.preview-password-gate__eyebrow {
+  margin: 0 0 8px;
+  color: var(--brand);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.preview-password-gate__title {
+  margin: 0 0 10px;
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+.preview-password-gate__copy {
+  margin: 0 0 18px;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.preview-password-gate__label {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.preview-password-gate__row {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+.preview-password-gate__input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: 1rem;
+  background: #fff;
+}
+.preview-password-gate__error {
+  margin: 10px 0 0;
+  color: var(--brand);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+#preview-gated-content[hidden] {
+  display: none !important;
+}
+@media (max-width: 560px) {
+  .preview-password-gate__card { padding: 22px 18px 24px; }
+  .preview-password-gate__row { flex-direction: column; }
 }
 
 .guide-details {

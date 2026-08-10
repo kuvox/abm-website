@@ -70,7 +70,7 @@ def _nav_class(active: str | None, item: str, extra: str = "") -> str:
 
 def header(rel: str, *, active: str | None = None) -> str:
   brand_href = "/" if not rel else f"{rel}index.html"
-  return f"""<header class="site-header">
+  return f"""<header class="site-header site-header--overlay">
   <div class="container nav">
     <a href="{brand_href}" class="brand-mark" aria-label="Austin Becker E-Commerce Marketing"><img src="{rel}images/logo.svg" alt="Austin Becker E-Commerce Marketing" class="brand-logo"></a>
     <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">☰</button>

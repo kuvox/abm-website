@@ -94,11 +94,9 @@ CASE_STUDIES = [
         "challenge": "",
         "solution": "",
         "what_we_did": [],
-        "body_html": """    <span class="case-sec-kicker" aria-hidden="true">01</span>
-    <h2>Challenge</h2>
+        "body_html": """    <h2>Challenge</h2>
     <p>Professionals in the hose and accessories market search for replacement parts and materials with all sorts of searches: part numbers, colloquial terminology and nicknames for types of equipment, and brand and manufacturer searches. Being found with any of these disparate types of searches is difficult in Google Shopping Ads, which only display 70 to 150 characters in product ad titles.</p>
 
-    <span class="case-sec-kicker" aria-hidden="true">02</span>
     <h2>Solution</h2>
     <p>Tony at Murdock Industrial requested a product data feed audit and optimization from Austin and his team in 2019. After optimizing product data across Tony&rsquo;s 100,000+ SKU catalog, Austin&rsquo;s team began optimizing shopping ad campaigns to ensure that Murdock Industrial&rsquo;s paid ads appeared on part number, colloquial, brand and other relevant searches across Google and Microsoft Ads (Bing, Yahoo, DuckDuckGo, and more).</p>
 
@@ -129,8 +127,7 @@ CASE_STUDIES = [
     </div>
 
     <div class="case-result-panel">
-      <span class="case-sec-kicker" aria-hidden="true">03</span>
-      <h2>The result</h2>
+      <h2>Results</h2>
       <p>Without sharing actual sales volumes, ROAS, or other proprietary data, we can share that Murdock Industrial&rsquo;s sales were quickly pushed up, while ad costs grew at a far slower pace &mdash; meaning more profit month after month.</p>
       <p>More importantly, Murdock Industrial&rsquo;s trend of high sales growth alongside modest ad budget growth has continued for years, freeing up Tony and his team to invest in additional business objectives, continually growing the entire business&rsquo;s revenue year after year.</p>
     </div>""",
@@ -146,6 +143,7 @@ CASE_STUDIES = [
         "quote_featured": True,
         "quote_logo": "images/website-logos/website-client-logos/murdock-industrial-logo.png",
         "quote_logo_alt": "Murdock Industrial logo",
+        "preview_password": "tony",
     },
     {
         "slug": "iron-fence-shop",
@@ -201,7 +199,8 @@ CASE_STUDIES = [
         "meta_description": "How we scaled Parker Baby's Google Shopping and search ads without scaling acquisition cost — better feeds, optimized GMC data, and a 20.72% conversion rate lift.",
         "challenge": "Google Ads worked well for Parker Baby. However, customer acquisition opportunities were growing thanks to the brand's success on Amazon and increasing demand for the brand's products. The goal was to scale sales on Google shopping and search ads to take advantage of growing demand for Parker Baby's products — but to do so without scaling customer acquisition costs.",
         "solution": "To scale Google Ads, Austin's team re-created Parker Baby's product feed with optimized titles and shipping data to show shoppers the correct product ad with the lowest available shipping price. The team then optimized color, material, size, images and optional data fields in Google Merchant Center. With optimized product data, shopping ads click-through rates and conversion rates increased.",
-        "what_we_did": [
+        "what_we_did": [],
+        "results": [
             "Within the first 3 weeks, return on ad spend (ROAS) increased and ad spend dropped due to cost savings from improved CTR and a planned reduction in branded search spending. Emphasis on non-branded, higher funnel searches increased pay-per-click sales.",
         ],
         "metrics": [
@@ -350,6 +349,33 @@ def _case_quote_callout_html(cs: dict, rel: str) -> str:
 """
 
 
+def _case_preview_password_gate_html(cs: dict) -> str:
+    """Client-share password gate wrapping quote + body until unlocked."""
+    password = cs.get("preview_password")
+    if not password:
+        return ""
+    slug = cs["slug"]
+    return f"""<section class="preview-password-gate" id="preview-password-gate" data-preview-slug="{slug}" data-preview-password="{password}" aria-label="Preview password">
+  <div class="container">
+    <div class="preview-password-gate__card">
+      <p class="preview-password-gate__eyebrow">Client preview</p>
+      <h2 class="preview-password-gate__title">This case study is password protected</h2>
+      <p class="preview-password-gate__copy">Enter the preview password to view the full write-up, including client quotes and results.</p>
+      <form class="preview-password-gate__form" id="preview-password-form" novalidate>
+        <label class="preview-password-gate__label" for="preview-password-input">Preview password</label>
+        <div class="preview-password-gate__row">
+          <input type="password" id="preview-password-input" name="preview-password" class="preview-password-gate__input" autocomplete="current-password" required>
+          <button type="submit" class="btn btn-primary">Unlock</button>
+        </div>
+        <p class="preview-password-gate__error" id="preview-password-error" hidden>Incorrect password. Try again.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+"""
+
+
 def render_case_study(cs: dict) -> str:
     rel = "../"
     if cs.get("body_html"):
@@ -385,6 +411,20 @@ def render_case_study(cs: dict) -> str:
 {case_body_html}
   </div>
 </section>"""
+    quote_and_body = f"{_case_quote_callout_html(cs, rel)}{case_body_section_html}"
+    preview_gate_script = ""
+    robots_meta = ""
+    if cs.get("preview_password"):
+        robots_meta = '<meta name="robots" content="noindex, nofollow">\n'
+        case_main_html = (
+            f"{_case_preview_password_gate_html(cs)}"
+            f'<div id="preview-gated-content" hidden>\n{quote_and_body}</div>\n'
+        )
+        preview_gate_script = (
+            f'<script src="{rel}scripts/preview-password-gate.js" defer></script>\n'
+        )
+    else:
+        case_main_html = quote_and_body
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -392,7 +432,7 @@ def render_case_study(cs: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{cs['client']} Case Study — Austin Becker E-Commerce Marketing</title>
 <meta name="description" content="{cs['meta_description']}">
-<link rel="canonical" href="https://abeckermarketing.com/case-studies/{cs['slug']}.html">
+{robots_meta}<link rel="canonical" href="https://abeckermarketing.com/case-studies/{cs['slug']}.html">
 <meta property="og:site_name" content="Austin Becker E-Commerce Marketing">
 <meta property="og:title" content="{cs['client']} Case Study">
 <meta property="og:description" content="{cs['meta_description']}">
@@ -421,8 +461,7 @@ def render_case_study(cs: dict) -> str:
   </div>
 </section>
 
-{_case_quote_callout_html(cs, rel)}{case_body_section_html}
-
+{case_main_html}
 <section class="section client-reviews-section">
   <div class="container">
 {case_study_pager_html(cs['slug'], rel)}
@@ -451,7 +490,7 @@ def render_case_study(cs: dict) -> str:
 {footer(rel)}
 <script src="{rel}scripts/hero-grid-interactive.js" defer></script>
 <script src="{rel}scripts/site-nav.js" defer></script>
-</body>
+{preview_gate_script}</body>
 </html>
 """
 
