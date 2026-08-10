@@ -79,12 +79,12 @@ def header(rel: str, *, active: str | None = None) -> str:
         <div class="megamenu megamenu--services">
           <div class="megamenu-col megamenu-col--cta">
             <div class="megamenu-cta-card">
-              <p class="megamenu-cta-quote">I&rsquo;ve had the pleasure of working with Austin, and I must say, he&rsquo;s been an absolute legend!</p>
-              <div class="megamenu-cta-attribution">
-                <img src="{rel}images/boxhill-instagram-logo-circle.jpg" alt="" class="megamenu-cta-avatar" width="52" height="52">
+              <p class="megamenu-cta-quote">Since we started working with Austin and his team, <strong>we&rsquo;ve grown our business every quarter, year over year.</strong></p>
+              <div class="megamenu-cta-attribution megamenu-cta-attribution--stacked">
+                <a href="{rel}case-studies/hose-warehouse-beltsmart.html" class="megamenu-cta-logo-link" aria-label="Read the Murdock Industrial case study"><img src="{rel}images/website-logos/murdock-logo-nav.png" alt="Murdock Industrial logo" class="megamenu-cta-logo" width="489" height="96"></a>
                 <div class="megamenu-cta-attribution-text">
-                  <strong class="megamenu-cta-name">Rich Fraser</strong>
-                  <span class="megamenu-cta-title">Owner at <a href="https://www.boxhill.co.nz/" target="_blank" rel="noopener">boxhill.co.nz</a></span>
+                  <strong class="megamenu-cta-name">Tony Price</strong>
+                  <span class="megamenu-cta-title">Owner &amp; CEO</span>
                 </div>
               </div>
             </div>
@@ -164,6 +164,7 @@ def footer(rel: str) -> str:
       <div class="footer-brand">
         <img src="{rel}images/website-logos/ABHorizontalWhiteDigital.png" alt="Austin Becker E-Commerce Marketing" class="footer-logo">
         <p>We help $5M to $50M annual revenue businesses grow via pay per click ads. Contact us today to learn how we can help you grow your business.</p>
+        <p>We&rsquo;re based in South Bend, Indiana in the USA.</p>
         <div class="social-icons">
             {SOCIAL_ICONS}
         </div>

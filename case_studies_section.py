@@ -124,7 +124,7 @@ def _card_html(rel: str, card: dict) -> str:
       </a>"""
 
 
-def case_studies_section(rel: str = "", *, heading: str | None = "Customer Success Stories") -> str:
+def case_studies_section(rel: str = "", *, heading: str | None = "Client Case Studies") -> str:
     cards = "\n".join(_card_html(rel, card) for card in CASE_STUDY_CARDS)
     heading_html = ""
     if heading:

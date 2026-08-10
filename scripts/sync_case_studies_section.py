@@ -47,7 +47,7 @@ def main() -> None:
             continue
 
         rel = rel_prefix(path, ROOT)
-        heading = None if path.name == "case-studies.html" else "Customer Success Stories"
+        heading = None if path.name == "case-studies.html" else "Client Case Studies"
         section = case_studies_section(rel, heading=heading)
 
         new_text = text
@@ -57,8 +57,8 @@ def main() -> None:
                 break
 
         if path.name == "case-studies.html":
-            new_text = H1_RE.sub("<h1>Customer Success Stories</h1>", new_text)
-            new_text = H1_RE_ALT.sub("<h1>Customer Success Stories</h1>", new_text)
+            new_text = H1_RE.sub("<h1>Client Case Studies</h1>", new_text)
+            new_text = H1_RE_ALT.sub("<h1>Client Case Studies</h1>", new_text)
             new_text = CONTACT_BTN_RE.sub("", new_text)
 
         if new_text != text:

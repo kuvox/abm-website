@@ -286,10 +286,27 @@ p { margin: 0 0 1em; font-size: 18.5px; }
   margin-top: 8px;
 }
 .megamenu--services {
-  grid-template-columns: minmax(240px, 280px) minmax(210px, 240px) minmax(150px, 170px);
+  /* Tall client-quote card in the LEFT column + two link columns.
+     (Alternate full-width bottom-band layout: give the CTA col the extra classes
+     megamenu-col--cta-band / megamenu-cta-card--band, move it after the link
+     columns, and set: grid-template-columns: minmax(230px, 300px) minmax(170px, 220px); max-width: 640px) */
+  grid-template-columns: minmax(304px, 354px) minmax(210px, 240px) minmax(150px, 170px);
   gap: 32px;
-  max-width: 860px;
+  max-width: 934px;
   margin: 0 auto;
+}
+/* Client-quote band stretched across the bottom of the services dropdown */
+.megamenu-col--cta-band { grid-column: 1 / -1; }
+.megamenu-cta-card.megamenu-cta-card--band {
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  padding: 20px 28px;
+}
+.megamenu-cta-card--band .megamenu-cta-quote { flex: 1; margin: 0; }
+.megamenu-cta-card--band .megamenu-cta-attribution--stacked {
+  flex-shrink: 0;
+  gap: 8px;
 }
 .megamenu-col--cta {
   display: flex;
@@ -403,6 +420,18 @@ p { margin: 0 0 1em; font-size: 18.5px; }
   display: flex;
   align-items: center;
   gap: 14px;
+}
+.megamenu-cta-logo-link { display: inline-block; transition: opacity .18s ease; }
+.megamenu-cta-logo-link:hover { opacity: 0.75; }
+.megamenu-cta-logo {
+  height: 36px;
+  width: auto;
+  flex-shrink: 0;
+}
+.megamenu-cta-attribution--stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
 }
 .megamenu-cta-avatar {
   width: 52px;
@@ -645,9 +674,45 @@ body.nav-open { overflow: hidden; }
   box-shadow: var(--shadow-lg);
   background: #000;
 }
-.video-frame iframe {
+/* Caption + Indiana badge row under the About Us video */
+.video-caption-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 14px;
+}
+.video-caption {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.indiana-badge-link {
+  display: block;
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: transform .18s ease, opacity .18s ease;
+}
+.indiana-badge-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+  text-decoration: none;
+}
+.indiana-badge {
+  display: block;
+  height: 72px;
+  width: auto;
+}
+@media (max-width: 520px) {
+  .indiana-badge { height: 56px; }
+  .indiana-badge-link { margin-left: 0; }
+}
+.video-frame iframe,
+.video-frame video {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
+  object-fit: cover;
   border: 0;
 }
 
@@ -1249,44 +1314,44 @@ a.stat-card:hover .abm-link-icon { transform: translateX(3px); }
 .services-cta-dashlist {
   list-style: none;
   padding: 0;
-  margin: 18px auto 0;
+  margin: 22px auto 0;
   max-width: 1040px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.25em 0;
+  gap: 12px;
 }
 .services-cta-dashlist li {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   color: #fff;
   font-size: 0.9rem;
+  font-weight: 600;
   line-height: 1.4;
-  opacity: 0.95;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: default;
+  transition: transform .18s ease, background-color .18s ease,
+              border-color .18s ease, box-shadow .18s ease;
 }
-.services-cta-dashlist li:not(:last-child)::after {
-  content: "—";
-  margin: 0 0.7em;
-  opacity: 0.55;
+.services-cta-dashlist li:hover {
+  transform: translateY(-3px);
+  background: rgba(232, 79, 59, 0.22);
+  border-color: rgba(255, 141, 118, 0.9);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
 }
 @media (max-width: 900px) {
-  .services-cta-dashlist {
-    justify-content: center;
-    gap: 10px;
-  }
-  .services-cta-dashlist li {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 16px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.14);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    font-weight: 600;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  }
-  .services-cta-dashlist li:not(:last-child)::after {
-    content: none;
-  }
+  .services-cta-dashlist { gap: 10px; }
+  .services-cta-dashlist li { padding: 8px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .services-cta-dashlist li,
+  .services-cta-dashlist li:hover { transform: none; transition: none; }
 }
 .services-cta-bubbles { margin-top: 24px; }
 .btn-outline-light {
@@ -1587,6 +1652,15 @@ a.stat-card:hover .abm-link-icon { transform: translateX(3px); }
   background: #fff; padding: 28px; border-radius: var(--radius-lg);
   border: 1px solid var(--line); position: relative;
 }
+/* Optional "Read the case study" link at the bottom of a review card */
+.quote-case-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+.quote-case-link:hover { text-decoration: underline; }
 .quote::before {
   content: '"'; position: absolute; top: 8px; left: 18px;
   font-size: 4rem; color: var(--brand); opacity: 0.2; line-height: 1; font-family: Georgia, serif;

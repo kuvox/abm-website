@@ -310,7 +310,7 @@ These patterns live on `index.html` but are documented here for reuse.
 <section class="section section--alt client-case-studies-section">
   <div class="container">
     <div class="case-studies-carousel-header center">
-      <h2>Customer Success Stories</h2>
+      <h2>Client Case Studies</h2>
     </div>
   </div>
   <div class="case-studies-carousel-track" tabindex="0" aria-label="Client case studies">
