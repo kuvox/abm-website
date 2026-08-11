@@ -3,14 +3,6 @@ from __future__ import annotations
 
 CASE_STUDY_CARDS = [
     {
-        "href": "case-studies/hose-warehouse-beltsmart.html",
-        "image": "images/Hose-Warehouse.jpg",
-        "alt": "HoseWarehouse",
-        "name": "HoseWarehouse",
-        "result": "181.92% Increase in Revenue",
-        "excerpt": "HoseWarehouse.com and BeltSmart.com sell industrial hose, tools and accessories at wholesale prices in the USA. Both are subsidiaries of Murdock Industrial based in Akron, Ohio.",
-    },
-    {
         "href": "case-studies/kingsley-north.html",
         "image": "images/kingsley-north-case-study-thumbnail.jpg",
         "video_webm": "images/kingsley-north-case-study-video.webm",
@@ -21,12 +13,12 @@ CASE_STUDY_CARDS = [
         "excerpt": "Kingsley North leads the lapidary equipment space. We enhanced product feeds and built feature-focused video ads to grow conversions on the same budget.",
     },
     {
-        "href": "case-studies/parker-baby.html",
-        "image": "images/parker-baby-homepage.png",
-        "alt": "Parker Baby",
-        "name": "Parker Baby",
-        "result": "Increased ROAS Within 3 Weeks",
-        "excerpt": "Parker Baby designs and provides exceptional and affordable baby products for the modern parent. Since 2015, they've specialized in diaper backpacks, caddies, bath supplies, and other baby accessories.",
+        "href": "case-studies/hose-warehouse-beltsmart.html",
+        "image": "images/Hose-Warehouse.jpg",
+        "alt": "HoseWarehouse",
+        "name": "HoseWarehouse",
+        "result": "181.92% Increase in Revenue",
+        "excerpt": "HoseWarehouse.com and BeltSmart.com sell industrial hose, tools and accessories at wholesale prices in the USA. Both are subsidiaries of Murdock Industrial based in Akron, Ohio.",
     },
     {
         "href": "case-studies/tallslim-tees.html",
@@ -35,6 +27,14 @@ CASE_STUDY_CARDS = [
         "name": "TallSlim Tees",
         "result": "6x+ Conv. Value Growth from First Q4",
         "excerpt": "TallSlim Tees is an apparel brand for men 6 ft&ndash;7 ft tall, designing slim and tall clothing focused on length rather than width for t-shirts, flannels, and activewear.",
+    },
+    {
+        "href": "case-studies/parker-baby.html",
+        "image": "images/parker-baby-homepage.png",
+        "alt": "Parker Baby",
+        "name": "Parker Baby",
+        "result": "Increased ROAS Within 3 Weeks",
+        "excerpt": "Parker Baby designs and provides exceptional and affordable baby products for the modern parent. Since 2015, they've specialized in diaper backpacks, caddies, bath supplies, and other baby accessories.",
     },
     {
         "href": "case-studies/iron-fence-shop.html",

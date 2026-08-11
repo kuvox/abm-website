@@ -58,7 +58,7 @@ def footer(depth=0):
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="{p}images/website-logos/ABHorizontalWhiteDigital.png" alt="Austin Becker E-Commerce Marketing" class="footer-logo">
-        <p style="color:#bcbec1;font-size:0.95rem;">We help $5M to $50M annual revenue businesses grow via pay-per-click ads. Contact us today to learn how we can help.</p>
+        <p style="color:#bcbec1;font-size:0.95rem;">We help $1M to $50M annual revenue businesses grow via pay-per-click ads. Contact us today to learn how we can help.</p>
       </div>
       <div>
         <h4>Services</h4>
@@ -116,7 +116,7 @@ about_body = """
   <div class="container">
     <div class="eyebrow">About</div>
     <h1>Specialists in e-commerce PPC.</h1>
-    <p class="lead">An e-commerce, growth-focused team, equipped to work with $5M&ndash;$50M annual revenue companies. If your product catalog is large, complex or niche, we're the right choice for you.</p>
+    <p class="lead">An e-commerce, growth-focused team, equipped to work with $1M&ndash;$50M annual revenue companies. If your product catalog is large, complex or niche, we're the right choice for you.</p>
   </div>
 </section>
 
@@ -125,14 +125,14 @@ about_body = """
     <div>
       <div class="eyebrow">Are We a Fit?</div>
       <h2>Built specifically for product catalog ad performance.</h2>
-      <p>Our services are designed to meet the needs of growing $5M to $50M annual revenue companies. We work with your internal and external teams to ensure that our advertising work matches your brand style and guidelines across all channels.</p>
+      <p>Our services are designed to meet the needs of growing $1M to $50M annual revenue companies. We work with your internal and external teams to ensure that our advertising work matches your brand style and guidelines across all channels.</p>
       <p>We maintain a special emphasis on e-commerce ads and product data feeds. This helps us keep all our clients' ad data clean, understandable and usable.</p>
     </div>
     <div>
       <ul class="checklist">
         <li>Cross-channel: Google, Amazon, Microsoft, YouTube</li>
         <li>Product feed quality is our specialty</li>
-        <li>Proven results with $5M&ndash;$50M revenue clients</li>
+        <li>Proven results with $1M&ndash;$50M revenue clients</li>
         <li>Brand-style alignment across every channel</li>
         <li>Clear, transparent reporting</li>
         <li>We work alongside your existing team</li>
@@ -184,7 +184,7 @@ about_body = """
 """
 page("about.html",
      "About Us — Austin Becker E-Commerce Marketing",
-     "An e-commerce growth-focused team specializing in PPC for $5M-$50M annual revenue stores. Meet the founder and learn why we're the right fit.",
+     "An e-commerce growth-focused team specializing in PPC for $1M-$50M annual revenue stores. Meet the founder and learn why we're the right fit.",
      about_body, active="about")
 
 
@@ -494,7 +494,7 @@ for s in services:
 <section class="cta-banner">
   <div class="container">
     <h2>Ready to grow {s['name']} performance?</h2>
-    <p>We work with $5M&ndash;$50M annual revenue e-commerce companies. Let's talk.</p>
+    <p>We work with $1M&ndash;$50M annual revenue e-commerce companies. Let's talk.</p>
     <a href="../contact.html" class="btn btn-primary">Contact Us</a>
   </div>
 </section>

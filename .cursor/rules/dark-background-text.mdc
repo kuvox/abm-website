@@ -1,0 +1,33 @@
+---
+description: Use white or near-white text on dark backgrounds for readable contrast
+alwaysApply: true
+---
+
+# Dark background text contrast
+
+When placing text on a black, near-black, or otherwise dark background (`#111`, `#0d1b2a`, dark gradients, etc.), use light text so it remains readable.
+
+## Rules
+
+- Body copy on dark backgrounds: `color: rgba(255, 255, 255, 0.85)` or `#fff`
+- Secondary / muted copy on dark backgrounds: `color: rgba(255, 255, 255, 0.65)` minimum
+- Headings on dark backgrounds: `#fff` or very high-opacity white
+- Emphasis (`strong`, `em`) on dark backgrounds: stay at full white or a light accent — never dark gray or `var(--ink-soft)`
+
+## Examples
+
+```css
+/* ✅ GOOD — dark panel */
+.feed-data-window {
+  background: #111;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ❌ BAD — dark panel with default body text color */
+.dark-panel {
+  background: #111;
+  color: var(--ink-soft);
+}
+```
+
+Before shipping UI on dark sections, check default text tokens (`--ink`, `--ink-soft`) are not reused without a light override.

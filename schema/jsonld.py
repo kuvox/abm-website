@@ -286,7 +286,7 @@ def homepage_schema() -> str:
             *[_service_ref(svc) for svc in SERVICES],
             _webpage_node(
                 page_url=SITE + "/",
-                name="Austin Becker E-Commerce Marketing — PPC for $5M-$50M Stores",
+                name="Austin Becker E-Commerce Marketing — PPC for $1M-$50M Stores",
                 description=ORG["description"],
                 about_id=ORG_ID,
                 main_entity_id=ORG_ID,
@@ -307,7 +307,7 @@ def about_schema() -> str:
             _webpage_node(
                 page_url=page_url,
                 name="About Us — Austin Becker E-Commerce Marketing",
-                description="An e-commerce growth-focused team specializing in PPC for $5M-$50M annual revenue stores.",
+                description="An e-commerce growth-focused team specializing in PPC for $1M-$50M annual revenue stores.",
                 main_entity_id=PERSON_ID,
                 about_id=ORG_ID,
             ),

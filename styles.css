@@ -902,21 +902,6 @@ body.nav-open { overflow: hidden; }
     margin-top: 0;
     padding-top: 0;
   }
-  .services-hub-section {
-    margin-top: 0;
-    padding-top: clamp(28px, 6vw, 40px);
-  }
-  .services-intro-split {
-    grid-template-columns: 1fr;
-    gap: 0;
-    margin-bottom: 24px;
-  }
-  .services-intro-split__spacer {
-    display: none;
-  }
-  .services-intro-split__copy p {
-    max-width: none;
-  }
 }
 
 /* Services intro: text on the left, Vimeo video on the right */
@@ -5023,4 +5008,26 @@ body.content-unlocked .content-gate-preview--faded::after {
 .related-card .related-meta {
   color: var(--ink-soft);
   font-size: 0.85rem;
+}
+
+/* ---------- Mobile fixes (must stay at END of file so they win the cascade
+   over the base rules defined above) ---------- */
+@media (max-width: 900px) {
+  /* Services/platform pages: the floating hero card was covering the heading
+     below it, and the intro copy was stuck at desktop column width. */
+  .services-hub-section {
+    margin-top: 0;
+    padding-top: clamp(48px, 11vw, 72px);
+  }
+  .services-intro-split {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 24px;
+  }
+  .services-intro-split__spacer { display: none; }
+  .services-intro-split__copy p { max-width: none; }
+
+  /* Homepage hero: let the lead sentences wrap naturally on small screens
+     instead of honoring the manual desktop line breaks. */
+  .hero p.lead br { display: none; }
 }

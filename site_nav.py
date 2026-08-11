@@ -127,7 +127,7 @@ def header(rel: str, *, active: str | None = None) -> str:
         <div class="megamenu megamenu--about">
           <div class="megamenu-col megamenu-col--text">
             <span class="megamenu-eyebrow">About Us</span>
-            <p>Digital ads for $5M-$50M shops with large, complex product catalogs.</p>
+            <p>Digital ads for $1M-$50M shops with large, complex product catalogs.</p>
           </div>
           <div class="megamenu-col">
             <ul>
@@ -163,7 +163,7 @@ def footer(rel: str) -> str:
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="{rel}images/website-logos/ABHorizontalWhiteDigital.png" alt="Austin Becker E-Commerce Marketing" class="footer-logo">
-        <p>We help $5M to $50M annual revenue businesses grow via pay per click ads. Contact us today to learn how we can help you grow your business.</p>
+        <p>We help $1M to $50M annual revenue businesses grow via pay per click ads. Contact us today to learn how we can help you grow your business.</p>
         <p>We&rsquo;re based in South Bend, Indiana in the USA.</p>
         <div class="social-icons">
             {SOCIAL_ICONS}
