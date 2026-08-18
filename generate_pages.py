@@ -34,6 +34,10 @@ from datetime import date as _date
 
 from schema.jsonld import article_schema, case_study_schema, guide_schema
 
+
+def ga4_tag(rel: str) -> str:
+    return f'<script src="{rel}scripts/ga4.js" async></script>\n'
+
 # Build date — stamped into dateModified so schema freshness tracks rebuilds.
 _TODAY = _date.today().isoformat()
 
@@ -445,7 +449,7 @@ def render_case_study(cs: dict) -> str:
 <meta name="twitter:card" content="summary_large_image">
 {case_study_schema(slug=cs['slug'], title=cs['title'], description=cs['meta_description'], client=cs['client'], image_path=cs['hero_image'], date_modified=_TODAY, service_fragments=_CS_SERVICES.get(cs['slug']))}
 <link rel="stylesheet" href="../styles.css">
-</head>
+{ga4_tag(rel)}</head>
 <body>
 
 {header(rel, active="case-studies")}
@@ -1141,7 +1145,7 @@ def render_gated_guide(guide: dict) -> str:
 <meta name="twitter:card" content="summary_large_image">
 {schema}
 <link rel="stylesheet" href="../styles.css">
-</head>
+{ga4_tag(rel)}</head>
 <body>
 
 {header(rel, active="learn")}
@@ -1197,7 +1201,7 @@ def render_article(art: dict, all_articles: list) -> str:
 <meta name="twitter:card" content="summary_large_image">
 {_article_schema_html(art)}
 <link rel="stylesheet" href="../styles.css">
-</head>
+{ga4_tag(rel)}</head>
 <body>
 
 {header(rel, active="learn")}

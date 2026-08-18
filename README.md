@@ -209,7 +209,7 @@ Already done for you:
 Still to do (manual):
 
 - [ ] Submit `https://abeckermarketing.com/sitemap.xml` to Google Search Console after launch
-- [ ] Add Google Analytics or your preferred analytics tag (paste the snippet just before `</head>` in each HTML file, or in a shared include)
+- [x] Add Google Analytics or your preferred analytics tag (paste the snippet just before `</head>` in each HTML file, or in a shared include)
 - [ ] Set up 301 redirects from old WordPress URLs to new URLs if any URL paths changed (Cloudflare Pages supports a `_redirects` file or you can do it at the DNS level)
 
 ---
