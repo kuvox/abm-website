@@ -507,6 +507,59 @@ def render_case_study(cs: dict) -> str:
 # Each article body uses HTML-as-string. Keep paragraphs short and readable.
 RESOURCES = [
     {
+        "slug": "website-leaking-money-conversion-gap",
+        "title": "Your Website Is Leaking Money, and It Is Not Your Ad Budget's Fault",
+        "lead": "You are paying to bring people to your site, but the average conversion rate is about 2.35%. That means 98 out of every 100 paid visitors leave without buying.",
+        "meta_description": "Most ecommerce sites convert 1.4% to 3% of visitors. Learn why the product-information gap kills conversions and how ABM's Revenue Assistant closes it.",
+        "date": "Aug 31, 2026",
+        "feature_image": "images/blog-thumbnail-youtube-vehicle-listing-ads.png",
+        "feature_alt": "Google Vehicle Listing Ads guide thumbnail",
+        "categories": [("AI in Advertising", "ai-in-advertising")],
+        "video_embed": None,
+        "toc": [
+            ("why-visitors-leave", "Why so many visitors leave"),
+            ("the-fix", "The fix: answer the question before they even ask it"),
+            ("business-benefits", "What that does for your business"),
+            ("bottom-line", "The bottom line"),
+        ],
+        "body_html": """    <p>You are spending real money to bring people to your website. Paid ads, SEO, social campaigns, email. The traffic shows up, the numbers on the analytics dashboard climb, and it feels like things are working. Then you look at how many of those visitors actually became customers, and the picture changes.</p>
+    <p>Here is the uncomfortable truth. The overall average website conversion rate in 2026 is about <strong>2.35%</strong>. For most ecommerce stores the number sits somewhere between <strong>1.4% and 3.0%</strong>, depending on the industry and how you count. First-time visitors convert even lower &mdash; just <strong>1.0 to 2.0%</strong>.</p>
+    <p>If your site converts at 2%, then 98 out of every 100 people you paid to attract leave without doing anything. No purchase. No form. No call. You paid for all 100, and 98 walked out the door. That is not a traffic problem. You already solved the traffic problem when you funded the ads. This is a conversion problem, and it is quietly eating your marketing budget alive.</p>
+
+    <h2 id="why-visitors-leave">Why so many visitors leave</h2>
+    <p>There are a handful of usual suspects, and they are worth naming.</p>
+    <p><strong>Website experience</strong> is one. If the layout is confusing, if people cannot find what they came for, they bounce. <strong>Site speed</strong> is another, and it is a big one. Even a one second delay in load time measurably drops conversions, especially on mobile where most of your traffic now lives. <strong>Trust signals</strong> matter too. If the site does not feel credible, people hesitate, and hesitation kills sales.</p>
+    <p>All of these are real. Most businesses that care about conversion are already working on them, tuning page speed, cleaning up layouts, adding reviews and guarantees.</p>
+    <p>But there is one factor that almost nobody is paying attention to, and it may cause the highest drop off of them all. It is the <strong>information gap</strong> between your product and your customer.</p>
+    <p>Here is what that means. A visitor lands on your site with a question in their head. Will this actually fit my needs? Is this the right model for me? What is the difference between these two options? How much would this really cost me per month? They want an answer, and they want it now. Customers are impatient. If they cannot get the answer quickly, they do not send an email and wait two days for a reply. They leave, and most of the time they leave for a competitor who made it easier.</p>
+    <p>That gap, the space between the question in the customer&rsquo;s head and the answer they cannot find fast enough, is where a huge share of your traffic disappears.</p>
+
+    <div class="guide-aside-block">
+      <div class="guide-aside-text">
+        <h2 id="the-fix">The fix: answer the question before they even ask it</h2>
+        <p>The solution is simple to say and harder to build. You have to give potential buyers the answers they need before they have to go looking, and you have to do it fast enough to keep them interested.</p>
+        <p>This is exactly what we now build at Austin Becker Marketing. We deploy an AI chatbot powered by your live inventory and a trained knowledge base, and it answers any and every question about the products on your website. Not with canned replies. It handles the conversation at the quality of a high level sales rep, because we train the AI to guide buyers as efficiently as a real closer would.</p>
+        <p>This matters because it is a completely different animal from the old chatbots you have seen. Most of those are glorified handoff tools. A visitor shows up, and before they can even ask a question, the widget shoves them into a queue to wait for a human agent. That is not help. That is a waiting room. Our Revenue Assistant actually does the work in the moment, answering, guiding, and qualifying, right there on the page.</p>
+      </div>
+      <div class="guide-aside-media guide-aside-media--pair">
+        <figure><img src="../images/sample-chatbot-rv-result-temp-2.gif" alt="Revenue Assistant answering an RV shopper question" loading="lazy"></figure>
+        <figure><img src="../images/sample-chatbot-rv-result-temp-3.gif" alt="Revenue Assistant recommending products based on shopper preferences" loading="lazy"></figure>
+        <figure><img src="../images/sample-chatbot-rv-result-temp.png" alt="Revenue Assistant chatbot result on an RV dealership website" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <h2 id="business-benefits">What that does for your business</h2>
+    <p>The benefits stack up quickly.</p>
+    <p><strong>First, it increases qualified leads.</strong> There is always a group of visitors who were going to drop off, not because they were not interested, but because they were overwhelmed and no one led them anywhere. The Revenue Assistant catches those people. It gives them direction, and it turns a silent bounce into a real conversation.</p>
+    <p><strong>Second, it works after hours.</strong> Your sales team goes home, but your website does not. A buyer sitting on the couch at 9pm on a Tuesday, ready to make a decision, does not have to wait until morning and lose momentum. The Revenue Assistant can answer, guide, and close that buyer while your competitors&rsquo; contact forms sit unanswered until 9am.</p>
+    <p><strong>Third, it makes real recommendations.</strong> Before a customer ever reaches a human, the assistant recommends products based on that customer&rsquo;s stated preferences. It asks the right questions, understands what the person actually needs, and points them to the right fit.</p>
+    <p>And here is the part that sales teams love. All of that preference data does not disappear. When a human does get involved, they are not starting cold. They already have deep context on exactly what the buyer wants, what they asked about, and what they were leaning toward. Your rep walks into the conversation already knowing the customer, which means less time qualifying and more time closing. It gives your sales team far more to work with, and it raises the rate at which conversations turn into sales.</p>
+
+    <h2 id="bottom-line">The bottom line</h2>
+    <p>You worked hard to get people to your website. The Austin Becker Marketing Revenue Assistant makes sure they do not leave empty handed, by answering every question instantly, guiding overwhelmed buyers to the right product, selling around the clock even when your team is offline, and handing your sales reps warm, fully understood leads instead of cold clicks.</p>
+    <p>If your traffic is strong but your conversions are not, the gap is not your ad budget. It is what happens after the click. <a href="../contact.html">Let us help you close it.</a></p>""",
+    },
+    {
         "slug": "fix-cart-data-errors-google-ads",
         "title": "Fix Cart Data Errors in Google Ads",
         "lead": "When Google Ads shows Missing Cart Data, your Merchant Center product IDs and tracking tag IDs don&rsquo;t match. Fix it without losing historic performance data.",
