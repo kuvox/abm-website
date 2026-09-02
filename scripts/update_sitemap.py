@@ -19,6 +19,7 @@ PAGES = [
     ("services.html", "/services", "0.9", "monthly"),
     ("supported-ad-platforms.html", "/supported-ad-platforms", "0.7", "monthly"),
     ("resources.html", "/resources", "0.8", "weekly"),
+    ("vehicle-dealership-ai-sales-agent.html", "/vehicle-dealership-ai-sales-agent", "0.7", "monthly"),
 ]
 PAGES += [
     (f"guides/{p.name}", f"/guides/{p.stem}", "0.7", "monthly")

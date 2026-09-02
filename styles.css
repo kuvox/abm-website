@@ -5031,3 +5031,57 @@ body.content-unlocked .content-gate-preview--faded::after {
      instead of honoring the manual desktop line breaks. */
   .hero p.lead br { display: none; }
 }
+
+/* ===== AI sales agent article (vehicle-dealership-ai-sales-agent) ===== */
+.article-body .pov-eyebrow { margin: 2.6rem 0 10px; }
+.article-body h2.pov-headline {
+  margin: 0 0 1rem;
+  font-family: var(--font);
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.ai-cta-box {
+  position: relative;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+}
+.ai-cta-sticker {
+  position: absolute;
+  top: -17px;
+  right: 36px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 8px 18px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+.ai-cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.ai-cta-text h2 { margin: 10px 0 12px; }
+.ai-cta-benefits { list-style: none; margin: 20px 0 0; padding: 0; }
+.ai-cta-benefits li { position: relative; padding-left: 28px; margin-bottom: 12px; }
+.ai-cta-benefits li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--brand);
+  font-weight: 700;
+}
+@media (max-width: 860px) {
+  .ai-cta-grid { grid-template-columns: 1fr; gap: 32px; }
+  .ai-cta-box { padding: 32px 24px; }
+  .ai-cta-sticker { position: static; display: inline-block; margin-bottom: 16px; }
+}
