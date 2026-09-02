@@ -178,7 +178,7 @@ about_body = """
   <div class="container">
     <h2>Take the Next Step</h2>
     <p>We're ready to discuss your business and how we can help you grow it. Please fill out a contact form so we can begin the conversation.</p>
-    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+    <a href="/contact" class="btn btn-primary">Contact Us</a>
   </div>
 </section>
 """
@@ -389,7 +389,7 @@ case_body = """
   <div class="container">
     <h2>Want to be our next case study?</h2>
     <p>Let's discuss your store and how we'd approach it.</p>
-    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+    <a href="/contact" class="btn btn-primary">Contact Us</a>
   </div>
 </section>
 """
@@ -476,7 +476,7 @@ for s in services:
     <div class="eyebrow">Service</div>
     <h1>{s['name']}</h1>
     <p class="lead">{s['lead']}</p>
-    <a href="../contact.html" class="btn btn-primary">Talk to us about {s['name']}</a>
+    <a href="/contact" class="btn btn-primary">Talk to us about {s['name']}</a>
   </div>
 </section>
 
@@ -487,7 +487,7 @@ for s in services:
     <hr class="rule">
     <h3>Want to see if we're a fit?</h3>
     <p>Tell us about your store and your current ad performance. We'll let you know whether we can help — honestly.</p>
-    <a href="../contact.html" class="btn btn-ghost">Contact us</a>
+    <a href="/contact" class="btn btn-ghost">Contact us</a>
   </div>
 </section>
 
@@ -495,7 +495,7 @@ for s in services:
   <div class="container">
     <h2>Ready to grow {s['name']} performance?</h2>
     <p>We work with $1M&ndash;$50M annual revenue e-commerce companies. Let's talk.</p>
-    <a href="../contact.html" class="btn btn-primary">Contact Us</a>
+    <a href="/contact" class="btn btn-primary">Contact Us</a>
   </div>
 </section>
 """

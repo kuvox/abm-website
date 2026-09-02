@@ -3,7 +3,7 @@
   "ids": {
     "organization": "https://abeckermarketing.com/#organization",
     "website": "https://abeckermarketing.com/#website",
-    "person": "https://abeckermarketing.com/about.html#austin-becker"
+    "person": "https://abeckermarketing.com/about#austin-becker"
   },
   "organization": {
     "name": "Austin Becker E-Commerce Marketing",
@@ -11,7 +11,7 @@
     "description": "U.S.-based PPC agency helping $5M–$50M annual revenue e-commerce stores grow through paid advertising on Google, Amazon, and Microsoft, with specialization in product data feed optimization for large Shopify catalogs.",
     "email": "austin@abeckermarketing.com",
     "address": {
-      "streetAddress": "510 S Main St Suite 120",
+      "streetAddress": "510 S Main St Room 126",
       "addressLocality": "South Bend",
       "addressRegion": "IN",
       "postalCode": "46601",

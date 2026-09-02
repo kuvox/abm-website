@@ -8,8 +8,8 @@ Typical client outcomes: improved return on ad spend within 2–4 weeks of feed 
 
 ## Services
 
-- [Services + Pricing](https://abeckermarketing.com/services.html): Ad management, product feeds, consulting, and pricing for e-commerce PPC teams.
-- [Supported Ad Platforms](https://abeckermarketing.com/supported-ad-platforms.html): Google, YouTube, Microsoft, Meta, Pinterest, Target, Walmart, Reddit, and ChatGPT catalog advertising.
+- [Services + Pricing](https://abeckermarketing.com/services): Ad management, product feeds, consulting, and pricing for e-commerce PPC teams.
+- [Supported Ad Platforms](https://abeckermarketing.com/supported-ad-platforms): Google, YouTube, Microsoft, Meta, Pinterest, Target, Walmart, Reddit, and ChatGPT catalog advertising.
 
 ## Focus and Expertise
 
@@ -17,39 +17,39 @@ Typical client outcomes: improved return on ad spend within 2–4 weeks of feed 
 
 ## About
 
-- [About Us](https://abeckermarketing.com/about.html): Who the agency works with, the team, and why clients choose them.
-- [Contact](https://abeckermarketing.com/contact.html): Contact form, address (510 S Main St Suite 120, South Bend, IN 46601), and email (austin@abeckermarketing.com).
+- [About Us](https://abeckermarketing.com/about): Who the agency works with, the team, and why clients choose them.
+- [Contact](https://abeckermarketing.com/contact): Contact form, address (510 S Main St Room 126, South Bend, IN 46601), and email (austin@abeckermarketing.com).
 
 ## Case Studies
 
-- [All Case Studies](https://abeckermarketing.com/case-studies.html): Customer success stories with measurable revenue and ROAS results.
-- [Murdock Industrial / Hose Warehouse & BeltSmart](https://abeckermarketing.com/case-studies/hose-warehouse-beltsmart.html): 181.92% year-over-year Google Ads revenue growth from a rebuilt product feed.
-- [Iron Fence Shop](https://abeckermarketing.com/case-studies/iron-fence-shop.html): 16% lower Google Ads spend with 221% more form leads via better conversion tracking.
-- [Kingsley North](https://abeckermarketing.com/case-studies/kingsley-north.html): 15.64% higher conversion rate on the same budget with enhanced feeds and video creative.
-- [Parker Baby Co.](https://abeckermarketing.com/case-studies/parker-baby.html): Scaled Google Shopping and search ads with a 20.72% conversion rate lift.
-- [TallSlim Tees](https://abeckermarketing.com/case-studies/tallslim-tees.html): 6x+ attributed conversion value growth from first to most recent Q4.
-- [TrailHeads](https://abeckermarketing.com/case-studies/trailheads.html): 172% year-over-year revenue growth by segmenting the product feed by seasonality.
+- [All Case Studies](https://abeckermarketing.com/case-studies): Customer success stories with measurable revenue and ROAS results.
+- [Murdock Industrial / Hose Warehouse & BeltSmart](https://abeckermarketing.com/case-studies/hose-warehouse-beltsmart): 181.92% year-over-year Google Ads revenue growth from a rebuilt product feed.
+- [Iron Fence Shop](https://abeckermarketing.com/case-studies/iron-fence-shop): 16% lower Google Ads spend with 221% more form leads via better conversion tracking.
+- [Kingsley North](https://abeckermarketing.com/case-studies/kingsley-north): 15.64% higher conversion rate on the same budget with enhanced feeds and video creative.
+- [Parker Baby Co.](https://abeckermarketing.com/case-studies/parker-baby): Scaled Google Shopping and search ads with a 20.72% conversion rate lift.
+- [TallSlim Tees](https://abeckermarketing.com/case-studies/tallslim-tees): 6x+ attributed conversion value growth from first to most recent Q4.
+- [TrailHeads](https://abeckermarketing.com/case-studies/trailheads): 172% year-over-year revenue growth by segmenting the product feed by seasonality.
 
 ## Resources & Guides
 
-- [Resources Hub](https://abeckermarketing.com/resources.html): Free research articles, video guides, support articles, and training content organized by topic (Amazon, Google Ads, Google Shopping, Microsoft, Product Feeds, YouTube).
-- [Streamlined Conversion Tracking for Shopify 2026](https://abeckermarketing.com/guides/conversion-tracking-shopify-2026.html): On-site gated checklist for Google & Microsoft conversion tracking via Shopify Customer Events (2026).
-- [Fix Cart Data Errors in Google Ads](https://abeckermarketing.com/resources/fix-cart-data-errors-google-ads.html): Resolve Missing Cart Data when GMC item IDs don’t match your tracking tag; gradual ID swap checklist.
-- [2026 Google Merchant Center Full Setup](https://abeckermarketing.com/resources/google-merchant-center-setup-2026.html): Complete Shopify-to-GMC setup with DataFeedWatch, feed submission, and troubleshooting.
-- [Google Merchant Center SFTP File Upload](https://abeckermarketing.com/resources/google-merchant-center-sftp-upload.html): Send intraday product feed updates to Google and Microsoft Merchant Center via SFTP.
-- [Meta Creative Assets Checklist](https://abeckermarketing.com/resources/meta-creative-assets-checklist.html): Video and image ad specs, safe zones, and sales promotion asset requirements for Meta ads.
-- [Where Product Data Feeds Are Used](https://abeckermarketing.com/guides/product-data-feeds-as-keywords.html): How product feed titles and attributes act as keywords for Shopping and catalog ads, with an interactive A/C compressor demo.
-- [Google Vehicle Listing Ads](https://abeckermarketing.com/guides/google-vehicle-listing-ads.html): DIY guide for RV and auto dealerships setting up Google Vehicle Listing Ads (Shopping ads for vehicles) in Merchant Center.
-- [2025 Shopify Conversion Tracking Guide](https://abeckermarketing.com/resources/2025-shopify-conversion-tracking-guide.html): Google and Microsoft Ads tracking with enhanced conversions via Shopify Customer Events.
-- [How to Optimize Google Shopping Ads Results](https://abeckermarketing.com/resources/how-to-optimize-google-shopping-ads-results.html): 150-character titles, full attributes, and consecutive A/B tests to raise CTR and revenue.
-- [How to Set Marketing Budgets for Paid Ads](https://abeckermarketing.com/resources/how-much-to-budget.html): Budgeting with LTV, COGS, and target ROAS, including a budget calculator.
-- [Google Ads Customer Match Lists](https://abeckermarketing.com/resources/google-ads-customer-match-lists.html): Using first-party customer lists across YouTube, Display, and Search campaigns.
-- [Edit YouTube Ads for Success](https://abeckermarketing.com/resources/edit-youtube-ads-for-success.html): Edit guidance for Bumper, Non-Skippable, and Skippable video ads.
-- [Display Ads: An Introduction for Graphic Designers](https://abeckermarketing.com/resources/display-ads-an-introduction-for-graphic-designers.html): Specs, dimensions, and creative best practices for Google display ads.
+- [Resources Hub](https://abeckermarketing.com/resources): Free research articles, video guides, support articles, and training content organized by topic (Amazon, Google Ads, Google Shopping, Microsoft, Product Feeds, YouTube).
+- [Streamlined Conversion Tracking for Shopify 2026](https://abeckermarketing.com/guides/conversion-tracking-shopify-2026): On-site gated checklist for Google & Microsoft conversion tracking via Shopify Customer Events (2026).
+- [Fix Cart Data Errors in Google Ads](https://abeckermarketing.com/resources/fix-cart-data-errors-google-ads): Resolve Missing Cart Data when GMC item IDs don’t match your tracking tag; gradual ID swap checklist.
+- [2026 Google Merchant Center Full Setup](https://abeckermarketing.com/resources/google-merchant-center-setup-2026): Complete Shopify-to-GMC setup with DataFeedWatch, feed submission, and troubleshooting.
+- [Google Merchant Center SFTP File Upload](https://abeckermarketing.com/resources/google-merchant-center-sftp-upload): Send intraday product feed updates to Google and Microsoft Merchant Center via SFTP.
+- [Meta Creative Assets Checklist](https://abeckermarketing.com/resources/meta-creative-assets-checklist): Video and image ad specs, safe zones, and sales promotion asset requirements for Meta ads.
+- [Where Product Data Feeds Are Used](https://abeckermarketing.com/guides/product-data-feeds-as-keywords): How product feed titles and attributes act as keywords for Shopping and catalog ads, with an interactive A/C compressor demo.
+- [Google Vehicle Listing Ads](https://abeckermarketing.com/guides/google-vehicle-listing-ads): DIY guide for RV and auto dealerships setting up Google Vehicle Listing Ads (Shopping ads for vehicles) in Merchant Center.
+- [2025 Shopify Conversion Tracking Guide](https://abeckermarketing.com/resources/2025-shopify-conversion-tracking-guide): Google and Microsoft Ads tracking with enhanced conversions via Shopify Customer Events.
+- [How to Optimize Google Shopping Ads Results](https://abeckermarketing.com/resources/how-to-optimize-google-shopping-ads-results): 150-character titles, full attributes, and consecutive A/B tests to raise CTR and revenue.
+- [How to Set Marketing Budgets for Paid Ads](https://abeckermarketing.com/resources/how-much-to-budget): Budgeting with LTV, COGS, and target ROAS, including a budget calculator.
+- [Google Ads Customer Match Lists](https://abeckermarketing.com/resources/google-ads-customer-match-lists): Using first-party customer lists across YouTube, Display, and Search campaigns.
+- [Edit YouTube Ads for Success](https://abeckermarketing.com/resources/edit-youtube-ads-for-success): Edit guidance for Bumper, Non-Skippable, and Skippable video ads.
+- [Display Ads: An Introduction for Graphic Designers](https://abeckermarketing.com/resources/display-ads-an-introduction-for-graphic-designers): Specs, dimensions, and creative best practices for Google display ads.
 
 ## Optional
 
-- [Privacy Policy](https://abeckermarketing.com/privacy-policy.html)
+- [Privacy Policy](https://abeckermarketing.com/privacy-policy)
 - [LinkedIn](https://www.linkedin.com/in/austin-becker-marketing/)
 - [YouTube — PPC for Everyone](https://www.youtube.com/@ppcforeveryone): Austin and his team post free guides, tips and tutorials for search engine marketing on their YouTube channel which goes by the name PPC for Everyone. Most videos focus on Google shopping ads for ecommerce shops and on product data feed management in Google Merchant Center.
 - [Facebook](https://www.facebook.com/ABeckerMarketing)

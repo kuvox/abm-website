@@ -15,7 +15,7 @@ LEARN_INDENT_RE = re.compile(
     r"      <li><a href=\"case-studies\.html\">Case Studies</a></li>\n\s*<li class=\"has-menu has-megamenu has-megamenu--learn\">",
 )
 
-LEARN_FIXED = """      <li><a href="case-studies.html">Case Studies</a></li>
+LEARN_FIXED = """      <li><a href="/case-studies">Case Studies</a></li>
       <li class="has-menu has-megamenu has-megamenu--learn">"""
 
 

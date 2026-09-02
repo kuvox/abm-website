@@ -153,7 +153,7 @@ CASE_STUDIES = [
         "client": "Iron Fence Shop",
         "title": "16% Decrease in Google Ad Spend. 221% Increase in Form Leads.",
         "intro": "Iron Fence Shop retails handcrafted and custom-designed perimeter fencing crafted in their own facility — including fencing, driveway gates, and finials constructed of iron and aluminum.",
-        "hero_image": "images/iron-fence-shop-homepage.png",
+        "hero_image": "images/iron-fence-shop-homepage.webp",
         "hero_alt": "Iron Fence Shop homepage",
         "meta_description": "How we lowered Iron Fence Shop's Google Ads spend 16% while growing form leads 221% through better conversion tracking and refreshed ad copy.",
         "challenge": "Iron Fence Shop's ad accounts performed at a high level already, but business owner Josh wanted a regular watch on ads to ensure the business wasn't overspending or missing opportunities for growth.",
@@ -197,7 +197,7 @@ CASE_STUDIES = [
         "client": "Parker Baby Co.",
         "title": "Increased Return on Ad Spend Within 3 Weeks",
         "intro": "Parker Baby designs and provides exceptional and affordable baby products for the modern parent. Since 2015, they've specialized in diaper backpacks, caddies, bath supplies, and other baby accessories.",
-        "hero_image": "images/parker-baby-homepage.png",
+        "hero_image": "images/parker-baby-homepage.webp",
         "hero_alt": "Parker Baby Co. homepage",
         "meta_description": "How we scaled Parker Baby's Google Shopping and search ads without scaling acquisition cost — better feeds, optimized GMC data, and a 20.72% conversion rate lift.",
         "challenge": "Google Ads worked well for Parker Baby. However, customer acquisition opportunities were growing thanks to the brand's success on Amazon and increasing demand for the brand's products. The goal was to scale sales on Google shopping and search ads to take advantage of growing demand for Parker Baby's products — but to do so without scaling customer acquisition costs.",
@@ -225,7 +225,7 @@ CASE_STUDIES = [
         "client": "TallSlim Tees",
         "title": "6x+ Conv. Value Growth from First to Most Recent Q4",
         "intro": "TallSlim Tees is an apparel brand specifically catered to men 6 ft&ndash;7 ft tall who seek a wardrobe tailored to their natural build. Their specialty is designing slim and tall clothing that focuses on length rather than width for t-shirts, flannels, and activewear that guarantees a perfect fit for the tall and lean figure.",
-        "hero_image": "images/tallslim-tees-homepage-3.png",
+        "hero_image": "images/tallslim-tees-homepage-3.webp",
         "hero_alt": "TallSlim Tees homepage",
         "meta_description": "How we scaled TallSlim Tees Google Shopping ads after acquisition—6x+ attributed conversion value growth from first to most recent Q4 while expanding into new product categories.",
         "challenge": "TallSlim Tees&rsquo; Google Ads account was performing well but the business needed to scale sales after being acquired by a new owner. The new ownership&rsquo;s marketing team needed to increase sales across existing top-selling SKUs, but also introducing new product categories, like jogger pants and hoodies, without losing profits along the way.",
@@ -438,12 +438,12 @@ def render_case_study(cs: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{cs['client']} Case Study — Austin Becker E-Commerce Marketing</title>
 <meta name="description" content="{cs['meta_description']}">
-{robots_meta}<link rel="canonical" href="https://abeckermarketing.com/case-studies/{cs['slug']}.html">
+{robots_meta}<link rel="canonical" href="https://abeckermarketing.com/case-studies/{cs['slug']}">
 <meta property="og:site_name" content="Austin Becker E-Commerce Marketing">
 <meta property="og:title" content="{cs['client']} Case Study">
 <meta property="og:description" content="{cs['meta_description']}">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://abeckermarketing.com/case-studies/{cs['slug']}.html">
+<meta property="og:url" content="https://abeckermarketing.com/case-studies/{cs['slug']}">
 <meta property="og:image" content="https://abeckermarketing.com/{cs['hero_image'].lstrip('/')}">
 <meta property="article:modified_time" content="{_TODAY}">
 <meta name="twitter:card" content="summary_large_image">
@@ -1135,12 +1135,12 @@ def render_gated_guide(guide: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{guide['title']} — Austin Becker E-Commerce Marketing</title>
 <meta name="description" content="{guide['meta_description']}">
-<link rel="canonical" href="https://abeckermarketing.com/guides/{guide['slug']}.html">
+<link rel="canonical" href="https://abeckermarketing.com/guides/{guide['slug']}">
 <meta property="og:site_name" content="Austin Becker E-Commerce Marketing">
 <meta property="og:title" content="{guide['title']}">
 <meta property="og:description" content="{guide['meta_description']}">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://abeckermarketing.com/guides/{guide['slug']}.html">
+<meta property="og:url" content="https://abeckermarketing.com/guides/{guide['slug']}">
 <meta property="og:image" content="https://abeckermarketing.com/{guide['feature_image']}">
 <meta name="twitter:card" content="summary_large_image">
 {schema}
@@ -1191,12 +1191,12 @@ def render_article(art: dict, all_articles: list) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{art['title']} — Austin Becker E-Commerce Marketing</title>
 <meta name="description" content="{art['meta_description']}">
-<link rel="canonical" href="https://abeckermarketing.com/resources/{art['slug']}.html">
+<link rel="canonical" href="https://abeckermarketing.com/resources/{art['slug']}">
 <meta property="og:site_name" content="Austin Becker E-Commerce Marketing">
 <meta property="og:title" content="{art['title']}">
 <meta property="og:description" content="{art['meta_description']}">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://abeckermarketing.com/resources/{art['slug']}.html">
+<meta property="og:url" content="https://abeckermarketing.com/resources/{art['slug']}">
 <meta property="og:image" content="https://abeckermarketing.com/{art['feature_image']}">
 <meta name="twitter:card" content="summary_large_image">
 {_article_schema_html(art)}

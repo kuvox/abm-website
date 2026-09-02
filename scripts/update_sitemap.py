@@ -13,26 +13,26 @@ ROOT = Path(__file__).resolve().parent.parent
 # (relative file, url path, priority, changefreq)
 PAGES = [
     ("index.html", "/", "1.0", "monthly"),
-    ("about.html", "/about.html", "0.8", "monthly"),
-    ("case-studies.html", "/case-studies.html", "0.8", "monthly"),
-    ("contact.html", "/contact.html", "0.8", "monthly"),
-    ("services.html", "/services.html", "0.9", "monthly"),
-    ("supported-ad-platforms.html", "/supported-ad-platforms.html", "0.7", "monthly"),
-    ("resources.html", "/resources.html", "0.8", "weekly"),
+    ("about.html", "/about", "0.8", "monthly"),
+    ("case-studies.html", "/case-studies", "0.8", "monthly"),
+    ("contact.html", "/contact", "0.8", "monthly"),
+    ("services.html", "/services", "0.9", "monthly"),
+    ("supported-ad-platforms.html", "/supported-ad-platforms", "0.7", "monthly"),
+    ("resources.html", "/resources", "0.8", "weekly"),
 ]
 PAGES += [
-    (f"guides/{p.name}", f"/guides/{p.name}", "0.7", "monthly")
+    (f"guides/{p.name}", f"/guides/{p.stem}", "0.7", "monthly")
     for p in sorted((ROOT / "guides").glob("*.html"))
 ]
 PAGES += [
-    (f"case-studies/{p.name}", f"/case-studies/{p.name}", "0.7", "monthly")
+    (f"case-studies/{p.name}", f"/case-studies/{p.stem}", "0.7", "monthly")
     for p in sorted((ROOT / "case-studies").glob("*.html"))
 ]
 PAGES += [
-    (f"resources/{p.name}", f"/resources/{p.name}", "0.6", "monthly")
+    (f"resources/{p.name}", f"/resources/{p.stem}", "0.6", "monthly")
     for p in sorted((ROOT / "resources").glob("*.html"))
 ]
-PAGES += [("privacy-policy.html", "/privacy-policy.html", "0.3", "yearly")]
+PAGES += [("privacy-policy.html", "/privacy-policy", "0.3", "yearly")]
 
 
 def lastmod(rel: str) -> str:

@@ -122,7 +122,7 @@ CART_DATA_GATED = """    <details class="guide-details">
       <li><a href="https://support.google.com/google-ads/answer/9028614" target="_blank" rel="noopener">Set up and test reporting with conversions with cart data</a></li>
       <li><a href="https://docs.getelevar.com/docs/version-20-how-to-change-product-ids-from-sku-to-shopify-ids-to-match-merchant-center-products" target="_blank" rel="noopener">How to Change Product IDs from SKU to Shopify IDs (Elevar)</a></li>
     </ul>
-    <p>Related: <a href="google-merchant-center-setup-2026.html">2026 Google Merchant Center Full Setup</a> &middot; <a href="../guides/conversion-tracking-shopify-2026.html">2026 Conversion Tracking Guide</a></p>"""
+    <p>Related: <a href="/google-merchant-center-setup-2026">2026 Google Merchant Center Full Setup</a> &middot; <a href="/guides/conversion-tracking-shopify-2026">2026 Conversion Tracking Guide</a></p>"""
 
 
 # ---------- GMC SFTP Upload ----------
@@ -236,7 +236,7 @@ Password: (strong password)</code></pre>
       <li><a href="https://support.google.com/merchants/answer/13813117?hl=en" target="_blank" rel="noopener">Submit product data sources using SFTP (Google)</a></li>
       <li><a href="https://www.datafeedwatch.com/blog/google-merchant-center-ftp" target="_blank" rel="noopener">FTP Connections and Google Merchant Center (DataFeedWatch)</a></li>
     </ul>
-    <p>Related: <a href="google-merchant-center-setup-2026.html">2026 Google Merchant Center Full Setup</a></p>"""
+    <p>Related: <a href="/google-merchant-center-setup-2026">2026 Google Merchant Center Full Setup</a></p>"""
 
 
 # ---------- GMC Full Setup ----------
@@ -287,12 +287,12 @@ GMC_SETUP_GATED = """
     <p>Plan to be online for several hours after submitting a new feed so you can troubleshoot issues.</p>
     <ul class="checklist">
       <li>Delete any old feeds. If you previously connected the Google &amp; YouTube sales channel to GMC, delete the data source, then set Product sync to Manually sync your products</li>
-      <li>Submit product data feeds by file upload or <a href="google-merchant-center-sftp-upload.html">SFTP upload</a> for intraday updates</li>
+      <li>Submit product data feeds by file upload or <a href="/google-merchant-center-sftp-upload">SFTP upload</a> for intraday updates</li>
       <li>Confirm items are approved or pending (wait up to 5 business days if pending)</li>
     </ul>
 
     <h2 id="troubleshooting">Troubleshooting</h2>
-    <p>Items could be rejected, or the entire account suspended. <a href="../contact.html">Reach out to us</a> or use the tips below.</p>
+    <p>Items could be rejected, or the entire account suspended. <a href="/contact">Reach out to us</a> or use the tips below.</p>
     <h3 id="rejected-items">What if items are rejected?</h3>
     <p>Check the &ldquo;Needs attention&rdquo; report. Misformatted attributes are often the culprit &mdash; e.g. <code>price = 99.95</code> should be <code>price = 99.95 USD</code>.</p>
     <h3 id="suspended-account">What if my GMC account is suspended?</h3>
@@ -313,7 +313,7 @@ GMC_SETUP_GATED = """
       <li><a href="https://www.facebook.com/business/help/120325381656392" target="_blank" rel="noopener">Meta catalog product data specifications</a></li>
       <li><a href="https://www.datafeedwatch.com/pricing?via=austin-youtube" target="_blank" rel="noopener">DataFeedWatch pricing (referral)</a></li>
     </ul>
-    <p>Related: <a href="google-merchant-center-sftp-upload.html">GMC SFTP File Upload</a> &middot; <a href="fix-cart-data-errors-google-ads.html">Fix Cart Data Errors</a> &middot; <a href="../guides/conversion-tracking-shopify-2026.html">2026 Conversion Tracking Guide</a></p>"""
+    <p>Related: <a href="/google-merchant-center-sftp-upload">GMC SFTP File Upload</a> &middot; <a href="/fix-cart-data-errors-google-ads">Fix Cart Data Errors</a> &middot; <a href="/guides/conversion-tracking-shopify-2026">2026 Conversion Tracking Guide</a></p>"""
 
 
 # ---------- Meta Creative Checklist ----------
@@ -471,4 +471,4 @@ analytics.subscribe("checkout_completed", (event) => {
       <li><a href="https://support.google.com/google-ads/answer/7548399?hl=en" target="_blank" rel="noopener">Google Ads conversion tag example</a></li>
       <li><a href="https://support.google.com/google-ads/answer/13258081" target="_blank" rel="noopener">Enhanced conversions user data</a></li>
     </ul>
-    <p>Related: <a href="../resources/google-merchant-center-setup-2026.html">2026 GMC Full Setup</a> &middot; <a href="../resources/fix-cart-data-errors-google-ads.html">Fix Cart Data Errors</a></p>"""
+    <p>Related: <a href="/resources/google-merchant-center-setup-2026">2026 GMC Full Setup</a> &middot; <a href="/resources/fix-cart-data-errors-google-ads">Fix Cart Data Errors</a></p>"""

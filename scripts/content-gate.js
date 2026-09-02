@@ -178,11 +178,38 @@
     });
   }
 
+  var ACCESS_PARAM = 'access';
+  var ACCESS_VALUE = 'unlocked';
+
+  function hasAccessParam() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      return params.get(ACCESS_PARAM) === ACCESS_VALUE;
+    } catch (e) {
+      return new RegExp('[?&]' + ACCESS_PARAM + '=' + ACCESS_VALUE + '(&|$)').test(window.location.search);
+    }
+  }
+
+  function cleanAccessParam() {
+    try {
+      var url = new URL(window.location.href);
+      url.searchParams.delete(ACCESS_PARAM);
+      window.history.replaceState({}, document.title, url.pathname + url.search + url.hash);
+    } catch (e) { /* ignore */ }
+  }
+
   function init() {
     var gate = document.getElementById('content-gate');
     if (!gate) return;
 
     listenForHubSpotSubmit();
+
+    // Auto-unlock via email link: ...?access=unlocked
+    if (hasAccessParam()) {
+      unlock({ scroll: false, force: true });
+      cleanAccessParam();
+      return;
+    }
 
     if (isUnlocked()) {
       unlock({ scroll: false, force: true });

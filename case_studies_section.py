@@ -22,7 +22,7 @@ CASE_STUDY_CARDS = [
     },
     {
         "href": "case-studies/tallslim-tees.html",
-        "image": "images/tallslim-tees-homepage-3.png",
+        "image": "images/tallslim-tees-homepage-3.webp",
         "alt": "TallSlim Tees",
         "name": "TallSlim Tees",
         "result": "6x+ Conv. Value Growth from First Q4",
@@ -30,7 +30,7 @@ CASE_STUDY_CARDS = [
     },
     {
         "href": "case-studies/parker-baby.html",
-        "image": "images/parker-baby-homepage.png",
+        "image": "images/parker-baby-homepage.webp",
         "alt": "Parker Baby",
         "name": "Parker Baby",
         "result": "Increased ROAS Within 3 Weeks",
@@ -38,7 +38,7 @@ CASE_STUDY_CARDS = [
     },
     {
         "href": "case-studies/iron-fence-shop.html",
-        "image": "images/iron-fence-shop-homepage.png",
+        "image": "images/iron-fence-shop-homepage.webp",
         "alt": "Iron Fence Shop",
         "name": "Iron Fence Shop",
         "result": "221% Increase in Form Leads",

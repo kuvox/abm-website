@@ -1,3 +1,6 @@
-/resources/shopify-google-merchant-center-setup-2026.html /resources/google-merchant-center-setup-2026.html 301
-/service-agreement.html /privacy-policy.html 301
-/service-agreement /privacy-policy.html 301
+/resources/shopify-google-merchant-center-setup-2026.html /resources/google-merchant-center-setup-2026 301
+/service-agreement.html /privacy-policy 301
+/service-agreement /privacy-policy 301
+
+# Force www -> apex (host canonicalization)
+https://www.abeckermarketing.com/* https://abeckermarketing.com/:splat 301!
