@@ -436,6 +436,10 @@ def render_case_study(cs: dict) -> str:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <title>{cs['client']} Case Study — Austin Becker E-Commerce Marketing</title>
 <meta name="description" content="{cs['meta_description']}">
 {robots_meta}<link rel="canonical" href="https://abeckermarketing.com/case-studies/{cs['slug']}">
@@ -507,57 +511,66 @@ def render_case_study(cs: dict) -> str:
 # Each article body uses HTML-as-string. Keep paragraphs short and readable.
 RESOURCES = [
     {
-        "slug": "website-leaking-money-conversion-gap",
-        "title": "Your Website Is Leaking Money, and It Is Not Your Ad Budget's Fault",
-        "lead": "You are paying to bring people to your site, but the average conversion rate is about 2.35%. That means 98 out of every 100 paid visitors leave without buying.",
-        "meta_description": "Most ecommerce sites convert 1.4% to 3% of visitors. Learn why the product-information gap kills conversions and how ABM's Revenue Assistant closes it.",
-        "date": "Aug 31, 2026",
+        "slug": "vehicle-dealership-ai-sales-agent",
+        "title": "Make Your Dealership&rsquo;s Website Like ChatGPT",
+        "lead": "Stop losing the leads that land on your dealership&rsquo;s website and leave without talking to you. An AI sales agent answers shoppers&rsquo; questions, captures more inquiries, and shows you which vehicles people are actually trying to find. Ideal for RV, car, and truck dealerships.",
+        "meta_description": "Add an AI sales agent to your RV, car, or truck dealership website to answer shopper questions, capture more leads, and lift conversion rates above the 2% average.",
+        "date": "Sep 3, 2026",
         "feature_image": "images/blog-thumbnail-youtube-vehicle-listing-ads.png",
-        "feature_alt": "Google Vehicle Listing Ads guide thumbnail",
+        "feature_alt": "AI sales agent for vehicle dealership websites",
         "categories": [("AI in Advertising", "ai-in-advertising")],
         "video_embed": None,
         "toc": [
-            ("why-visitors-leave", "Why so many visitors leave"),
-            ("the-fix", "The fix: answer the question before they even ask it"),
-            ("business-benefits", "What that does for your business"),
-            ("bottom-line", "The bottom line"),
+            ("two-percent", "Your site converts 2%. Not bad, right?"),
+            ("what-to-do", "What to do about it"),
+            ("ai-sales-agent", "Enter the AI-powered website sales agent"),
+            ("results-and-costs", "The end results, the costs"),
         ],
-        "body_html": """    <p>You are spending real money to bring people to your website. Paid ads, SEO, social campaigns, email. The traffic shows up, the numbers on the analytics dashboard climb, and it feels like things are working. Then you look at how many of those visitors actually became customers, and the picture changes.</p>
-    <p>Here is the uncomfortable truth. The overall average website conversion rate in 2026 is about <strong>2.35%</strong>. For most ecommerce stores the number sits somewhere between <strong>1.4% and 3.0%</strong>, depending on the industry and how you count. First-time visitors convert even lower &mdash; just <strong>1.0 to 2.0%</strong>.</p>
-    <p>If your site converts at 2%, then 98 out of every 100 people you paid to attract leave without doing anything. No purchase. No form. No call. You paid for all 100, and 98 walked out the door. That is not a traffic problem. You already solved the traffic problem when you funded the ads. This is a conversion problem, and it is quietly eating your marketing budget alive.</p>
+        "body_html": """    <h2 id="two-percent">Your dealership&rsquo;s site converts 2% of users into sales or leads. Not bad, right?</h2>
+    <p>In 2026, about <strong>2.35%</strong> of website sessions converted, meaning the visitor purchased, submitted a form, or completed another valuable action.</p>
+    <p>Notably, first-time visitors convert far less often: just <strong>1.0 to 2.0%</strong>.</p>
+    <p>If your dealership&rsquo;s website is at even 2%, that&rsquo;s good compared to the market. But even an improvement from 2% to 2.5% massively increases your vehicle sales: more deals financed, better-value trade-ins, and more customers overall.</p>
+    <p>If we, as an ad agency, made no plans to get you from 2% to 2.5%, 3% and higher conversion rates, we&rsquo;d be leaving that 97&ndash;98% of additional traffic on the table. We&rsquo;d be letting our clients lose money on their Google Ads, ChatGPT Ads, and everything else that brought those shoppers in.</p>
 
-    <h2 id="why-visitors-leave">Why so many visitors leave</h2>
-    <p>There are a handful of usual suspects, and they are worth naming.</p>
-    <p><strong>Website experience</strong> is one. If the layout is confusing, if people cannot find what they came for, they bounce. <strong>Site speed</strong> is another, and it is a big one. Even a one second delay in load time measurably drops conversions, especially on mobile where most of your traffic now lives. <strong>Trust signals</strong> matter too. If the site does not feel credible, people hesitate, and hesitation kills sales.</p>
-    <p>All of these are real. Most businesses that care about conversion are already working on them, tuning page speed, cleaning up layouts, adding reviews and guarantees.</p>
-    <p>But there is one factor that almost nobody is paying attention to, and it may cause the highest drop off of them all. It is the <strong>information gap</strong> between your product and your customer.</p>
-    <p>Here is what that means. A visitor lands on your site with a question in their head. Will this actually fit my needs? Is this the right model for me? What is the difference between these two options? How much would this really cost me per month? They want an answer, and they want it now. Customers are impatient. If they cannot get the answer quickly, they do not send an email and wait two days for a reply. They leave, and most of the time they leave for a competitor who made it easier.</p>
-    <p>That gap, the space between the question in the customer&rsquo;s head and the answer they cannot find fast enough, is where a huge share of your traffic disappears.</p>
+    <h2 id="what-to-do">What to do about it? Answer shoppers&rsquo; questions before they leave</h2>
+    <p>Once a user has landed on your website, they&rsquo;ve likely already cost you money: whether that&rsquo;s paid ad clicks, all your SEO work on the website, or referrals you&rsquo;ve worked hard to earn.</p>
+    <p>Think of each visit to the website as a cost. Each cost needs to give you back the maximum amount of revenue possible. So how we get these visitors to book a test drive is immensely important, not just for making money today, but for cashing in on all the investment you&rsquo;ve made over the years to get these people to your website in the first place.</p>
+    <p><strong>Enter the website sales agent.</strong></p>
+    <p>A sales agent typically replies to questions from people on your website. For example, someone sees a Toyota Camry that just got listed on your website. The user shows up to view the vehicle&rsquo;s details. But an annoying chatbot pops up and asks the user for their contact info.</p>
+    <p>The shopper might be looking for a Camry, but they decide they don&rsquo;t want this particular trim. So they leave. Did it help for a chatbot to ask them to hand over their contact info? No, not at all.</p>
+    <p>What you needed to learn from this prospective buyer was that <strong>A)</strong> they&rsquo;re interested in a Camry. Check. We know that because they&rsquo;re on the Camry vehicle page. Next, you needed to learn <strong>B)</strong> that they want a Camry XLE or XSE, but not an LE. We don&rsquo;t know that based on this user&rsquo;s visit, so there&rsquo;s little we can do to offer them the right vehicle unless they keep coming back to your website over and over and hand you their phone number for a call. That is unlikely, unfortunately, because as we&rsquo;ve seen, a 2% conversion rate means the other 98% of site visitors will not convert and you&rsquo;ll simply lose them.</p>
 
     <div class="guide-aside-block">
       <div class="guide-aside-text">
-        <h2 id="the-fix">The fix: answer the question before they even ask it</h2>
-        <p>The solution is simple to say and harder to build. You have to give potential buyers the answers they need before they have to go looking, and you have to do it fast enough to keep them interested.</p>
-        <p>This is exactly what we now build at Austin Becker Marketing. We deploy an AI chatbot powered by your live inventory and a trained knowledge base, and it answers any and every question about the products on your website. Not with canned replies. It handles the conversation at the quality of a high level sales rep, because we train the AI to guide buyers as efficiently as a real closer would.</p>
-        <p>This matters because it is a completely different animal from the old chatbots you have seen. Most of those are glorified handoff tools. A visitor shows up, and before they can even ask a question, the widget shoves them into a queue to wait for a human agent. That is not help. That is a waiting room. Our Revenue Assistant actually does the work in the moment, answering, guiding, and qualifying, right there on the page.</p>
+        <h2 id="ai-sales-agent">Enter the AI-powered website sales agent</h2>
+        <p>Why think that a website chatbot with AI will do any better?</p>
+        <p>Here&rsquo;s why: in 2026, customers are widely familiar with LLMs. ChatGPT offers a clean, quick entry point for shoppers to find information.</p>
+        <p>2026 estimates put ChatGPT users in the United States at <strong>67.7 million</strong> (<a href="https://backlinko.com/chatgpt-stats" target="_blank" rel="noopener">source</a>). That&rsquo;s an incredibly large portion of the population using one relatively new technology.</p>
+        <p>So there&rsquo;s no question that consumers are familiar with chat-driven AI tools. They get answers faster than from Google in many cases.</p>
+        <p>Imagine that our Camry buyer has been going back and forth from Google Ads to all the dealership websites that appear at the top of Google Search. They click into website A. They don&rsquo;t see what they want. They go to website B, and so on.</p>
+        <p>Then they come to your website. They see a ChatGPT-like chat feature in the bottom right of your website. They click it and start asking questions like: &ldquo;Do you have it in red?&rdquo; &ldquo;Do you have a lower-mileage model?&rdquo; &ldquo;Is there a leather trim option?&rdquo;</p>
       </div>
       <div class="guide-aside-media guide-aside-media--pair">
-        <figure><img src="../images/sample-chatbot-rv-result-temp-2.gif" alt="Revenue Assistant answering an RV shopper question" loading="lazy"></figure>
-        <figure><img src="../images/sample-chatbot-rv-result-temp-3.gif" alt="Revenue Assistant recommending products based on shopper preferences" loading="lazy"></figure>
-        <figure><img src="../images/sample-chatbot-rv-result-temp.png" alt="Revenue Assistant chatbot result on an RV dealership website" loading="lazy"></figure>
+        <figure><img src="../images/sample-chatbot-rv-result-temp-2.gif" alt="AI sales agent answering an RV shopper question on a dealership website" loading="lazy"></figure>
+        <figure><img src="../images/sample-chatbot-rv-result-temp-3.gif" alt="AI sales agent recommending vehicles based on shopper preferences" loading="lazy"></figure>
+        <figure><img src="../images/sample-chatbot-rv-result-temp.png" alt="AI sales agent chat result on an RV dealership website" loading="lazy"></figure>
       </div>
     </div>
 
-    <h2 id="business-benefits">What that does for your business</h2>
-    <p>The benefits stack up quickly.</p>
-    <p><strong>First, it increases qualified leads.</strong> There is always a group of visitors who were going to drop off, not because they were not interested, but because they were overwhelmed and no one led them anywhere. The Revenue Assistant catches those people. It gives them direction, and it turns a silent bounce into a real conversation.</p>
-    <p><strong>Second, it works after hours.</strong> Your sales team goes home, but your website does not. A buyer sitting on the couch at 9pm on a Tuesday, ready to make a decision, does not have to wait until morning and lose momentum. The Revenue Assistant can answer, guide, and close that buyer while your competitors&rsquo; contact forms sit unanswered until 9am.</p>
-    <p><strong>Third, it makes real recommendations.</strong> Before a customer ever reaches a human, the assistant recommends products based on that customer&rsquo;s stated preferences. It asks the right questions, understands what the person actually needs, and points them to the right fit.</p>
-    <p>And here is the part that sales teams love. All of that preference data does not disappear. When a human does get involved, they are not starting cold. They already have deep context on exactly what the buyer wants, what they asked about, and what they were leaning toward. Your rep walks into the conversation already knowing the customer, which means less time qualifying and more time closing. It gives your sales team far more to work with, and it raises the rate at which conversations turn into sales.</p>
+    <p>A standard chatbot on your website would have said &ldquo;please give us your phone number.&rdquo; But the AI-powered sales agent has collected all sorts of valuable questions. When you have questions, you can provide answers.</p>
+    <p>&ldquo;Yes,&rdquo; the sales agent tells the shopper. &ldquo;We have 3 other Camrys for sale, including a red XSE with leather seats.&rdquo;</p>
+    <p>&ldquo;Great!&rdquo; the shopper thinks. &ldquo;I don&rsquo;t have to go back to Google. I can just find what I need here.&rdquo;</p>
+    <p>Even if you don&rsquo;t have the Camry in red and XSE trim, the AI sales agent can be trained to notify your sales team of a customer looking for that particular model. In the meantime, the AI sales agent can let the customer know: &ldquo;We have an XLE in blue with leather trim. If you&rsquo;d like to see a red Camry, just give us your phone number and we&rsquo;ll call you when we&rsquo;ve found you a red one.&rdquo;</p>
+    <p>Rather than opening with &ldquo;please give us your phone number,&rdquo; your website sales agent, all on its own, has discovered what the customer is looking for and collected their contact info. Now your sales team can follow up with exactly what the shopper wants, or make the call to suggest your closest alternative.</p>
 
-    <h2 id="bottom-line">The bottom line</h2>
-    <p>You worked hard to get people to your website. The Austin Becker Marketing Revenue Assistant makes sure they do not leave empty handed, by answering every question instantly, guiding overwhelmed buyers to the right product, selling around the clock even when your team is offline, and handing your sales reps warm, fully understood leads instead of cold clicks.</p>
-    <p>If your traffic is strong but your conversions are not, the gap is not your ad budget. It is what happens after the click. <a href="../contact.html">Let us help you close it.</a></p>""",
+    <h2 id="results-and-costs">The end results, the costs</h2>
+    <p>Just a small improvement in your website&rsquo;s conversion rate hugely improves your lead generation. An AI-powered sales agent is one arrow in your quiver of options. But it&rsquo;s a highly effective arrow: shoppers get answers and alternate suggestions right away and have fewer reasons to leave your website and go back to Google.</p>
+    <p>It&rsquo;s also an extremely cost-effective option. A Business Development Representative typically requires about $20 per hour in pay and only works from 9:00 am to 5:00 pm.</p>
+    <p>An AI sales agent won&rsquo;t likely replace human sales reps altogether, but it does two important things.</p>
+    <p><strong>First,</strong> it allows dealerships that formerly could not afford a sales rep to answer website chat inquiries to now afford one.</p>
+    <p><strong>Second,</strong> it allows dealerships to collect shopper inquiries outside business hours.</p>
+    <p>AI sales agents are a new technology, so we don&rsquo;t promise specific sales increases. But we do guarantee better info from your customers, more leads, and improved conversion rates of site traffic to real sales leads for your RV, car, or truck dealership.</p>
+    <p><a href="../contact.html">Get in touch with our team</a> to discuss how we can set up an AI sales agent for your dealership&rsquo;s website.</p>""",
     },
     {
         "slug": "fix-cart-data-errors-google-ads",
@@ -1186,6 +1199,10 @@ def render_gated_guide(guide: dict) -> str:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <title>{guide['title']} — Austin Becker E-Commerce Marketing</title>
 <meta name="description" content="{guide['meta_description']}">
 <link rel="canonical" href="https://abeckermarketing.com/guides/{guide['slug']}">
@@ -1242,6 +1259,10 @@ def render_article(art: dict, all_articles: list) -> str:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <title>{art['title']} — Austin Becker E-Commerce Marketing</title>
 <meta name="description" content="{art['meta_description']}">
 <link rel="canonical" href="https://abeckermarketing.com/resources/{art['slug']}">
