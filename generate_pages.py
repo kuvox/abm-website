@@ -573,7 +573,7 @@ RESOURCES = [
 
     <div class="article-inline-form" id="dealership-ai-form">
       <p class="article-inline-form__lead"><a href="../contact.html">Get in touch with our team</a> to discuss how we can set up an AI sales agent for your dealership&rsquo;s website.</p>
-      <form data-hs-form="REPLACE_WITH_HUBSPOT_FORM_GUID" data-hs-form-name="dealership_ai_sales_agent" data-hs-success="Thanks &mdash; we&rsquo;ll be in touch about an AI sales agent for your dealership.">
+      <form data-hs-form="72b94b2e-4892-4b8e-ad25-a04bd3a8ac45" data-hs-form-name="dealership_ai_sales_agent" data-hs-success="Thanks &mdash; we&rsquo;ll be in touch about an AI sales agent for your dealership.">
         <div class="form-row form-row-split">
           <div>
             <label for="dai-name">Name <span class="req">*</span></label>
