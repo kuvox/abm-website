@@ -115,6 +115,15 @@
           );
           setStatus(form, message);
           if (typeof form.reset === 'function') form.reset();
+
+          // Conversion signal for GTM/GA4 — genuine success only (never in .catch()).
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'lead_form_submit',
+            form_id: formId,
+            form_name: form.getAttribute('data-hs-form-name') || 'contact',
+            page_path: window.location.pathname,
+          });
         })
         .catch(function () {
           setStatus(form, 'Something went wrong. Please try again, or email us directly.', true);

@@ -184,15 +184,9 @@ Every page is plain HTML. To change a headline, paragraph, or service descriptio
 
 ---
 
-## 6. Updating the service pages in bulk
+## 6. Retired generator: `build_pages.py`
 
-If you want to edit all 7 service pages at once (e.g., adding a new section to all of them), it's easiest to edit `build_pages.py` (in the parent folder), update the `services` list and the service-page template inside the loop, then re-run:
-
-```bash
-python3 build_pages.py
-```
-
-That regenerates all 7 service pages from the template. Then redeploy.
+`build_pages.py` was a one-shot bootstrap generator with a stale template (old nav, no GA4/GTM, placeholder HubSpot form). It now lives in `_archive/` and must not be run — the pages it emitted are hand-maintained now, and `generate_pages.py` is the only live generator (case studies, resources, guides).
 
 ---
 

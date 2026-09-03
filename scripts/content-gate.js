@@ -34,9 +34,28 @@
     slot.removeAttribute('hidden');
   }
 
+  function resourceSlug() {
+    var parts = window.location.pathname.split('/').filter(Boolean);
+    var last = parts[parts.length - 1] || '';
+    return last.replace(/\.html$/, '');
+  }
+
+  function trackUnlock() {
+    // Conversion signal for GTM/GA4 — only fired on a real form submission,
+    // not on revisit (localStorage) or ?access=unlocked email links.
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'gated_content_unlock',
+      form_id: HUBSPOT_FORM_ID,
+      resource_slug: resourceSlug(),
+      page_path: window.location.pathname,
+    });
+  }
+
   function unlock(options) {
     if (unlocked && !(options && options.force)) return;
     unlocked = true;
+    if (options && options.fromSubmit) trackUnlock();
 
     try {
       localStorage.setItem(STORAGE_KEY, '1');
@@ -100,7 +119,7 @@
         return;
       }
       error.hidden = true;
-      unlock({ scroll: true });
+      unlock({ scroll: true, fromSubmit: true });
     });
   }
 
@@ -135,7 +154,7 @@
     var observer = new MutationObserver(function () {
       if (looksLikeSuccess(gate)) {
         observer.disconnect();
-        unlock({ moveSuccess: true, scroll: true });
+        unlock({ moveSuccess: true, scroll: true, fromSubmit: true });
       }
     });
     observer.observe(gate, {
@@ -153,28 +172,28 @@
       // Object-shaped HubSpot callbacks
       if (typeof d === 'object') {
         if (d.type === 'hsFormCallback' && d.eventName === 'onFormSubmitted') {
-          unlock({ moveSuccess: true, scroll: true });
+          unlock({ moveSuccess: true, scroll: true, fromSubmit: true });
           return;
         }
         if (d.type === 'hsFormCallback' && d.id === 'onFormSubmitted') {
-          unlock({ moveSuccess: true, scroll: true });
+          unlock({ moveSuccess: true, scroll: true, fromSubmit: true });
           return;
         }
         if (d.eventName === 'onFormSubmitted' || d.eventName === 'onFormSubmit') {
-          unlock({ moveSuccess: true, scroll: true });
+          unlock({ moveSuccess: true, scroll: true, fromSubmit: true });
           return;
         }
       }
 
       // Occasional string payloads from embeds
       if (typeof d === 'string' && /onFormSubmitted|formSubmitted/i.test(d)) {
-        unlock({ moveSuccess: true, scroll: true });
+        unlock({ moveSuccess: true, scroll: true, fromSubmit: true });
       }
     });
 
     // Global HubSpot event bus (classic + some new embeds)
     window.addEventListener('hs-form-event', function () {
-      unlock({ moveSuccess: true, scroll: true });
+      unlock({ moveSuccess: true, scroll: true, fromSubmit: true });
     });
   }
 
