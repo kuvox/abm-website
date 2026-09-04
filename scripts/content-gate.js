@@ -13,12 +13,27 @@
 
   var unlocked = false;
 
-  function isUnlocked() {
+  var COOKIE_DAYS = 365;
+
+  function hasCookie() {
+    return new RegExp('(?:^|;\\s*)' + STORAGE_KEY + '=1(?:;|$)').test(document.cookie);
+  }
+
+  function setCookie() {
     try {
-      return localStorage.getItem(STORAGE_KEY) === '1';
-    } catch (e) {
-      return false;
-    }
+      var expires = new Date(Date.now() + COOKIE_DAYS * 864e5).toUTCString();
+      document.cookie = STORAGE_KEY + '=1; expires=' + expires + '; path=/; SameSite=Lax' +
+        (location.protocol === 'https:' ? '; Secure' : '');
+    } catch (e) { /* ignore */ }
+  }
+
+  function isUnlocked() {
+    // localStorage is the primary flag; a first-party cookie is the backup so
+    // the unlock survives storage being cleared independently of cookies
+    // (and vice versa). Either one is enough.
+    var stored = false;
+    try { stored = localStorage.getItem(STORAGE_KEY) === '1'; } catch (e) { /* ignore */ }
+    return stored || hasCookie();
   }
 
   function moveSuccessToBottom() {
@@ -45,8 +60,9 @@
     // not on revisit (localStorage) or ?access=unlocked email links.
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'gated_content_unlock',
+      event: 'lead_form_submit',
       form_id: HUBSPOT_FORM_ID,
+      form_name: 'gated_content',
       resource_slug: resourceSlug(),
       page_path: window.location.pathname,
     });
@@ -60,6 +76,7 @@
     try {
       localStorage.setItem(STORAGE_KEY, '1');
     } catch (e) { /* ignore */ }
+    setCookie();
 
     document.body.classList.add('content-unlocked');
 
@@ -101,25 +118,61 @@
   }
 
   function mountFallbackForm(container) {
+    // Only used when HubSpot's embed script cannot load. Mirrors the fields the
+    // HubSpot form requires (first name, email, company website) so the
+    // submission is accepted by the Forms API.
     container.innerHTML =
       '<form class="content-gate-fallback" id="content-gate-fallback" novalidate>' +
-      '  <label for="content-gate-email">Work email</label>' +
-      '  <input type="email" id="content-gate-email" name="email" autocomplete="email" required placeholder="you@company.com">' +
+      '  <div class="form-row"><label for="content-gate-first">First name</label>' +
+      '  <input type="text" id="content-gate-first" name="firstname" autocomplete="given-name" required></div>' +
+      '  <div class="form-row"><label for="content-gate-email">Work email</label>' +
+      '  <input type="email" id="content-gate-email" name="email" autocomplete="email" required placeholder="you@company.com"></div>' +
+      '  <div class="form-row"><label for="content-gate-website">Company website</label>' +
+      '  <input type="text" id="content-gate-website" name="website" inputmode="url" autocomplete="url" required placeholder="www.company.com"></div>' +
       '  <p class="content-gate-error" id="content-gate-error" hidden>Enter a valid work email address.</p>' +
       '  <button type="submit" class="btn btn-primary">Unlock the guide</button>' +
       '</form>';
 
     var form = document.getElementById('content-gate-fallback');
     var error = document.getElementById('content-gate-error');
+    var button = form.querySelector('button[type="submit"]');
     form.addEventListener('submit', function (event) {
       event.preventDefault();
-      var email = document.getElementById('content-gate-email').value;
-      if (!isValidEmail(email)) {
+      var first = (document.getElementById('content-gate-first').value || '').trim();
+      var email = (document.getElementById('content-gate-email').value || '').trim();
+      var site = (document.getElementById('content-gate-website').value || '').trim();
+      if (!isValidEmail(email) || !first || !site) {
+        error.textContent = !isValidEmail(email) ? 'Enter a valid work email address.' : 'Please fill in every field.';
         error.hidden = false;
         return;
       }
       error.hidden = true;
-      unlock({ scroll: true, fromSubmit: true });
+      button.disabled = true;
+      if (!/^https?:\/\//i.test(site)) site = 'https://' + site;
+      var payload = {
+        fields: [
+          { name: 'firstname', value: first },
+          { name: 'email', value: email },
+          { name: 'website', value: site },
+        ],
+        context: { pageUri: window.location.href, pageName: document.title },
+      };
+      var hutk = (document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/) || [])[1];
+      if (hutk) payload.context.hutk = decodeURIComponent(hutk);
+      fetch('https://api.hsforms.com/submissions/v3/integration/submit/' + HUBSPOT_PORTAL_ID + '/' + HUBSPOT_FORM_ID, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('submit failed');
+          unlock({ scroll: true, fromSubmit: true });
+        })
+        .catch(function () {
+          // Best effort: never leave the reader stuck if HubSpot rejects the
+          // fallback (e.g. consent-field requirements). Unlock without tracking.
+          unlock({ scroll: true });
+        });
     });
   }
 

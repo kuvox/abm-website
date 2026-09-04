@@ -2036,6 +2036,7 @@ a.stat-card:hover .abm-link-icon { transform: translateX(3px); }
 .article-inline-form .form-row textarea { background: #fff; }
 .article-inline-form .form-row textarea { min-height: 110px; }
 .article-inline-form .hs-form-status { margin: 14px 0 0; font-weight: 600; }
+.article-inline-form form.is-submitted .hs-form-status { margin: 0; font-size: 1.1rem; }
 .article-inline-form .hs-form-status.is-error { color: var(--brand-dark); }
 @media (max-width: 640px) {
   .article-inline-form { padding: 22px 18px; }

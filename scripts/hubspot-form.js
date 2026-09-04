@@ -110,10 +110,18 @@
           var message =
             form.getAttribute('data-hs-success') ||
             "Thanks — we've received your message and will be in touch soon.";
+          // Hide everything except the status line. Use inline display:none
+          // (not the hidden attribute) so display:grid rows like .form-row-split
+          // can't override it; also hide any intro copy in the form's parent
+          // that's marked data-hs-hide-on-success.
+          Array.prototype.forEach.call(form.children, function (el) {
+            if (!el.classList.contains('hs-form-status')) el.style.display = 'none';
+          });
           Array.prototype.forEach.call(
-            form.querySelectorAll('.form-row, button[type="submit"], input[type="submit"]'),
-            function (el) { el.hidden = true; }
+            form.parentNode.querySelectorAll('[data-hs-hide-on-success]'),
+            function (el) { el.style.display = 'none'; }
           );
+          form.classList.add('is-submitted');
           setStatus(form, message);
           if (typeof form.reset === 'function') form.reset();
 

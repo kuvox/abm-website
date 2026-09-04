@@ -572,7 +572,7 @@ RESOURCES = [
     <p>AI sales agents are a new technology, so we don&rsquo;t promise specific sales increases. But we do guarantee better info from your customers, more leads, and improved conversion rates of site traffic to real sales leads for your RV, car, or truck dealership.</p>
 
     <div class="article-inline-form" id="dealership-ai-form">
-      <p class="article-inline-form__lead"><a href="../contact.html">Get in touch with our team</a> to discuss how we can set up an AI sales agent for your dealership&rsquo;s website.</p>
+      <p class="article-inline-form__lead" data-hs-hide-on-success><a href="../contact.html">Get in touch with our team</a> to discuss how we can set up an AI sales agent for your dealership&rsquo;s website.</p>
       <form data-hs-form="72b94b2e-4892-4b8e-ad25-a04bd3a8ac45" data-hs-form-name="dealership_ai_sales_agent" data-hs-success="Thanks &mdash; we&rsquo;ll be in touch about an AI sales agent for your dealership.">
         <div class="form-row form-row-split">
           <div>
