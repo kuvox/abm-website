@@ -274,7 +274,7 @@
         </div>
         <div class="form-row">
           <label for="dai-website">Dealership Website <span class="req">*</span></label>
-          <input id="dai-website" name="website" type="url" placeholder="https://" autocomplete="url" required>
+          <input id="dai-website" name="website" type="text" inputmode="url" placeholder="www.yourdealership.com" autocomplete="url" pattern="^\s*(https?://)?(www\.)?([A-Za-z0-9-]+\.)+[A-Za-z]{2,}(/\S*)?\s*$" title="Enter your website, e.g. yourdealership.com" required>
         </div>
         <div class="form-row">
           <label for="dai-message">Message <span class="optional">(optional)</span></label>

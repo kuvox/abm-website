@@ -45,6 +45,7 @@
 
       var value = (el.value || '').trim();
       if (value === '') return; // omit empty optional fields
+      if (name === 'website' && !/^https?:\/\//i.test(value)) value = 'https://' + value;
       fields.push({ name: name, value: value });
     });
 
