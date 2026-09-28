@@ -63,6 +63,16 @@
             status.classList.remove('is-error');
           }
           form.reset();
+
+          // Conversion signal for GTM/GA4 — genuine success only.
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'lead_form_submit',
+            form_id: FORM_ID,
+            form_name: 'newsletter',
+            form_location: form.closest('.newsletter-cta') ? 'newsletter_section' : 'inline',
+            page_path: window.location.pathname,
+          });
         })
         .catch(function () {
           if (status) {

@@ -45,6 +45,7 @@
 
       var value = (el.value || '').trim();
       if (value === '') return; // omit empty optional fields
+      if (name === 'website' && !/^https?:\/\//i.test(value)) value = 'https://' + value;
       fields.push({ name: name, value: value });
     });
 
@@ -109,12 +110,29 @@
           var message =
             form.getAttribute('data-hs-success') ||
             "Thanks — we've received your message and will be in touch soon.";
+          // Hide everything except the status line. Use inline display:none
+          // (not the hidden attribute) so display:grid rows like .form-row-split
+          // can't override it; also hide any intro copy in the form's parent
+          // that's marked data-hs-hide-on-success.
+          Array.prototype.forEach.call(form.children, function (el) {
+            if (!el.classList.contains('hs-form-status')) el.style.display = 'none';
+          });
           Array.prototype.forEach.call(
-            form.querySelectorAll('.form-row, button[type="submit"], input[type="submit"]'),
-            function (el) { el.hidden = true; }
+            form.parentNode.querySelectorAll('[data-hs-hide-on-success]'),
+            function (el) { el.style.display = 'none'; }
           );
+          form.classList.add('is-submitted');
           setStatus(form, message);
           if (typeof form.reset === 'function') form.reset();
+
+          // Conversion signal for GTM/GA4 — genuine success only (never in .catch()).
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'lead_form_submit',
+            form_id: formId,
+            form_name: form.getAttribute('data-hs-form-name') || 'contact',
+            page_path: window.location.pathname,
+          });
         })
         .catch(function () {
           setStatus(form, 'Something went wrong. Please try again, or email us directly.', true);
