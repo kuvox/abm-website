@@ -15,3 +15,6 @@ _comparisons_*/
 # Cloudflare Pages local dev
 .wrangler/
 .dev.vars
+
+# Local staging for files to remove (never commit)
+_to_delete/

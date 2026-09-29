@@ -336,6 +336,38 @@ def services_page_schema() -> str:
     return _script_tag(graph)
 
 
+def video_node(
+    page_url: str,
+    *,
+    name: str,
+    description: str,
+    upload_date: str,
+    embed_url: str | None = None,
+    content_url: str | None = None,
+    thumbnail_url: str | None = None,
+    duration: str | None = None,
+) -> dict:
+    """VideoObject for a page's main video (YouTube embed or self-hosted file)."""
+    node: dict = {
+        "@type": "VideoObject",
+        "@id": f"{page_url}#video",
+        "name": name,
+        "description": description,
+        "uploadDate": upload_date,
+        "publisher": {"@id": ORG_ID},
+    }
+    if embed_url:
+        node["embedUrl"] = embed_url
+        thumbnail_url = thumbnail_url or _youtube_thumbnail(embed_url)
+    if content_url:
+        node["contentUrl"] = content_url
+    if thumbnail_url:
+        node["thumbnailUrl"] = thumbnail_url
+    if duration:
+        node["duration"] = duration
+    return node
+
+
 def article_schema(
     *,
     slug: str,
@@ -346,6 +378,7 @@ def article_schema(
     section: str = "Resource",
     base_path: str = "resources",
     video_url: str | None = None,
+    video: dict | None = None,
     faqs: list[tuple[str, str]] | None = None,
     date_modified: str | None = None,
 ) -> str:
@@ -384,19 +417,21 @@ def article_schema(
         *_refs(),
     ]
     if video_url:
-        video_node: dict = {
-            "@type": "VideoObject",
-            "@id": f"{page_url}#video",
-            "name": title,
-            "description": description,
-            "embedUrl": video_url,
-            "uploadDate": _parse_date(date),
-            "publisher": {"@id": ORG_ID},
-        }
-        thumb = _youtube_thumbnail(video_url)
-        if thumb:
-            video_node["thumbnailUrl"] = thumb
-        graph_nodes.append(video_node)
+        graph_nodes.append(
+            video_node(page_url, name=title, description=description, upload_date=_parse_date(date), embed_url=video_url)
+        )
+    elif video:
+        graph_nodes.append(
+            video_node(
+                page_url,
+                name=video.get("name", title),
+                description=video.get("description", description),
+                upload_date=video.get("upload_date", _parse_date(date)),
+                content_url=video.get("content_url"),
+                thumbnail_url=video.get("thumbnail_url"),
+                duration=video.get("duration"),
+            )
+        )
     if faqs:
         graph_nodes.append(
             {
@@ -480,6 +515,8 @@ def guide_schema(
     description: str,
     date_modified: str | None = None,
     image_path: str | None = None,
+    video_url: str | None = None,
+    date: str | None = None,
 ) -> str:
     page_url = f"{SITE}/guides/{slug}.html"
     article_id = f"{page_url}#article"
@@ -502,22 +539,32 @@ def guide_schema(
         article_node["image"] = f"{SITE}/{image_path.lstrip('/')}"
     if date_modified:
         article_node["dateModified"] = date_modified
-    graph = {
-        "@context": "https://schema.org",
-        "@graph": [
-            article_node,
-            _webpage_node(
-                page_url=page_url,
-                name=f"{title} — Austin Becker E-Commerce Marketing",
+    if date:
+        article_node["datePublished"] = _parse_date(date)
+    graph_nodes: list[dict] = [
+        article_node,
+        _webpage_node(
+            page_url=page_url,
+            name=f"{title} — Austin Becker E-Commerce Marketing",
+            description=description,
+            main_entity_id=article_id,
+            about_id=ORG_ID,
+            breadcrumb_id=breadcrumb["@id"],
+        ),
+        breadcrumb,
+        *_refs(),
+    ]
+    if video_url:
+        graph_nodes.append(
+            video_node(
+                page_url,
+                name=title,
                 description=description,
-                main_entity_id=article_id,
-                about_id=ORG_ID,
-                breadcrumb_id=breadcrumb["@id"],
-            ),
-            breadcrumb,
-            *_refs(),
-        ],
-    }
+                upload_date=_parse_date(date) if date else (date_modified or ""),
+                embed_url=video_url,
+            )
+        )
+    graph = {"@context": "https://schema.org", "@graph": graph_nodes}
     return _script_tag(graph)
 
 

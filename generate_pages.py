@@ -518,10 +518,13 @@ RESOURCES = [
         "lead": "Stop losing the leads that land on your dealership&rsquo;s website and leave without talking to you. An AI sales agent answers shoppers&rsquo; questions, captures more inquiries, and shows you which vehicles people are actually trying to find. Ideal for RV, car, and truck dealerships.",
         "meta_description": "Add an AI sales agent to your RV, car, or truck dealership website to answer shopper questions, capture more leads, and lift conversion rates above the 2% average.",
         "date": "Sep 3, 2026",
-        "feature_image": "images/blog-thumbnail-youtube-vehicle-listing-ads.png",
+        "feature_image": "images/vehicle-bot-demo-video-blog-thumbnail.jpg",
         "feature_alt": "AI sales agent for vehicle dealership websites",
         "hero_video_mp4": "images/vehicle-bot-demo-v1.mp4",
-        "hero_video_poster": "images/vehicle-bot-demo-v1-poster.jpg",
+        "hero_video_poster": "images/vehicle-bot-demo-video-poster.jpg",
+        "hero_video_duration": "PT4M22S",
+        "hero_video_name": "AI Sales Agent Demo for Vehicle Dealership Websites",
+        "hero_video_description": "Austin Becker demos an AI sales agent on an RV dealership website: it answers shopper questions, compares prices, checks availability, and captures lead details in chat.",
         "hero_video_label": "Demo: an AI sales agent chatting with a shopper on an RV dealership website",
         "categories": [("AI in Advertising", "ai-in-advertising")],
         "video_embed": None,
@@ -1181,6 +1184,15 @@ def _blog_body_section(art: dict) -> str:
 
 def _article_schema_html(art: dict) -> str:
     video_url = art.get("video_embed")
+    video = None
+    if art.get("hero_video_mp4"):
+        video = {
+            "name": art.get("hero_video_name", art["title"]),
+            "description": art.get("hero_video_description", art["meta_description"]),
+            "content_url": f"https://abeckermarketing.com/{art['hero_video_mp4']}",
+            "thumbnail_url": f"https://abeckermarketing.com/{art.get('hero_video_poster', art['feature_image'])}",
+            "duration": art.get("hero_video_duration"),
+        }
     return article_schema(
         slug=art["slug"],
         title=art["title"],
@@ -1188,6 +1200,7 @@ def _article_schema_html(art: dict) -> str:
         date=art["date"],
         image_path=art["feature_image"],
         video_url=video_url,
+        video=video,
         faqs=art.get("faqs"),
         date_modified=_TODAY,
     )
@@ -1236,6 +1249,8 @@ def render_gated_guide(guide: dict) -> str:
         description=guide["meta_description"],
         date_modified=_TODAY,
         image_path=guide.get("feature_image"),
+        video_url=guide.get("video_embed"),
+        date=guide.get("date"),
     )
 
     return f"""<!doctype html>
