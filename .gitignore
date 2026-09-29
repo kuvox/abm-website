@@ -11,3 +11,7 @@ sessions/
 
 # Design comparison screenshots (local reference only)
 _comparisons_*/
+
+# Cloudflare Pages local dev
+.wrangler/
+.dev.vars

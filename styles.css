@@ -3852,6 +3852,13 @@ body.guide-lightbox-open { overflow: hidden; }
   margin: 2.4rem 0 0.9rem;
   letter-spacing: -0.01em;
 }
+.article-body h2 .conversion-subhead {
+  display: block;
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
 .article-body h3 {
   font-size: 1.25rem;
   margin: 1.8rem 0 0.6rem;
@@ -5137,4 +5144,130 @@ body.content-unlocked .content-gate-preview--faded::after {
   .ai-cta-grid { grid-template-columns: 1fr; gap: 32px; }
   .ai-cta-box { padding: 32px 24px; }
   .ai-cta-sticker { position: static; display: inline-block; margin-bottom: 16px; }
+}
+
+/* Right-floated media pair for long-form articles (text wraps around it) */
+.guide-float-media {
+  float: right;
+  width: 44%;
+  max-width: 420px;
+  margin: 0.25rem 0 1rem 2rem;
+  display: flex;
+  gap: 12px;
+}
+.guide-float-media figure { margin: 0; flex: 1 1 0; min-width: 0; }
+.guide-float-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+.guide-float-clear { clear: both; }
+@media (max-width: 640px) {
+  .guide-float-media {
+    float: none;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 1.25rem;
+  }
+}
+
+/* Stacked chat demos beside a specific article passage */
+.guide-chat-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+  gap: 8px 32px;
+  align-items: start;
+  margin: 0 0 1.4rem;
+}
+.guide-chat-split__copy > :first-child { margin-top: 0; }
+.guide-chat-split__copy > :last-child { margin-bottom: 0; }
+.guide-chat-split__media {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.guide-chat-split__media figure { margin: 0; }
+.guide-chat-split__media video,
+.guide-chat-split__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  background: #fff;
+}
+@media (max-width: 720px) {
+  .guide-chat-split {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .guide-chat-split__media {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+/* Single chat demo beside a passage: ~25% narrower column than the stacked pair */
+.guide-chat-split--single {
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 315px);
+}
+.guide-chat-split__media figcaption,
+.guide-chat-row figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--muted, #6b7280);
+  text-align: center;
+}
+
+/* "More Examples": two chat demos side by side with captions */
+.guide-examples-sub { margin-top: -0.5rem; }
+.guide-chat-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 315px));
+  gap: 24px 32px;
+  justify-content: center;
+  margin: 0 0 2rem;
+}
+.guide-chat-row figure { margin: 0; }
+.guide-chat-row video,
+.guide-chat-row img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  background: #fff;
+}
+@media (max-width: 720px) {
+  .guide-chat-split--single {
+    grid-template-columns: 1fr;
+  }
+  .guide-chat-split--single .guide-chat-split__media {
+    max-width: 315px;
+  }
+  .guide-chat-row {
+    grid-template-columns: minmax(0, 315px);
+  }
+}
+
+/* Portrait demo video in an article hero (click to play, has audio) */
+.guide-hero-video {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 560px;
+  aspect-ratio: 538 / 720;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  background: #000;
+}
+@media (max-width: 900px) {
+  .guide-hero-video { max-height: 70vh; }
 }

@@ -66,6 +66,23 @@
     status.classList.toggle('is-success', !isError);
   }
 
+  function notifyTeam(form, fields) {
+    var map = {};
+    fields.forEach(function (f) { map[f.name] = f.value; });
+    try {
+      fetch('/api/lead-notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        keepalive: true,
+        body: JSON.stringify({
+          form_name: form.getAttribute('data-hs-form-name') || 'contact',
+          page: window.location.href,
+          fields: map,
+        }),
+      }).catch(function () {});
+    } catch (e) { /* ignore */ }
+  }
+
   function initForm(form) {
     var formId = form.getAttribute('data-hs-form');
     if (!formId) return;
@@ -86,8 +103,9 @@
       if (button) button.disabled = true;
       setStatus(form, 'Sending…');
 
+      var submittedFields = collectFields(form);
       var payload = {
-        fields: collectFields(form),
+        fields: submittedFields,
         context: {
           pageUri: window.location.href,
           pageName: document.title,
@@ -133,6 +151,10 @@
             form_name: form.getAttribute('data-hs-form-name') || 'contact',
             page_path: window.location.pathname,
           });
+
+          // Optional team notification (Slack via /functions/api/lead-notify.js).
+          // Opt in per form with data-hs-notify; fire-and-forget, never affects UX.
+          if (form.hasAttribute('data-hs-notify')) notifyTeam(form, submittedFields);
         })
         .catch(function () {
           setStatus(form, 'Something went wrong. Please try again, or email us directly.', true);
