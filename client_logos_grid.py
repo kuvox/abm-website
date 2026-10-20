@@ -115,11 +115,6 @@ OTHER_CLIENTS = [
         "alt": "Billfodl",
         "href": "https://billfodl.com/",
     },
-    {
-        "image": "listing-mirror-logo.png",
-        "alt": "Listing Mirror",
-        "href": "https://www.listingmirror.com/",
-    },
 ]
 
 

@@ -46,7 +46,7 @@ python3 scripts/sync_client_logos_grid.py
 
 **Featured (hover tooltip + link):** Hose Warehouse, MyMusic Folders, TallSlim Tees, Parker Baby, Kingsley North, Meseroll Shop, Indoor Cycle Pros, Poulsbo RV, Maia Homes, Conservation Mart, BeltSmart — in that order.
 
-**Link only (grayscale → color on hover):** The Crypto Lawyers, Murdock Industrial, Irish Woodworks, Billfodl, Listing Mirror.
+**Link only (grayscale → color on hover):** The Crypto Lawyers, Murdock Industrial, Irish Woodworks, Billfodl.
 
 **Iron Fence Shop** is intentionally excluded from the logo grid (case study remains elsewhere).
 
