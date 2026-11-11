@@ -52,14 +52,6 @@ FEATURED_CLIENTS = [
         "category": "Biking Gear",
     },
     {
-        "image": "indoor-cycle-pros-logo.png",
-        "alt": "Indoor Cycle Pros",
-        "href": "https://indoorcyclepros.com/",
-        "name": "Indoor Cycle Pros",
-        "tenure": "1 Year Client",
-        "category": "Biking Gear",
-    },
-    {
         "image": "poulsbo-rv-logo.png",
         "alt": "Poulsbo RV",
         "href": "https://poulsborv.com/",
