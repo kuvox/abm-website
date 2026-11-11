@@ -83,9 +83,37 @@
     } catch (e) { /* ignore */ }
   }
 
+  // Conditional rows: <div data-show-when="SELECT_ID=VALUE" hidden>...</div>
+  // shows the row (and makes its inputs required) only while that select has
+  // that value. Hidden rows are cleared so stale text never gets submitted.
+  function initConditionalRows(form) {
+    var rows = form.querySelectorAll('[data-show-when]');
+    Array.prototype.forEach.call(rows, function (row) {
+      var rule = row.getAttribute('data-show-when').split('=');
+      var select = form.querySelector('#' + rule[0]);
+      if (!select) return;
+      var inputs = row.querySelectorAll('input, select, textarea');
+
+      function sync() {
+        var show = select.value === rule[1];
+        row.hidden = !show;
+        Array.prototype.forEach.call(inputs, function (el) {
+          el.required = show;
+          if (!show) el.value = '';
+        });
+      }
+
+      select.addEventListener('change', sync);
+      form.addEventListener('reset', function () { setTimeout(sync, 0); });
+      sync();
+    });
+  }
+
   function initForm(form) {
     var formId = form.getAttribute('data-hs-form');
     if (!formId) return;
+
+    initConditionalRows(form);
 
     var endpoint =
       'https://api.hsforms.com/submissions/v3/integration/submit/' +

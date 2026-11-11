@@ -520,7 +520,7 @@ RESOURCES = [
         "date": "Sep 3, 2026",
         "feature_image": "images/vehicle-bot-demo-video-blog-thumbnail.jpg",
         "feature_alt": "AI sales agent for vehicle dealership websites",
-        "hero_video_mp4": "images/vehicle-bot-demo-v1.mp4",
+        "hero_video_mp4": "images/vehicle-bot-demo-v2.mp4",
         "hero_video_poster": "images/vehicle-bot-demo-video-poster.jpg",
         "hero_video_duration": "PT4M22S",
         "hero_video_name": "AI Sales Agent Demo for Vehicle Dealership Websites",
@@ -601,6 +601,24 @@ RESOURCES = [
         <div class="form-row">
           <label for="dai-website">Dealership Website <span class="req">*</span></label>
           <input id="dai-website" name="website" type="text" inputmode="url" placeholder="www.yourdealership.com" autocomplete="url" pattern="^\s*(https?://)?(www\.)?([A-Za-z0-9-]+\.)+[A-Za-z]{2,}(/\S*)?\s*$" title="Enter your website, e.g. yourdealership.com" required>
+        </div>
+        <div class="form-row">
+          <label for="dai-heard">How did you hear about us? <span class="req">*</span></label>
+          <select id="dai-heard" name="how_did_you_hear_about_us" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="x">X.com</option>
+            <option value="reddit">Reddit</option>
+            <option value="google">Google</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="youtube">YouTube</option>
+            <option value="facebook_instagram">Facebook/Instagram</option>
+            <option value="ai_assistant">ChatGPT/Claude/Perplexity</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-row" data-show-when="dai-heard=other" hidden>
+          <label for="dai-heard-other">Where did you hear about us? <span class="req">*</span></label>
+          <input id="dai-heard-other" name="how_did_you_hear_about_us_other" type="text">
         </div>
         <div class="form-row">
           <label for="dai-message">Message <span class="optional">(optional)</span></label>

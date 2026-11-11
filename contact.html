@@ -185,29 +185,26 @@
           <input id="company" name="company" type="text" required>
         </div>
         <div class="form-row">
-          <label for="revenue">Annual Revenue</label>
-          <select id="revenue" name="annualrevenue">
-            <option>1 to 5 million</option>
-            <option>5 to 25 million</option>
-            <option>25 to 50 million</option>
-            <option>50 million +</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="budget">Advertising Budget <span class="req">*</span></label>
-          <select id="budget" name="budget_allocation_per_month_contact" required>
-            <option>We haven't started yet</option>
-            <option>Less than $5,000</option>
-            <option>$5,000 to $10,000</option>
-            <option>$10,000 to $25,000</option>
-            <option>$25,000 to 50,000</option>
-            <option>$50,000 to $100,000</option>
-            <option>Over $100,000</option>
-          </select>
-        </div>
-        <div class="form-row">
           <label for="website">Company Website <span class="req">*</span></label>
           <input id="website" name="website" type="url" placeholder="https://" required>
+        </div>
+        <div class="form-row">
+          <label for="heard">How did you hear about us? <span class="req">*</span></label>
+          <select id="heard" name="how_did_you_hear_about_us" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="x">X.com</option>
+            <option value="reddit">Reddit</option>
+            <option value="google">Google</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="youtube">YouTube</option>
+            <option value="facebook_instagram">Facebook/Instagram</option>
+            <option value="ai_assistant">ChatGPT/Claude/Perplexity</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-row" data-show-when="heard=other" hidden>
+          <label for="heard-other">Where did you hear about us? <span class="req">*</span></label>
+          <input id="heard-other" name="how_did_you_hear_about_us_other" type="text">
         </div>
         <div class="form-row">
           <label for="message">Message</label>

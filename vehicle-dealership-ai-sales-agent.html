@@ -50,7 +50,7 @@
       "description": "Austin Becker demos an AI sales agent on an RV dealership website: it answers shopper questions, compares prices, checks availability, and captures lead details in chat.",
       "uploadDate": "2026-09-28",
       "duration": "PT4M22S",
-      "contentUrl": "https://abeckermarketing.com/images/vehicle-bot-demo-v1.mp4",
+      "contentUrl": "https://abeckermarketing.com/images/vehicle-bot-demo-v2.mp4",
       "thumbnailUrl": "https://abeckermarketing.com/images/vehicle-bot-demo-video-poster.jpg",
       "publisher": { "@id": "https://abeckermarketing.com/#organization" }
     },
@@ -180,7 +180,7 @@
     </div>
     <div class="hero-video">
       <video class="guide-hero-video" controls playsinline preload="metadata" poster="images/vehicle-bot-demo-video-poster.jpg" aria-label="Demo: an AI sales agent chatting with a shopper on an RV dealership website">
-        <source src="images/vehicle-bot-demo-v1.mp4" type="video/mp4">
+        <source src="images/vehicle-bot-demo-v2.mp4" type="video/mp4">
         <img src="images/vehicle-bot-demo-video-poster.jpg" alt="AI sales agent for vehicle dealership websites" class="guide-hero-image">
       </video>
     </div>
@@ -291,6 +291,24 @@
             <div class="form-row">
               <label for="ai-company">Dealership Name <span class="req">*</span></label>
               <input id="ai-company" name="company" type="text" required>
+            </div>
+            <div class="form-row">
+              <label for="ai-heard">How did you hear about us? <span class="req">*</span></label>
+              <select id="ai-heard" name="how_did_you_hear_about_us" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="x">X.com</option>
+                <option value="reddit">Reddit</option>
+                <option value="google">Google</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="youtube">YouTube</option>
+                <option value="facebook_instagram">Facebook/Instagram</option>
+                <option value="ai_assistant">ChatGPT/Claude/Perplexity</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-row" data-show-when="ai-heard=other" hidden>
+              <label for="ai-heard-other">Where did you hear about us? <span class="req">*</span></label>
+              <input id="ai-heard-other" name="how_did_you_hear_about_us_other" type="text">
             </div>
             <div class="form-row">
               <label for="ai-message">What do you sell, and what should the AI agent help with?</label>

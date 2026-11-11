@@ -2297,7 +2297,8 @@ hr.rule { border: 0; height: 1px; background: var(--line); margin: 48px 0; }
   transition: transform .15s ease, box-shadow .15s ease;
 }
 .resource-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-.resource-card-image img {
+.resource-card-image img,
+.resource-card-image video {
   width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: var(--bg-alt);
 }
 .resource-card-body { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
