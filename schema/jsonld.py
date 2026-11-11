@@ -427,6 +427,7 @@ def article_schema(
                 name=video.get("name", title),
                 description=video.get("description", description),
                 upload_date=video.get("upload_date", _parse_date(date)),
+                embed_url=video.get("embed_url"),
                 content_url=video.get("content_url"),
                 thumbnail_url=video.get("thumbnail_url"),
                 duration=video.get("duration"),

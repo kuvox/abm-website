@@ -518,10 +518,10 @@ RESOURCES = [
         "lead": "Stop losing the leads that land on your dealership&rsquo;s website and leave without talking to you. An AI sales agent answers shoppers&rsquo; questions, captures more inquiries, and shows you which vehicles people are actually trying to find. Ideal for RV, car, and truck dealerships.",
         "meta_description": "Add an AI sales agent to your RV, car, or truck dealership website to answer shopper questions, capture more leads, and lift conversion rates above the 2% average.",
         "date": "Sep 3, 2026",
-        "feature_image": "images/vehicle-bot-demo-video-blog-thumbnail.jpg",
+        "feature_image": "images/vehicle-bot-demo-card-poster.jpg",
         "feature_alt": "AI sales agent for vehicle dealership websites",
-        "hero_video_mp4": "images/vehicle-bot-demo-v2.mp4",
-        "hero_video_poster": "images/vehicle-bot-demo-video-poster.jpg",
+        "hero_youtube_id": "339trMJlGJo",
+        "hero_video_poster": "images/vehicle-bot-demo-card-poster.jpg",
         "hero_video_duration": "PT4M22S",
         "hero_video_name": "AI Sales Agent Demo for Vehicle Dealership Websites",
         "hero_video_description": "Austin Becker demos an AI sales agent on an RV dealership website: it answers shopper questions, compares prices, checks availability, and captures lead details in chat.",
@@ -1097,6 +1097,15 @@ def _blog_hero_media(art: dict, rel: str) -> str:
         <iframe src="{art['video_embed']}" title="{art['title']}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>"""
+    if art.get("hero_youtube_id"):
+        yt = art["hero_youtube_id"]
+        poster = art.get("hero_video_poster", art["feature_image"])
+        return f"""    <div class="hero-video">
+      <a class="guide-hero-video yt-facade" href="https://www.youtube.com/watch?v={yt}" data-yt-id="{yt}" data-yt-title="{art.get('hero_video_name', art['title'])}" aria-label="Play video: {art.get('hero_video_label', art['feature_alt'])}">
+        <img src="{rel}{poster}" alt="{art['feature_alt']}" width="852" height="480">
+        <span class="yt-facade-play" aria-hidden="true"></span>
+      </a>
+    </div>"""
     if art.get("hero_video_mp4"):
         poster = art.get("hero_video_poster", art["feature_image"])
         return f"""    <div class="hero-video">
@@ -1203,7 +1212,15 @@ def _blog_body_section(art: dict) -> str:
 def _article_schema_html(art: dict) -> str:
     video_url = art.get("video_embed")
     video = None
-    if art.get("hero_video_mp4"):
+    if art.get("hero_youtube_id"):
+        video = {
+            "name": art.get("hero_video_name", art["title"]),
+            "description": art.get("hero_video_description", art["meta_description"]),
+            "embed_url": f"https://www.youtube.com/embed/{art['hero_youtube_id']}",
+            "thumbnail_url": f"https://abeckermarketing.com/{art.get('hero_video_poster', art['feature_image'])}",
+            "duration": art.get("hero_video_duration"),
+        }
+    elif art.get("hero_video_mp4"):
         video = {
             "name": art.get("hero_video_name", art["title"]),
             "description": art.get("hero_video_description", art["meta_description"]),
@@ -1380,6 +1397,7 @@ def render_article(art: dict, all_articles: list) -> str:
 <script src="../scripts/newsletter-form.js" defer></script>
 {"<script src=\"../scripts/content-gate.js\" defer></script>" if art.get("gated") else ""}
 {"<script src=\"../scripts/hubspot-form.js\" defer></script>" if art.get("hubspot_form") else ""}
+{"<script src=\"../scripts/yt-facade.js\" defer></script>" if art.get("hero_youtube_id") else ""}
 </body>
 </html>
 """
