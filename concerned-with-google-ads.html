@@ -20,7 +20,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://i.ytimg.com">
 <link rel="stylesheet" href="styles.css">
 <style>
 /* ===== Paid-ads landing page (concerned-with-google-ads): page-only styles ===== */
@@ -43,7 +42,6 @@
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
   cursor: pointer;
 }
-.lp-hero-video img,
 .lp-hero-video iframe {
   position: absolute;
   inset: 0;
@@ -53,140 +51,140 @@
   border: 0;
   display: block;
 }
-.lp-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 76px;
-  height: 76px;
-  margin: -38px 0 0 -38px;
-  border-radius: 50%;
-  background: linear-gradient(90deg, #FF7A4D 0%, #E74D3B 55%, #DA3A5E 100%);
-  box-shadow: 0 10px 28px rgba(231, 77, 59, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform .18s ease;
-}
-.lp-play svg { width: 30px; height: 30px; margin-left: 4px; fill: #fff; }
-.lp-hero-video:hover .lp-play,
 .lp-hero-video:focus-visible .lp-play { transform: scale(1.08); }
-
-.lp-intro-grid {
+.lp-problems-head { max-width: 760px; margin-bottom: 32px; }
+.lp-problems-head h2.pov-headline { margin-bottom: 0; }
+.lp-problems-head .lp-subhead { margin-bottom: 0; }
+.lp-problems {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  column-gap: 56px;
-  align-items: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 56px;
 }
-.lp-subhead {
-  margin: 0 0 20px;
-  font-size: 1.3rem;
-  line-height: 1.35;
-  font-weight: 600;
-  color: var(--ink);
-}
-.lp-fix-panel {
+.lp-contact { background: #fff; }
+.lp-contact .contact-split { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: 56px; }
+.lp-contact form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 18px; }
+.lp-contact form .form-row-split,
+.lp-contact form .form-row:has(textarea),
+.lp-contact form > button,
+.lp-contact form > p { grid-column: 1 / -1; }
+.lp-contact form textarea { min-height: 110px; }
+.lp-contact form .form-row-split { column-gap: 18px; }
+@media (max-width: 900px) { .lp-contact .contact-split { grid-template-columns: 1fr; gap: 32px; } }
+@media (max-width: 600px) { .lp-contact form { grid-template-columns: 1fr; } }
+.lp-contact .lp-contact-title { margin-top: 0; font-size: clamp(2rem, 3.6vw, 2.8rem); line-height: 1.1; }
+.lp-reviews { padding-bottom: 2.5rem; }
+.lp-reviews .clients-quotes-title { margin-top: 0; }
+.lp-reviews + .section--clients-dark { padding-top: 2.5rem; }
+.lp-problem {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  padding: 36px 32px;
+  box-shadow: var(--shadow);
+  padding: 28px 26px;
 }
-.lp-fix-panel h2 {
-  margin: 0 0 24px;
-  font-size: 1.6rem;
-  line-height: 1.2;
-}
-.lp-fix-grid {
+.lp-problem h3 { margin: 0 0 10px; font-size: 1.25rem; line-height: 1.25; color: var(--ink); }
+.lp-problem p { margin: 0; color: var(--ink-soft); line-height: 1.6; }
+.lp-next-section { background: var(--bg-soft); }
+.lp-next-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 56px;
+  align-items: start;
 }
-.lp-flip { perspective: 1200px; cursor: pointer; outline: none; }
-.lp-flip:focus-visible .lp-flip-inner {
-  box-shadow: 0 0 0 3px rgba(232, 79, 59, 0.4);
-  border-radius: var(--radius-lg);
-}
-.lp-flip-inner {
-  position: relative;
-  min-height: 200px;
-  transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
-  transform-style: preserve-3d;
-}
-.lp-flip.flipped .lp-flip-inner { transform: rotateY(180deg); }
-.lp-flip-face {
-  position: absolute;
-  inset: 0;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: var(--radius-lg);
-  padding: 24px 22px;
-  display: flex;
-  flex-direction: column;
-}
-.lp-flip-front {
-  background: var(--brand-tint);
-  transition: box-shadow .15s ease;
-}
-.lp-flip:hover .lp-flip-front { box-shadow: 0 10px 24px rgba(52, 53, 54, 0.10); }
-.lp-flip-front h3 {
-  margin: auto 0 14px;
-  font-size: 1.2rem;
-  line-height: 1.25;
-  color: var(--ink);
-}
-.lp-flip-hint {
-  margin: 0;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--brand);
-}
-.lp-flip-back {
-  transform: rotateY(180deg);
-  background: var(--brand);
-  color: #fff;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 14px;
-}
-.lp-flip:not(.flipped) .lp-flip-back,
-.lp-flip.flipped .lp-flip-front { pointer-events: none; }
-.lp-flip-back a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 18px;
-  border-radius: var(--radius-pill);
+.lp-next-intro { position: sticky; top: 110px; }
+.lp-next-intro h2.pov-headline { margin: 0; font-size: 2.2rem; }
+.lp-next-list { display: grid; gap: 20px; }
+.lp-next-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
   background: #fff;
-  color: var(--brand-dark);
-  font-weight: 700;
-  font-size: 0.98rem;
-  line-height: 1.3;
-  text-decoration: none;
-  transition: transform .15s ease, box-shadow .15s ease;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 26px 26px 24px;
 }
-.lp-flip-back a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
-  text-decoration: none;
-  color: var(--brand-dark);
+.lp-next-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--brand); color: var(--brand);
+  font-weight: 700; font-size: 1rem;
 }
-.lp-flip-back .lp-flip-hint { color: rgba(255, 255, 255, 0.85); font-weight: 500; }
+.lp-next-item h3 { margin: 4px 0 8px; font-size: 1.2rem; line-height: 1.3; color: var(--ink); }
+.lp-next-item p { margin: 0; color: var(--ink-soft); line-height: 1.6; }
+@media (max-width: 900px) {
+  .lp-next-grid { grid-template-columns: 1fr; gap: 28px; }
+  .lp-next-intro { position: static; }
+  .lp-next-intro h2.pov-headline { font-size: 1.8rem; }
+}
+@media (max-width: 520px) { .lp-next-item { grid-template-columns: 1fr; gap: 10px; padding: 22px 20px; } }
+@media (max-width: 900px) { .lp-problems { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; } }
 
 @media (max-width: 900px) {
   .lp-hero .container.lp-hero-grid { grid-template-columns: 1fr; gap: 36px; }
   .lp-hero-video { max-width: 280px; margin: 0 auto; }
-  .lp-intro-grid { grid-template-columns: 1fr; row-gap: 40px; }
-  .lp-intro-grid .pov-intro-text { display: block; }
 }
-@media (max-width: 520px) {
-  .lp-fix-panel { padding: 28px 20px; }
-  .lp-fix-grid { grid-template-columns: 1fr; }
-  .lp-flip-inner { min-height: 130px; }
+
+/* ===== Formatting pass: one type scale, even spacing ===== */
+html { scroll-padding-top: 96px; }
+/* Hero: smaller portrait video, centered in its half */
+.lp-hero .container.lp-hero-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 48px; }
+.lp-hero-video { width: 272px; max-width: 100%; justify-self: center; border-radius: 16px; }
+.lp-hero h1 { font-size: clamp(2.1rem, 4.2vw, 3.25rem); }
+.lp-hero p.lead { font-size: clamp(1.0625rem, 1.4vw, 1.1875rem); max-width: 560px; }
+/* Hero video: self-hosted, silent autoplay loop, optional sound */
+.lp-hero-video { cursor: default; border-radius: 20px; box-shadow: 0 28px 64px rgba(0, 0, 0, 0.45); }
+.lp-hero-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.lp-sound {
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  display: inline-flex; align-items: center; gap: 7px;
+  min-height: 34px; padding: 0 13px 0 10px;
+  border: 0; border-radius: 999px; cursor: pointer;
+  background: rgba(21, 22, 25, 0.82); color: #fff;
+  font: 700 13px/1 var(--font);
+  transition: background-color .15s ease;
 }
-@media (prefers-reduced-motion: reduce) {
-  .lp-flip-inner { transition: none; }
+.lp-sound:hover { background: rgba(21, 22, 25, 0.95); }
+.lp-sound:focus-visible { outline: 2px solid #ff7a4d; outline-offset: 2px; }
+.lp-sound svg { width: 17px; height: 17px; }
+.lp-sound .lp-sound-on, .lp-sound[aria-pressed="true"] .lp-sound-off { display: none; }
+.lp-sound[aria-pressed="true"] .lp-sound-on { display: inline; }
+/* Section headings: one size everywhere */
+.pov-intro-text h2.pov-headline,
+.lp-next-intro h2.pov-headline,
+.lp-contact .lp-contact-title,
+.section--clients-dark .services-subhead,
+.case-studies-carousel-header h2,
+.cta-banner h2 { font-size: clamp(1.65rem, 2.7vw, 2.125rem); line-height: 1.15; }
+.lp-problems-head { max-width: 860px; margin-bottom: 28px; }
+/* Cards: one title size, one body size */
+.lp-problems { margin-bottom: 0; gap: 20px; }
+.lp-problem { padding: 24px; }
+.lp-problem h3, .lp-next-item h3 { font-size: 1.125rem; line-height: 1.3; margin: 0 0 8px; }
+.lp-problem p, .lp-next-item p { font-size: 1rem; line-height: 1.6; }
+/* What to do next: text centered beside shorter cards, no sticky gap */
+.lp-next-grid { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 48px; align-items: center; }
+.lp-next-intro { position: static; }
+.lp-next-intro h2.pov-headline { margin: 0 0 22px; }
+.lp-next-list { gap: 14px; }
+.lp-next-item { padding: 20px 22px; gap: 16px; align-items: start; }
+.lp-next-num { width: 32px; height: 32px; font-size: .95rem; }
+.lp-next-item h3 { margin-top: 3px; }
+/* Contact text and dark bands */
+.lp-contact .lead { font-size: 1.0625rem; line-height: 1.6; }
+.lp-contact .contact-partner-badges { margin-top: 24px; }
+.section--clients-dark .services-intro-text p.muted { font-size: 1.0625rem; line-height: 1.6; }
+.clients-quotes-title { font-size: 1.375rem; }
+.section, .cta-banner { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+.lp-reviews { padding-bottom: 2rem; }
+.lp-reviews + .section--clients-dark { padding-top: 2rem; }
+@media (max-width: 900px) {
+  .lp-hero .container.lp-hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .lp-hero-video { width: 232px; margin: 0 auto; }
+  .lp-next-grid { grid-template-columns: 1fr; gap: 24px; }
+  .lp-problems-head.pov-intro-text, .lp-next-intro.pov-intro-text { display: block; }
+  .section, .cta-banner { padding-top: 3.25rem; padding-bottom: 3.25rem; }
 }
 </style>
 <script src="scripts/ga4.js" async></script>
@@ -278,134 +276,171 @@
   <canvas class="grid-trail-canvas" aria-hidden="true"></canvas>
   <div class="container lp-hero-grid">
     <div class="hero-text">
-      <p class="hero-eyebrow">Has your business stopped growing?</p>
-      <h1>Grow Profits<br>With Google Ads</h1>
-      <p class="lead">We grow our clients&rsquo; sales by 3% to 5% within the first 6 weeks.<br>
-On average, our clients increase their total sales<br>
-<strong class="grad-text">by 20.5% year-over-year without sacrificing ROI.</strong></p>
+      <h1>Concerned With Sales?<br>Confused by Ads?</h1>
+      <p class="lead">You&rsquo;re not the only one! $1M - $25M revenue shops often miss out on more sales and better ROI metrics because of&hellip;<br>
+<strong class="grad-text">broken tracking, item disapprovals, mis-allocated budget.</strong></p>
       <div class="hero-actions">
-        <a href="/contact" class="btn btn-gradient">Contact Us</a>
-        <a href="/case-studies" class="hero-arrow-link">Case Studies <span aria-hidden="true">&rsaquo;</span></a>
+        <a href="#services" class="btn btn-gradient">Common Problems</a>
+        <a href="#contact" class="hero-arrow-link">Contact Us <span aria-hidden="true">&rsaquo;</span></a>
       </div>
     </div>
-    <a class="lp-hero-video" href="https://youtube.com/shorts/TJg66xiclto" data-yt-id="TJg66xiclto" target="_blank" rel="noopener" aria-label="Play video">
-      <img src="https://i.ytimg.com/vi/TJg66xiclto/oar2.jpg" alt="" width="540" height="960" fetchpriority="high" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/TJg66xiclto/hqdefault.jpg'">
-      <span class="lp-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-    </a>
+    <div class="lp-hero-video">
+      <video id="lp-hero-vid" poster="images/concerned-with-google-ads-hero-poster.jpg" width="480" height="854" muted loop playsinline preload="none" data-src="videos/concerned-with-google-ads-hero.mp4" aria-label="What happens when we review your Google Ads"></video>
+      <button type="button" class="lp-sound" id="lp-sound" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path class="lp-sound-off" d="m16 9 5 6m0-6-5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="lp-sound-on" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="lp-sound-label">Watch with sound</span>
+      </button>
+    </div>
   </div>
 </section>
 
-<!-- ================= WHO WE HELP + FIX           <div class="lp-flip" role="button" tabindex="0" aria-pressed="false">
-            <div class="lp-flip-inner">
-              <div class="lp-flip-face lp-flip-front">
-                <h3>Broken/Missing Conversion Data</h3>
-                <p class="lp-flip-hint">Tap to see the fix &rsaquo;</p>
-              </div>
-              <div class="lp-flip-face lp-flip-back">
-                <a href="https://youtu.be/wSx8Lmtb_L0" target="_blank" rel="noopener" tabindex="-1">We Fix It: Example <span aria-hidden="true">&rsaquo;</span></a>
-                <p class="lp-flip-hint">Tap card to flip back</p>
-              </div>
-            </div>
-          </div>
-          <div class="lp-flip" role="button" tabindex="0" aria-pressed="false">
-            <div class="lp-flip-inner">
-              <div class="lp-flip-face lp-flip-front">
-                <h3>Disapproved Shopping Ads</h3>
-                <p class="lp-flip-hint">Tap to see the fix &rsaquo;</p>
-              </div>
-              <div class="lp-flip-face lp-flip-back">
-                <a href="/services" tabindex="-1">How We Stop These <span aria-hidden="true">&rsaquo;</span></a>
-                <p class="lp-flip-hint">Tap card to flip back</p>
-              </div>
-            </div>
-          </div>
-          <div class="lp-flip" role="button" tabindex="0" aria-pressed="false">
-            <div class="lp-flip-inner">
-              <div class="lp-flip-face lp-flip-front">
-                <h3>Costly Irrelevant Searches</h3>
-                <p class="lp-flip-hint">Tap to see the fix &rsaquo;</p>
-              </div>
-              <div class="lp-flip-face lp-flip-back">
-                <a href="https://youtube.com/shorts/2mr4cD7aF-8" target="_blank" rel="noopener" tabindex="-1">Where to Find These: Video <span aria-hidden="true">&rsaquo;</span></a>
-                <p class="lp-flip-hint">Tap card to flip back</p>
-              </div>
-            </div>
-          </div>
-          <div class="lp-flip" role="button" tabindex="0" aria-pressed="false">
-            <div class="lp-flip-inner">
-              <div class="lp-flip-face lp-flip-front">
-                <h3>Ads That Spend More Than They Earn</h3>
-                <p class="lp-flip-hint">Tap to see the fix &rsaquo;</p>
-              </div>
-              <div class="lp-flip-face lp-flip-back">
-                <a href="/contact" tabindex="-1">Talk To Us About How to Fix This <span aria-hidden="true">&rsaquo;</span></a>
-                <p class="lp-flip-hint">Tap card to flip back</p>
-              </div>
-            </div>
-          </div> ================= -->
+<!-- ================= THREE PROBLEMS ================= -->
 <section class="section" id="services">
   <div class="container">
-    <div class="lp-intro-grid">
-      <div class="pov-intro-text">
-        <h2 class="pov-headline">$1M to $50M Annual Revenue <strong>Shopify Store Owners.</strong></h2>
-        <p class="lp-subhead">Concerned about sales growth? Confused about Google Ads?</p>
-        <p class="muted">You&rsquo;re concerned that something&rsquo;s not right in your paid ads account, and you&rsquo;re confused by all the settings and feature updates in the Google Ads interface. We understand you.</p>
-        <p class="muted">Every week, we take a look at advertisers&rsquo; Google Ads accounts and see missing conversion data, outdated ads, disapproved products, and sometimes tens of thousands of dollars wasted on campaigns that made no meaningful contribution to sales.</p>
-        <p class="muted">Online shops with between 1 and 20 million a year in annual revenue typically exist in a zone where they need paid search on Google Ads to perform, but don&rsquo;t quite have the resources or expertise in their internal marketing teams to handle and optimize all the nuances of paid search ads (much less to keep up with ever-changing feature and policy updates from Google and the other big ad platforms).</p>
+    <div class="lp-problems-head pov-intro-text">
+      <h2 class="pov-headline">Three problems Shopify stores experience <strong>in their Google Ads accounts.</strong></h2>
+    </div>
+    <div class="lp-problems">
+      <div class="lp-problem">
+        <h3>Incomplete conversion tracking</h3>
+        <p>There&rsquo;s a high chance you&rsquo;re missing conversion data. Google and Apple changes altered how most ad tracking systems work. You&rsquo;re likely missing over 10% of conversions altogether. It&rsquo;s a common problem!</p>
       </div>
-      <div class="lp-fix-panel">
-        <h2>Take Action Today and Fix&hellip;</h2>
-        <div class="lp-fix-grid">
-          <div class="lp-flip" role="button" tabindex="0" aria-pressed="false">
-            <div class="lp-flip-inner">
-              <div class="lp-flip-face lp-flip-front">
-                <h3>Broken/Missing Conversion Data</h3>
-                <p class="lp-flip-hint">Tap to see the fix &rsaquo;</p>
-              </div>
-              <div class="lp-flip-face lp-flip-back">
-                <a href="https://youtu.be/wSx8Lmtb_L0" target="_blank" rel="noopener" tabindex="-1">We Fix It: Example <span aria-hidden="true">&rsaquo;</span></a>
-                <p class="lp-flip-hint">Tap card to flip back</p>
-              </div>
-            </div>
+      <div class="lp-problem">
+        <h3>Missing product data</h3>
+        <p>You auto-exported your product catalog into Google Ads? Then you&rsquo;re missing attributes and optimizations that keep your items approved in ads. This is the most common problem we see. And it&rsquo;s often the hardest to fix.</p>
+      </div>
+      <div class="lp-problem">
+        <h3>Wasted ad spend</h3>
+        <p>You have a keen eye for what your customers are searching for on the internet, right? Check your Search Terms report and find out if those are the searches you&rsquo;re actually paying for. You might be surprised by what you see!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHAT YOU CAN DO NEXT ================= -->
+<section class="section lp-next-section" id="what-to-do">
+  <div class="container">
+    <div class="lp-next-grid">
+      <div class="pov-intro-text lp-next-intro">
+        <h2 class="pov-headline">Your ads need attention. Attention takes time. <strong>Here&rsquo;s what you can do next.</strong></h2>
+        <a href="#contact" class="btn btn-gradient">Contact Us</a>
+      </div>
+      <div class="lp-next-list">
+        <div class="lp-next-item">
+          <span class="lp-next-num" aria-hidden="true">1</span>
+          <div>
+            <h3>Have a glance at reports</h3>
+            <p>Spend 30 minutes reviewing reports in Google Ads. It is common (yet unfortunate!) for shops to spend thousands on low ROI searches, while missing out on good ones!</p>
           </div>
-          <div class="lp-flip" role="button" tabindex="0" aria-pressed="false">
-            <div class="lp-flip-inner">
-              <div class="lp-flip-face lp-flip-front">
-                <h3>Disapproved Shopping Ads</h3>
-                <p class="lp-flip-hint">Tap to see the fix &rsaquo;</p>
-              </div>
-              <div class="lp-flip-face lp-flip-back">
-                <a href="/services" tabindex="-1">How We Stop These <span aria-hidden="true">&rsaquo;</span></a>
-                <p class="lp-flip-hint">Tap card to flip back</p>
-              </div>
-            </div>
+        </div>
+        <div class="lp-next-item">
+          <span class="lp-next-num" aria-hidden="true">2</span>
+          <div>
+            <h3>Check how much of your product feed is approved</h3>
+            <p>Shop owners are often dismayed to learn that 10-20% of their items are not even showing in ads. Why? Because they&rsquo;re disapproved in Merchant Center.</p>
           </div>
-          <div class="lp-flip" role="button" tabindex="0" aria-pressed="false">
-            <div class="lp-flip-inner">
-              <div class="lp-flip-face lp-flip-front">
-                <h3>Costly Irrelevant Searches</h3>
-                <p class="lp-flip-hint">Tap to see the fix &rsaquo;</p>
-              </div>
-              <div class="lp-flip-face lp-flip-back">
-                <a href="https://youtube.com/shorts/2mr4cD7aF-8" target="_blank" rel="noopener" tabindex="-1">Where to Find These: Video <span aria-hidden="true">&rsaquo;</span></a>
-                <p class="lp-flip-hint">Tap card to flip back</p>
-              </div>
-            </div>
-          </div>
-          <div class="lp-flip" role="button" tabindex="0" aria-pressed="false">
-            <div class="lp-flip-inner">
-              <div class="lp-flip-face lp-flip-front">
-                <h3>Ads That Spend More Than They Earn</h3>
-                <p class="lp-flip-hint">Tap to see the fix &rsaquo;</p>
-              </div>
-              <div class="lp-flip-face lp-flip-back">
-                <a href="/contact" tabindex="-1">Talk To Us About How to Fix This <span aria-hidden="true">&rsaquo;</span></a>
-                <p class="lp-flip-hint">Tap card to flip back</p>
-              </div>
-            </div>
+        </div>
+        <div class="lp-next-item">
+          <span class="lp-next-num" aria-hidden="true">3</span>
+          <div>
+            <h3>Ask &ldquo;did anyone update conversion tracking?&rdquo;</h3>
+            <p>Tracking is not as simple as enabling the Google &amp; YouTube sales channel in Shopify. With enhanced tracking, you&rsquo;ll see 10% to 20% more conversions.</p>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT FORM ================= -->
+<section class="section contact-section lp-contact" id="contact">
+  <div class="container split contact-split" style="align-items:start;">
+    <div class="contact-left">
+      <span class="eyebrow">Contact</span>
+      <h2 class="lp-contact-title">Let's Talk</h2>
+      <p class="lead">We're here to help you grow your business. Contact us today.</p>
+      <p class="lead" style="margin-top:0;">Austin has been helping small to large size businesses in the USA, Canada, United Kingdom and Australia for the past 10 years to grow their revenue profitably. Our team is on board to help you beat your next sales goal.</p>
+      <div class="contact-partner-badges">
+        <a href="https://www.google.com/partners/agency?id=2938602801" target="_blank" rel="noopener" aria-label="Google Partner profile">
+          <img src="images/Partner-RGB-1.png" alt="Google Partner">
+        </a>
+        <a href="https://msadvertisingpartnerprogram.powerappsportals.com/partner-directory-profile-full/?partnerProfileID=3c2bfd14-8945-f111-88b4-7ced8d3d593b" target="_blank" rel="noopener" aria-label="Microsoft Advertising Partner profile">
+          <img src="images/80756-2026-Partner-Program-Badge-Updates-LP-C2_Partner.png" alt="Microsoft Advertising Partner">
+        </a>
+      </div>
+    </div>
+    <div class="form-wrap">
+      <form data-hs-form="ceab7d85-5720-4d93-88cb-11fa32d5b5e8" data-hs-form-name="contact">
+        <div class="form-row form-row-split">
+          <div>
+            <label for="first">First Name <span class="req">*</span></label>
+            <input id="first" name="firstname" type="text" required>
+          </div>
+          <div>
+            <label for="last">Last Name <span class="req">*</span></label>
+            <input id="last" name="lastname" type="text" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="email">Email <span class="req">*</span></label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel">
+        </div>
+        <div class="form-row">
+          <label for="company">Company Name <span class="req">*</span></label>
+          <input id="company" name="company" type="text" required>
+        </div>
+        <div class="form-row">
+          <label for="website">Company Website <span class="req">*</span></label>
+          <input id="website" name="website" type="url" placeholder="https://" required>
+        </div>
+        <div class="form-row">
+          <label for="heard">How did you hear about us? <span class="req">*</span></label>
+          <select id="heard" name="how_did_you_hear_about_us" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="x">X.com</option>
+            <option value="reddit">Reddit</option>
+            <option value="google">Google</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="youtube">YouTube</option>
+            <option value="facebook_instagram">Facebook/Instagram</option>
+            <option value="ai_assistant">ChatGPT/Claude/Perplexity</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-row" data-show-when="heard=other" hidden>
+          <label for="heard-other">Where did you hear about us? <span class="req">*</span></label>
+          <input id="heard-other" name="how_did_you_hear_about_us_other" type="text">
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLIENT REVIEWS ================= -->
+<section class="section section--dark section--clients-dark lp-reviews">
+  <div class="container">
+    <h3 class="clients-quotes-title">Client reviews <a href="https://maps.app.goo.gl/MyasdYPg5uZhGE7N7" target="_blank" rel="noopener" class="from-google">from Google</a></h3>
+    <div class="grid-3 clients-quotes">
+      <div class="quote">
+        <p>Since we started working with Austin and his team, we&rsquo;ve grown our business every quarter, year over year. Revenue from Google Ads and Microsoft Ads is still a big part of this growth.</p>
+        <cite>Tony Price<span><a href="/case-studies/hose-warehouse-beltsmart">Murdock Industrial</a></span></cite>
+        <a class="quote-case-link" href="/case-studies/hose-warehouse-beltsmart">Read the case study <span aria-hidden="true">&rsaquo;</span></a>
+      </div>
+      <div class="quote">
+        <p>We have been advertising on Google since 2012 and as the chart indicates, we typically have a (Summer) seasonal bump in sales. Since hiring Austin and his team in 2020, the spike tells the story. I highly recommend Austin for your next digital advertising project. You can expect exceptional results and a healthy return on your investment!</p>
+        <cite>Rex Bledsoe<span><a href="https://aquadesign.com/" target="_blank" rel="noopener">aquadesign.com</a></span></cite>      </div>
+      <div class="quote">
+        <p>I've had the pleasure of working with Austin, and I must say, he's been an absolute legend! His exceptional expertise, combined with his patient and helpful approach, made navigating complex feed setup, optimisation and scripting a breeze. Austin's attention to detail and thoroughness ensured we covered all bases and his guidance was invaluable.</p>
+        <cite>Rich Fraser<span><a href="https://www.boxhill.co.nz/" target="_blank" rel="noopener">boxhill.co.nz</a></span></cite>      </div>
     </div>
   </div>
 </section>
@@ -516,20 +551,6 @@ On average, our clients increase their total sales<br>
   </div>
 </div>
     </div>
-    <h3 class="clients-quotes-title">Client reviews <a href="https://maps.app.goo.gl/MyasdYPg5uZhGE7N7" target="_blank" rel="noopener" class="from-google">from Google</a></h3>
-    <div class="grid-3 clients-quotes">
-      <div class="quote">
-        <p>Since we started working with Austin and his team, we&rsquo;ve grown our business every quarter, year over year. Revenue from Google Ads and Microsoft Ads is still a big part of this growth.</p>
-        <cite>Tony Price<span><a href="/case-studies/hose-warehouse-beltsmart">Murdock Industrial</a></span></cite>
-        <a class="quote-case-link" href="/case-studies/hose-warehouse-beltsmart">Read the case study <span aria-hidden="true">&rsaquo;</span></a>
-      </div>
-      <div class="quote">
-        <p>We have been advertising on Google since 2012 and as the chart indicates, we typically have a (Summer) seasonal bump in sales. Since hiring Austin and his team in 2020, the spike tells the story. I highly recommend Austin for your next digital advertising project. You can expect exceptional results and a healthy return on your investment!</p>
-        <cite>Rex Bledsoe<span><a href="https://aquadesign.com/" target="_blank" rel="noopener">aquadesign.com</a></span></cite>      </div>
-      <div class="quote">
-        <p>I've had the pleasure of working with Austin, and I must say, he's been an absolute legend! His exceptional expertise, combined with his patient and helpful approach, made navigating complex feed setup, optimisation and scripting a breeze. Austin's attention to detail and thoroughness ensured we covered all bases and his guidance was invaluable.</p>
-        <cite>Rich Fraser<span><a href="https://www.boxhill.co.nz/" target="_blank" rel="noopener">boxhill.co.nz</a></span></cite>      </div>
-    </div>
   </div>
 </section>
 
@@ -611,113 +632,6 @@ On average, our clients increase their total sales<br>
   </div>
 </section>
 
-<!-- ================= SERVICE CARDS ================= -->
-<section class="section services-cta">
-  <div class="container">
-    <div class="services-cta-intro">
-      <p class="eyebrow services-cta-eyebrow">When You Work With Us</p>
-      <h2>What You Get</h2>
-      <div class="sync-graphic" aria-label="Optimized data and campaigns across platforms">
-        <div class="sync-col sync-col--sources">
-          <div class="sync-logo sync-logo--platforms">
-            <div class="sync-logo-grid">
-              <img src="images/website-logos/google-logo.svg" alt="Google Ads">
-              <img src="images/website-logos/microsoft-ads-icon.png" alt="Microsoft Ads">
-              <img src="images/website-logos/google-merchant-center-icon.png" alt="Google Merchant Center">
-              <img src="images/website-logos/facebook-icon.png" alt="Facebook">
-              <img src="images/website-logos/instagram-icon.png" alt="Instagram">
-              <img src="images/website-logos/chatgpt-black-icon.png" alt="ChatGPT">
-              <img src="images/website-logos/reddit-icon.png" alt="Reddit">
-              <img src="images/website-logos/pinterest-red-icon.png" alt="Pinterest">
-            </div>
-            <p class="sync-logo-caption">
-              <span class="sync-logo-caption-title">Managed Channels</span>
-              <span class="sync-logo-caption-sub">Focused on Google Ads</span>
-            </p>
-          </div>
-        </div>
-        <div class="sync-dots" aria-hidden="true"><span></span><span></span></div>
-        <div class="sync-tile">
-          <div class="sync-tile-icon"><img src="images/austin-becker-logo-icon-white.png" alt="Austin Becker E-Commerce Marketing"></div>
-          <h3>Optimized and cleaned data and campaigns</h3>
-          <h3>Marketing consulting + best practices</h3>
-        </div>
-        <div class="sync-dots" aria-hidden="true"><span></span><span></span></div>
-        <div class="sync-col sync-col--dest">
-          <div class="sync-logo sync-logo--dest">
-            <img src="images/website-logos/shopify-icon.png" alt="Shopify">
-            <p class="sync-logo-caption">
-              <span class="sync-logo-caption-title">Overall Sales Growth</span>
-              <span class="sync-logo-caption-sub">More efficient <br class="sync-caption-break">ad spend</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="services-cta-copy">
-        <p class="services-cta-body">Our team takes over responsibility for all of the paid ads duties below. Why? Because if any of the below pieces is broken, your ads are less profitable than they could be.</p>
-        <ul class="services-cta-dashlist" aria-label="Included services">
-          <li>Create and optimize ad campaigns</li>
-          <li>99%+ daily average item approval</li>
-          <li>Optimized product data</li>
-          <li>Product data feeds for all channels</li>
-          <li>Optimized audience remarketing</li>
-          <li>Conversion rate best practices consulting</li>
-          <li>1P conversion data setup</li>
-          <li>Regular reporting and analytics setup</li>
-        </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ABOUT PREVIEW ================= -->
-<section class="section section--soft">
-  <div class="container split">
-    <div>
-      <p class="eyebrow-gradient">Get to know us</p>
-      <h2>About Us</h2>
-      <p>We are based in South Bend, Indiana. We help $1M to $50M annual revenue businesses grow online with Google, Microsoft, and social media pay per click (PPC) advertising.</p>
-      <p>We&rsquo;re known for our work on product data feeds in particular, and for our ecommerce and retail-adjacent SaaS marketing work. We focus on Google Ads, and work on additional search, social, and AI channels when we know it will impact our clients&rsquo; businesses. See <a href="/supported-ad-platforms">supported channels here</a>.</p>
-      <div class="stats stats-inline">
-        <a class="stat stat-link" href="https://www.upwork.com/freelancers/~014ed904b2ddf51fa6?mp_source=share" target="_blank" rel="noopener">
-          <div class="num">100%</div>
-          <div class="label">UpWork Job Success</div>
-        </a>
-        <div class="stat">
-          <div class="num">10+</div>
-          <div class="label">Years of Experience</div>
-        </div>
-        <div class="stat">
-          <div class="num">5 to 10</div>
-          <div class="label">Clients Per Account Manager</div>
-        </div>
-      </div>
-      <div class="badge-row badge-row--about">
-        <a href="https://www.google.com/partners/agency?id=2938602801" target="_blank" rel="noopener" aria-label="Google Partner profile">
-          <img src="images/Partner-RGB-1.png" alt="Google Partner" class="partner-badge">
-        </a>
-        <a href="https://msadvertisingpartnerprogram.powerappsportals.com/partner-directory-profile-full/?partnerProfileID=3c2bfd14-8945-f111-88b4-7ced8d3d593b" target="_blank" rel="noopener" aria-label="Microsoft Advertising Partner profile">
-          <img src="images/80756-2026-Partner-Program-Badge-Updates-LP-C2_Partner.png" alt="Microsoft Advertising Partner" class="partner-badge">
-        </a>
-      </div>
-    </div>
-    <div>
-      <div class="video-frame">
-        <video controls preload="none" playsinline poster="images/founder-intro-poster.jpg" aria-label="Intro from our founder — Austin Becker eCommerce Marketing">
-          <source src="videos/founder-intro.mp4" type="video/mp4">
-          Your browser doesn&rsquo;t support HTML video. <a href="https://www.youtube.com/watch?v=9xu4mo0hUGY" target="_blank" rel="noopener">Watch the video on YouTube</a>.
-        </video>
-      </div>
-      <div class="video-caption-row">
-        <p class="video-caption">Message from founder Austin Becker</p>
-        <a href="https://maps.app.goo.gl/MyasdYPg5uZhGE7N7" target="_blank" rel="noopener" class="indiana-badge-link" aria-label="Austin Becker E-Commerce Marketing on Google Maps">
-          <img src="images/indiana-state-outline-square.png" alt="Indiana, USA based company" class="indiana-badge" width="1000" height="1000">
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= CTA ================= -->
 <section class="cta-banner cta-banner--dark grid-trail">
   <canvas class="grid-trail-canvas" aria-hidden="true"></canvas>
@@ -781,43 +695,38 @@ On average, our clients increase their total sales<br>
 </footer>
 
 <script>
-  // Hero video: load the YouTube player only when clicked
-  document.querySelectorAll('.lp-hero-video[data-yt-id]').forEach(function (el) {
-    el.addEventListener('click', function (e) {
-      e.preventDefault();
-      var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + el.dataset.ytId + '?autoplay=1&rel=0&playsinline=1';
-      f.title = 'A Becker Marketing video';
-      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-      f.allowFullscreen = true;
-      el.replaceWith(Object.assign(document.createElement('div'), { className: 'lp-hero-video' }));
-      document.querySelector('.lp-hero div.lp-hero-video').appendChild(f);
-    });
-    el.addEventListener('mouseenter', function () {
-      if (document.getElementById('yt-pc')) return;
-      var l = document.createElement('link');
-      l.id = 'yt-pc'; l.rel = 'preconnect'; l.href = 'https://www.youtube-nocookie.com';
-      document.head.appendChild(l);
-    }, { once: true });
-  });
-  // "Take Action Today" flip cards
-  document.querySelectorAll('.lp-flip').forEach(function (card) {
-    function toggle() {
-      var on = card.classList.toggle('flipped');
-      card.setAttribute('aria-pressed', on ? 'true' : 'false');
-      card.querySelectorAll('.lp-flip-back a').forEach(function (a) { a.tabIndex = on ? 0 : -1; });
+  // Hero video: start loading after the page is ready, play silently on a loop
+  (function () {
+    var v = document.getElementById('lp-hero-vid'), b = document.getElementById('lp-sound');
+    if (!v) return;
+    var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function load() { if (!v.src) v.src = v.dataset.src; }
+    function start() { load(); var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    if (!calm) {
+      if (document.readyState === 'complete') start(); else window.addEventListener('load', start);
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (es) {
+          es.forEach(function (e) { if (!v.src) return; if (e.isIntersecting) { if (v.paused) v.play().catch(function () {}); } else if (v.muted) v.pause(); });
+        }, { threshold: 0.2 }).observe(v);
+      }
     }
-    card.addEventListener('click', function (e) { if (!e.target.closest('a')) toggle(); });
-    card.addEventListener('keydown', function (e) {
-      if (e.target !== card) return;
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    b.addEventListener('click', function () {
+      var on = v.muted;
+      load();
+      v.muted = !on;
+      if (on) v.currentTime = 0;
+      v.play().catch(function () {});
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.querySelector('.lp-sound-label').textContent = on ? 'Mute' : 'Watch with sound';
     });
-  });
+  })();
 </script>
+<script src="scripts/hubspot-form.js" defer></script>
 <script src="scripts/client-logos-autoscroll.js" defer></script>
 <script src="scripts/hero-grid-interactive.js" defer></script>
 <script src="scripts/site-nav.js" defer></script>
 <!-- HubSpot tracking -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/14501596.js"></script>
+
 </body>
 </html>
