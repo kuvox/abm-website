@@ -127,7 +127,7 @@ def header(rel: str, *, active: str | None = None) -> str:
         <div class="megamenu megamenu--about">
           <div class="megamenu-col megamenu-col--text">
             <span class="megamenu-eyebrow">About Us</span>
-            <p>Digital ads for $1M-$50M shops with large, complex product catalogs.</p>
+            <p>Digital ads for $1M to $50M shops with large, complex product catalogs.</p>
           </div>
           <div class="megamenu-col">
             <ul>
